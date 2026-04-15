@@ -1,0 +1,552 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Habit {
+  id           String   @id @default(cuid())
+  userId       String   @default("default-user")
+  name         String
+  type         String   @default("daily")
+  color        String   @default("#C08552")
+  icon         String   @default("🎯")
+  targetValue  Float?
+  unit         String?
+  reminderTime String?
+  isArchived   Boolean  @default(false)
+  isPaused     Boolean  @default(false)
+  frequency    String   @default("daily")
+  sortOrder    Int      @default(0)
+  categoryId       String?
+  deadline         String?
+  stackedAfter     String?
+  minViableVersion String?
+  conditionType    String?
+  conditionValue   String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  logs     HabitLog[]
+  category HabitCategory? @relation(fields: [categoryId], references: [id])
+}
+
+model HabitLog {
+  id        String   @id @default(cuid())
+  habitId   String
+  date      String
+  status    String   @default("completed")
+  value     Float?
+  note      String   @default("")
+  createdAt DateTime @default(now())
+
+  habit Habit @relation(fields: [habitId], references: [id], onDelete: Cascade)
+
+  @@unique([habitId, date])
+}
+
+model UserStats {
+  id               String   @id @default(cuid())
+  userId           String   @unique @default("default-user")
+  xp               Int      @default(0)
+  level            Int      @default(1)
+  currentStreak    Int      @default(0)
+  longestStreak    Int      @default(0)
+  totalCompleted   Int      @default(0)
+  graceDayUsed     Boolean  @default(false)
+  coins            Int      @default(0)
+  streakFreezes    Int      @default(1)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model EarnedBadge {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  badgeType String
+  earnedAt  DateTime @default(now())
+}
+
+model HabitCategory {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  name      String
+  color     String   @default("#C08552")
+  emoji     String   @default("📁")
+  createdAt DateTime @default(now())
+
+  habits Habit[]
+}
+
+model UserProfile {
+  id                   String   @id @default(cuid())
+  userId               String   @unique @default("default-user")
+  name                 String   @default("")
+  email                String   @default("")
+  examDate             String   @default("")
+  studentClass         String   @default("")
+  gender               String   @default("")
+  studyMode            String   @default("pw")
+  waterGoal            Int      @default(8)
+  theme                String   @default("warm-brown")
+  darkModeSchedule     Boolean  @default(false)
+  darkModeStart        String   @default("20:00")
+  darkModeEnd          String   @default("07:00")
+  notificationsEnabled Boolean  @default(false)
+  weeklyEmailEnabled   Boolean  @default(false)
+  lastWeeklyReview     String   @default("")
+  onboardingDone       Boolean  @default(false)
+  examGoal             String   @default("")
+  streakFreezeUsed     Boolean  @default(false)
+  streakFreezeDate     String   @default("")
+  holidayMode          Boolean  @default(false)
+  holidayStart         String   @default("")
+  holidayEnd           String   @default("")
+  pinEnabled           Boolean  @default(false)
+  pinCode              String   @default("")
+  petName              String   @default("Buddy")
+  petLevel             Int      @default(1)
+  petXP                Int      @default(0)
+  weeklyStudyGoal      Int      @default(0)
+  screenTimeGoal       Int      @default(0)
+  subjects             String   @default("[]")
+  weakSubjects         String   @default("[]")
+  mantra               String   @default("")
+  subjectColors        String   @default("{}")
+  vacationMode         Boolean  @default(false)
+  vacationStart        String   @default("")
+  vacationEnd          String   @default("")
+  password             String   @default("")
+  username             String?  @unique
+  periodAge            Int?
+  periodCycleLength    Int      @default(28)
+  periodLastDate       String   @default("")
+  periodReminderEnabled Boolean @default(false)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+}
+
+model Friendship {
+  id         String   @id @default(cuid())
+  userId     String
+  friendId   String
+  status     String   @default("pending")
+  createdAt  DateTime @default(now())
+
+  @@unique([userId, friendId])
+}
+
+model MoodLog {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  date      String
+  mood      Int
+  createdAt DateTime @default(now())
+
+  @@unique([userId, date])
+}
+
+model WaterLog {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  date      String
+  glasses   Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, date])
+}
+
+model FocusSession {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  date      String
+  duration  Int
+  task      String   @default("")
+  notes     String   @default("")
+  completed Boolean  @default(true)
+  xpEarned  Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+// ── PW (Physics Wallah) Daily Study Tracker ────────────────────────
+
+model PWDaily {
+  id              String   @id @default(cuid())
+  userId          String   @default("default-user")
+  date            String   @unique
+  theoryRevised   Boolean  @default(false)
+  dppSolved       Boolean  @default(false)
+  practiceSheet   Boolean  @default(false)
+  pyqPracticed    Boolean  @default(false)
+  formulaRevised  Boolean  @default(false)
+  isRestDay       Boolean  @default(false)
+  hasTask         Boolean  @default(false)
+  testName        String   @default("")
+  taskScore       String   @default("")
+  taskAccuracy    String   @default("")
+  taskMistakes    String   @default("")
+  taskImprovedAt  String   @default("")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model PWClass {
+  id               String   @id @default(cuid())
+  userId           String   @default("default-user")
+  date             String
+  subject          String   @default("")
+  topic            String   @default("")
+  teacher          String   @default("")
+  time             String   @default("")
+  attendedLive     Boolean  @default(false)
+  attendedRecorded Boolean  @default(false)
+  createdAt        DateTime @default(now())
+}
+
+model PWTodo {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  title     String
+  completed Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ── PW History (Daily Snapshots) ──────────────────────────────────
+
+model PWHistory {
+  id              String   @id @default(cuid())
+  userId          String   @default("default-user")
+  date            String   @unique
+  classesJson     String   @default("[]")
+  todosJson       String   @default("[]")
+  dailyJson       String   @default("{}")
+  classesAttended Int      @default(0)
+  todosCompleted  Int      @default(0)
+  todosTotal      Int      @default(0)
+  hasTest         Boolean  @default(false)
+  isRestDay       Boolean  @default(false)
+  createdAt       DateTime @default(now())
+}
+
+model MistakeNote {
+  id         String   @id @default(cuid())
+  userId     String   @default("default-user")
+  subject    String
+  topic      String
+  mistake    String
+  correction String   @default("")
+  source     String   @default("")
+  isResolved Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model RevisionItem {
+  id          String   @id @default(cuid())
+  userId      String   @default("default-user")
+  subject     String
+  topic       String
+  notes       String   @default("")
+  studiedDate String
+  nextReview1 String
+  nextReview3 String
+  nextReview7 String
+  doneReview1 Boolean  @default(false)
+  doneReview3 Boolean  @default(false)
+  doneReview7 Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
+
+model SubjectProgress {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  subject   String
+  chapter   String
+  progress  Int      @default(0)
+  status    String   @default("not_started")
+  notes     String   @default("")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model MockTest {
+  id            String   @id @default(cuid())
+  userId        String   @default("default-user")
+  testName      String
+  subject       String   @default("Mixed")
+  date          String
+  marksObtained Float
+  maxMarks      Float
+  accuracy      Float    @default(0)
+  sillyMistakes Int      @default(0)
+  timeTaken     Int      @default(0)
+  notes         String   @default("")
+  createdAt     DateTime @default(now())
+}
+
+model DoubtNote {
+  id         String   @id @default(cuid())
+  userId     String   @default("default-user")
+  subject    String
+  topic      String
+  question   String
+  answer     String   @default("")
+  source     String   @default("")
+  isResolved Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model ScreenTimeLog {
+  id               String   @id @default(cuid())
+  userId           String   @default("default-user")
+  date             String
+  phoneGoalMins    Int      @default(120)
+  phoneActualMins  Int      @default(0)
+  studyGoalMins    Int      @default(360)
+  studyActualMins  Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@unique([userId, date])
+}
+
+model FormulaCard {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  subject   String
+  chapter   String
+  title     String
+  content   String
+  tags      String   @default("")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model DailyMission {
+  id          String   @id @default(cuid())
+  userId      String   @default("default-user")
+  date        String
+  title       String
+  description String   @default("")
+  isCompleted Boolean  @default(false)
+  coinsReward Int      @default(20)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([userId, date])
+}
+
+model RewardItem {
+  id          String   @id @default(cuid())
+  userId      String   @default("default-user")
+  name        String
+  cost        Int      @default(50)
+  emoji       String   @default("🎁")
+  category    String   @default("break")
+  redeemedAt  DateTime?
+  createdAt   DateTime @default(now())
+}
+
+model CoinTransaction {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  amount    Int
+  reason    String
+  date      String
+  createdAt DateTime @default(now())
+}
+
+model BossChallenge {
+  id               String   @id @default(cuid())
+  userId           String   @default("default-user")
+  weekStart        String
+  title            String
+  description      String   @default("")
+  requirementType  String
+  requirementValue Int      @default(5)
+  currentProgress  Int      @default(0)
+  isCompleted      Boolean  @default(false)
+  coinsReward      Int      @default(150)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@unique([userId, weekStart])
+}
+
+// ── Flashcards ─────────────────────────────────────────────────────
+
+model FlashCard {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  deckId    String?
+  front     String
+  back      String
+  subject   String   @default("")
+  tags      String   @default("")
+  box       Int      @default(1)
+  nextReview String  @default("")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  deck FlashCardDeck? @relation(fields: [deckId], references: [id], onDelete: SetNull)
+}
+
+model FlashCardDeck {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  name      String
+  subject   String   @default("")
+  color     String   @default("#C08552")
+  createdAt DateTime @default(now())
+
+  cards FlashCard[]
+}
+
+// ── Formula Sheet ──────────────────────────────────────────────────
+
+model FormulaEntry {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  subject   String
+  chapter   String   @default("")
+  formula   String
+  desc      String   @default("")
+  tags      String   @default("")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ── 30-Day Challenges ─────────────────────────────────────────────
+
+model Challenge {
+  id          String   @id @default(cuid())
+  userId      String   @default("default-user")
+  title       String
+  description String   @default("")
+  startDate   String
+  endDate     String
+  isCompleted Boolean  @default(false)
+  logs        String   @default("[]")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ── Sleep Tracker ──────────────────────────────────────────────────
+
+model SleepLog {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  date      String
+  bedtime   String
+  wakeTime  String
+  duration  Float
+  quality   Int      @default(3)
+  notes     String   @default("")
+  createdAt DateTime @default(now())
+
+  @@unique([userId, date])
+}
+
+model PeriodLog {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  startDate String
+  endDate   String   @default("")
+  flow      String   @default("medium")
+  symptoms  String   @default("[]")
+  notes     String   @default("")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, startDate])
+}
+
+// ── Gratitude Log ──────────────────────────────────────────────────
+
+model GratitudeLog {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  date      String
+  entry1    String   @default("")
+  entry2    String   @default("")
+  entry3    String   @default("")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, date])
+}
+
+// ── Energy Log ─────────────────────────────────────────────────────
+
+model EnergyLog {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  date      String
+  morning   Int      @default(3)
+  evening   Int      @default(3)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, date])
+}
+
+// ── End-of-Day Reflection ───────────────────────────────────────────
+
+model ReflectionLog {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  date      String
+  prompt    String
+  response  String   @default("")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, date])
+}
+
+// ── Weekly Stress Check-In ──────────────────────────────────────────
+
+model StressCheckIn {
+  id               String   @id @default(cuid())
+  userId           String   @default("default-user")
+  weekStart        String
+  academicPressure Int      @default(3)
+  sleepQuality     Int      @default(3)
+  socialTime       Int      @default(3)
+  notes            String   @default("")
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@unique([userId, weekStart])
+}
+
+// ── Topic Timer ────────────────────────────────────────────────────
+
+model TopicTimerLog {
+  id        String   @id @default(cuid())
+  userId    String   @default("default-user")
+  date      String
+  subject   String
+  topic     String   @default("")
+  minutes   Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+// ── Doubt Log ──────────────────────────────────────────────────────
+
+model DoubtLog {
+  id         String   @id @default(cuid())
+  userId     String   @default("default-user")
+  subject    String
+  doubt      String
+  isResolved Boolean  @default(false)
+  resolution String   @default("")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
