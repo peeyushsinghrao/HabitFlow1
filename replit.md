@@ -63,6 +63,7 @@ To regenerate client: `npm run db:generate`
 - Pomodoro session labels are filtered to user's selected subjects (not a hardcoded list)
 - Reward shop has a confirmation dialog before redemption and a fixed top notification on success
 - Store/Reward Shop includes one-time-use rewards, focus visuals, theme passes, cosmetics, and boosts with coin/level/streak/achievement unlock rules; consumables are redeemed but never equipped
+- Performance cleanup: Study Tool sub-screens are loaded on demand, public app images are compressed to their displayed/manifest sizes, and old imported screenshot/zip/reference folders were removed after verifying they were not referenced by the app
 - Classes Daily Tracker (formerly PW section) now shows "Classes Daily Tracker" in the header
 - PW renamed to "Classes" throughout the UI (onboarding, settings)
 - Habit templates auto-close after adding, and class 11/12 without stream shows a prompt to select stream

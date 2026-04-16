@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState, useRef, useCallback } from 'react';
+import { memo, useEffect, useMemo, useState, useRef, useCallback } from 'react';
 import { format, differenceInCalendarDays } from 'date-fns';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from 'next-themes';
@@ -87,7 +87,7 @@ type ProfileSummary = {
   studyMode: StudyMode;
 };
 
-function ThemeToggleButton({ theme, setTheme }: { theme: string | undefined; setTheme: (t: string) => void }) {
+const ThemeToggleButton = memo(function ThemeToggleButton({ theme, setTheme }: { theme: string | undefined; setTheme: (t: string) => void }) {
   const [showPicker, setShowPicker] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -167,9 +167,9 @@ function ThemeToggleButton({ theme, setTheme }: { theme: string | undefined; set
       </AnimatePresence>
     </div>
   );
-}
+});
 
-function FloatingActionMenu({
+const FloatingActionMenu = memo(function FloatingActionMenu({
   onAddHabit,
   onAddDoubt,
   stats,
@@ -239,7 +239,7 @@ function FloatingActionMenu({
       </div>
     </motion.div>
   );
-}
+});
 
 function renderScreen(tab: TabType, profile: ProfileSummary, onProfileUpdate: (profile: Partial<ProfileSummary>) => void) {
   switch (tab) {
@@ -1020,7 +1020,7 @@ export default function Page() {
     setAppReady(true);
   };
 
-  const handleProfileUpdate = (profile: Partial<ProfileSummary>) => {
+  const handleProfileUpdate = useCallback((profile: Partial<ProfileSummary>) => {
     if (profile.studyMode) {
       setStudyMode(profile.studyMode);
     }
@@ -1033,7 +1033,11 @@ export default function Page() {
     if (profile.studyMode === 'normal' && activeTab === 'pw') {
       setActiveTab('home');
     }
-  };
+  }, [activeTab, setActiveTab]);
+
+  const handleAddHabit = useCallback(() => setAddHabitOpen(true), [setAddHabitOpen]);
+  const handleAddDoubt = useCallback(() => setDoubtOpen(true), []);
+  const handleCloseDoubt = useCallback(() => setDoubtOpen(false), []);
 
   return (
     <>
@@ -1270,14 +1274,14 @@ export default function Page() {
             {/* Merged floating action menu — Add Habit + Add Doubt */}
             {activeTab !== 'focus' && (
               <FloatingActionMenu
-                onAddHabit={() => setAddHabitOpen(true)}
-                onAddDoubt={() => setDoubtOpen(true)}
+                onAddHabit={handleAddHabit}
+                onAddDoubt={handleAddDoubt}
                 stats={stats}
               />
             )}
 
             {/* Quick Doubt Logger — controlled sheet, no floating button */}
-            <QuickDoubtLogger isOpen={doubtOpen} onClose={() => setDoubtOpen(false)} />
+            <QuickDoubtLogger isOpen={doubtOpen} onClose={handleCloseDoubt} />
 
             {/* Bottom navigation bar */}
             <nav className="fixed bottom-0 left-0 right-0 z-30">

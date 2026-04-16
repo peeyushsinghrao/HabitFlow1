@@ -1,25 +1,35 @@
 'use client';
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  BookX, BookOpen, BookMarked, ClipboardList, BookLock,
-  HelpCircle, ShoppingBag, BarChart3, ChevronLeft,
-  FlaskConical, NotebookPen, Target, Trophy,
+  BookOpen, BookMarked, ClipboardList, BookLock,
+  HelpCircle, BarChart3, ChevronLeft,
+  FlaskConical, NotebookPen, Trophy,
   Brain, Timer, Moon, Heart, Zap, CalendarRange,
   HeartPulse,
 } from 'lucide-react';
 import { useHabitStore } from '@/stores/habit-store';
 import type { TabType } from '@/stores/habit-store';
-import { MistakeNotebook } from './mistake-notebook';
-import { SubjectTracker } from './subject-tracker';
-import { RevisionReminder } from './revision-reminder';
-import { MockTestScreen } from './mock-test-screen';
-import { FormulaVault } from './formula-vault';
-import { DoubtBank } from './doubt-bank';
-import { RewardShop } from './reward-shop';
-import { ParentReport } from './parent-report';
-import { WeeklyTimetableBuilder } from './weekly-timetable-builder';
+
+const ToolLoading = () => (
+  <div className="space-y-3">
+    {[1, 2, 3].map(i => (
+      <div key={i} className="h-20 rounded-2xl bg-muted/50 animate-pulse" />
+    ))}
+  </div>
+);
+
+const SubjectTracker = dynamic(() => import('./subject-tracker').then(m => ({ default: m.SubjectTracker })), { ssr: false, loading: ToolLoading });
+const MockTestScreen = dynamic(() => import('./mock-test-screen').then(m => ({ default: m.MockTestScreen })), { ssr: false, loading: ToolLoading });
+const FormulaVault = dynamic(() => import('./formula-vault').then(m => ({ default: m.FormulaVault })), { ssr: false, loading: ToolLoading });
+const DoubtBank = dynamic(() => import('./doubt-bank').then(m => ({ default: m.DoubtBank })), { ssr: false, loading: ToolLoading });
+const MistakeNotebook = dynamic(() => import('./mistake-notebook').then(m => ({ default: m.MistakeNotebook })), { ssr: false, loading: ToolLoading });
+const RevisionReminder = dynamic(() => import('./revision-reminder').then(m => ({ default: m.RevisionReminder })), { ssr: false, loading: ToolLoading });
+const RewardShop = dynamic(() => import('./reward-shop').then(m => ({ default: m.RewardShop })), { ssr: false, loading: ToolLoading });
+const ParentReport = dynamic(() => import('./parent-report').then(m => ({ default: m.ParentReport })), { ssr: false, loading: ToolLoading });
+const WeeklyTimetableBuilder = dynamic(() => import('./weekly-timetable-builder').then(m => ({ default: m.WeeklyTimetableBuilder })), { ssr: false, loading: ToolLoading });
 
 const STUDY_TOOLS = [
   {
