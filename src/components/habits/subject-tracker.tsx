@@ -209,11 +209,7 @@ export function SubjectTracker({ studentClass = '' }: { studentClass?: string })
     <div className="px-4 pb-4 space-y-4">
       {/* Overall progress summary */}
       {totalChapters > 0 && (
-<<<<<<< HEAD
-        <Card className="border-0 shadow-sm">
-=======
         <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
           <CardContent className="p-3">
             <div className="flex items-center gap-4">
               <div className="relative flex-shrink-0">
@@ -230,11 +226,7 @@ export function SubjectTracker({ studentClass = '' }: { studentClass?: string })
                     return (
                       <div key={s.value} className={`rounded-lg p-1.5 text-center ${s.color}`}>
                         <p className="text-sm font-bold">{count}</p>
-<<<<<<< HEAD
-                        <p className="text-[9px] leading-tight">{s.label}</p>
-=======
                         <p className="text-xs leading-tight">{s.label}</p>
->>>>>>> 925ef42 (Initial commit)
                       </div>
                     );
                   })}
@@ -255,66 +247,38 @@ export function SubjectTracker({ studentClass = '' }: { studentClass?: string })
       <AnimatePresence>
         {showAdd && (
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="overflow-hidden">
-<<<<<<< HEAD
-            <Card className="border-0 shadow-sm">
-              <CardContent className="p-4 space-y-3">
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <Label className="text-[10px] uppercase tracking-wider text-muted-foreground">Subject</Label>
-=======
             <Card className="border border-border/40 shadow-sm">
               <CardContent className="p-4 space-y-3">
                 <div className="grid grid-cols-2 gap-2">
                   <div>
                     <Label className="text-xs uppercase tracking-wider text-muted-foreground">Subject</Label>
->>>>>>> 925ef42 (Initial commit)
                     <select value={form.subject} onChange={e => setForm(f => ({ ...f, subject: e.target.value }))} className="mt-1 w-full h-9 px-2 rounded-lg border border-input bg-background text-xs">
                       {subjectOptions.map(s => <option key={s} value={s}>{s}</option>)}
                     </select>
                   </div>
                   <div>
-<<<<<<< HEAD
-                    <Label className="text-[10px] uppercase tracking-wider text-muted-foreground">Chapter Name</Label>
-=======
                     <Label className="text-xs uppercase tracking-wider text-muted-foreground">Chapter Name</Label>
->>>>>>> 925ef42 (Initial commit)
                     <Input value={form.chapter} onChange={e => setForm(f => ({ ...f, chapter: e.target.value }))} placeholder="e.g., Chapter 3" className="mt-1 h-9 rounded-lg text-xs" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   <div>
-<<<<<<< HEAD
-                    <Label className="text-[10px] uppercase tracking-wider text-muted-foreground">Status</Label>
-=======
                     <Label className="text-xs uppercase tracking-wider text-muted-foreground">Status</Label>
->>>>>>> 925ef42 (Initial commit)
                     <select value={form.status} onChange={e => setForm(f => ({ ...f, status: e.target.value }))} className="mt-1 w-full h-9 px-2 rounded-lg border border-input bg-background text-xs">
                       {STATUSES.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
                     </select>
                   </div>
                   <div>
-<<<<<<< HEAD
-                    <Label className="text-[10px] uppercase tracking-wider text-muted-foreground">Progress %</Label>
-=======
                     <Label className="text-xs uppercase tracking-wider text-muted-foreground">Progress %</Label>
->>>>>>> 925ef42 (Initial commit)
                     <Input type="number" min={0} max={100} value={form.progress} onChange={e => setForm(f => ({ ...f, progress: Number(e.target.value) }))} className="mt-1 h-9 rounded-lg text-xs" />
                   </div>
                 </div>
                 <div>
-<<<<<<< HEAD
-                  <Label className="text-[10px] uppercase tracking-wider text-muted-foreground">Priority</Label>
-                  <div className="grid grid-cols-3 gap-2 mt-1">
-                    {PRIORITIES.map(priority => (
-                      <button key={priority.value} type="button" onClick={() => setForm(f => ({ ...f, priority: priority.value }))}
-                        className={`rounded-lg border px-2 py-1.5 text-[10px] font-semibold transition-colors ${form.priority === priority.value ? 'border-primary bg-primary/10 text-primary' : 'border-border/60 text-muted-foreground'}`}>
-=======
                   <Label className="text-xs uppercase tracking-wider text-muted-foreground">Priority</Label>
                   <div className="grid grid-cols-3 gap-2 mt-1">
                     {PRIORITIES.map(priority => (
                       <button key={priority.value} type="button" onClick={() => setForm(f => ({ ...f, priority: priority.value }))}
                         className={`rounded-lg border px-2 py-1.5 text-xs font-semibold transition-colors ${form.priority === priority.value ? 'border-primary bg-primary/10 text-primary' : 'border-border/60 text-muted-foreground'}`}>
->>>>>>> 925ef42 (Initial commit)
                         {priority.label}
                       </button>
                     ))}
@@ -333,37 +297,22 @@ export function SubjectTracker({ studentClass = '' }: { studentClass?: string })
       </AnimatePresence>
 
       {streamKey && (
-<<<<<<< HEAD
-        <Card className="border-0 shadow-sm bg-primary/5">
-          <CardContent className="p-3">
-            <p className="text-xs font-semibold text-primary">{streamKey} subjects only</p>
-            <p className="text-[10px] text-muted-foreground mt-0.5">Add chapters from your selected class 11/12 stream.</p>
-=======
         <Card className="border border-primary/10 shadow-sm bg-primary/5">
           <CardContent className="p-3">
             <p className="text-xs font-semibold text-primary">{streamKey} subjects only</p>
             <p className="text-xs text-muted-foreground mt-0.5">Add chapters from your selected class 11/12 stream.</p>
->>>>>>> 925ef42 (Initial commit)
           </CardContent>
         </Card>
       )}
 
       {backlog.length > 0 && (
-<<<<<<< HEAD
-        <Card className="border-0 shadow-sm">
-=======
         <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
           <CardContent className="p-3">
             <div className="flex items-center gap-2 mb-2">
               <AlertTriangle className="h-4 w-4 text-amber-500" />
               <div>
                 <p className="text-xs font-semibold">Smart Backlog Tracker</p>
-<<<<<<< HEAD
-                <p className="text-[10px] text-muted-foreground">High priority unfinished chapters first</p>
-=======
                 <p className="text-xs text-muted-foreground">High priority unfinished chapters first</p>
->>>>>>> 925ef42 (Initial commit)
               </div>
             </div>
             <div className="space-y-1.5">
@@ -373,15 +322,9 @@ export function SubjectTracker({ studentClass = '' }: { studentClass?: string })
                 return (
                   <button key={ch.id} type="button" onClick={() => setExpandedSubject(ch.subject)}
                     className="w-full flex items-center gap-2 rounded-xl bg-muted/35 px-2.5 py-2 text-left">
-<<<<<<< HEAD
-                    <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded-full ${priority.color}`}>{priority.label}</span>
-                    <span className="flex-1 min-w-0 text-[11px] font-medium truncate">{ch.subject}: {ch.chapter}</span>
-                    <span className={`text-[9px] px-1.5 py-0.5 rounded-full ${sConf.color}`}>{sConf.label}</span>
-=======
                     <span className={`text-xs font-bold px-1.5 py-0.5 rounded-full ${priority.color}`}>{priority.label}</span>
                     <span className="flex-1 min-w-0 text-xs font-medium truncate">{ch.subject}: {ch.chapter}</span>
                     <span className={`text-xs px-1.5 py-0.5 rounded-full ${sConf.color}`}>{sConf.label}</span>
->>>>>>> 925ef42 (Initial commit)
                   </button>
                 );
               })}
@@ -419,48 +362,29 @@ export function SubjectTracker({ studentClass = '' }: { studentClass?: string })
             const lastStudied = daysAgo(latestUpdated);
 
             return (
-<<<<<<< HEAD
-              <Card key={subject} className="border-0 shadow-sm overflow-hidden">
-=======
               <Card key={subject} className="border border-border/40 shadow-sm overflow-hidden">
->>>>>>> 925ef42 (Initial commit)
                 <button className="w-full p-3 flex items-center gap-3 text-left" onClick={() => setExpandedSubject(isOpen ? null : subject)}>
                   <div className="relative flex-shrink-0">
                     <CircleRing pct={pct} status={dominantStatus} size={48} />
                     <div className="absolute inset-0 flex items-center justify-center">
-<<<<<<< HEAD
-                      <span className="text-[10px] font-bold">{pct}%</span>
-=======
                       <span className="text-xs font-bold">{pct}%</span>
->>>>>>> 925ef42 (Initial commit)
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
                       <span className="text-sm font-semibold">{subject}</span>
                       {lastStudied && (
-<<<<<<< HEAD
-                        <span className="flex items-center gap-0.5 text-[9px] text-muted-foreground bg-muted/60 px-1.5 py-0.5 rounded-full">
-=======
                         <span className="flex items-center gap-0.5 text-xs text-muted-foreground bg-muted/60 px-1.5 py-0.5 rounded-full">
->>>>>>> 925ef42 (Initial commit)
                           <Clock className="h-2.5 w-2.5" />
                           {lastStudied}
                         </span>
                       )}
                     </div>
                     <div className="flex items-center gap-1.5 flex-wrap">
-<<<<<<< HEAD
-                      <span className="text-[9px] text-muted-foreground">{chapters.length} chapters</span>
-                      {mastered > 0 && <span className="text-[9px] bg-emerald-100 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 px-1.5 py-0.5 rounded-full">{mastered} mastered</span>}
-                      {revised > 0 && <span className="text-[9px] bg-blue-100 text-blue-700 dark:bg-blue-950/40 dark:text-blue-400 px-1.5 py-0.5 rounded-full">{revised} revised</span>}
-                      {inProgress > 0 && <span className="text-[9px] bg-amber-100 text-amber-700 dark:bg-amber-950/40 dark:text-amber-400 px-1.5 py-0.5 rounded-full">{inProgress} in progress</span>}
-=======
                       <span className="text-xs text-muted-foreground">{chapters.length} chapters</span>
                       {mastered > 0 && <span className="text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 px-1.5 py-0.5 rounded-full">{mastered} mastered</span>}
                       {revised > 0 && <span className="text-xs bg-blue-100 text-blue-700 dark:bg-blue-950/40 dark:text-blue-400 px-1.5 py-0.5 rounded-full">{revised} revised</span>}
                       {inProgress > 0 && <span className="text-xs bg-amber-100 text-amber-700 dark:bg-amber-950/40 dark:text-amber-400 px-1.5 py-0.5 rounded-full">{inProgress} in progress</span>}
->>>>>>> 925ef42 (Initial commit)
                     </div>
                   </div>
                   <ChevronRight className={`h-4 w-4 text-muted-foreground transition-transform ${isOpen ? 'rotate-90' : ''}`} />
@@ -479,11 +403,7 @@ export function SubjectTracker({ studentClass = '' }: { studentClass?: string })
                                 <div className="flex items-center gap-2">
                                   <div className="flex-1 space-y-1.5">
                                     <div className="flex items-center gap-2">
-<<<<<<< HEAD
-                                      <select value={editStatus} onChange={e => setEditStatus(e.target.value)} className="flex-1 h-7 px-1 rounded border border-input bg-background text-[10px]">
-=======
                                       <select value={editStatus} onChange={e => setEditStatus(e.target.value)} className="flex-1 h-7 px-1 rounded border border-input bg-background text-xs">
->>>>>>> 925ef42 (Initial commit)
                                         {STATUSES.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
                                       </select>
                                       <Input type="number" min={0} max={100} value={editProgress} onChange={e => setEditProgress(Number(e.target.value))} className="w-16 h-7 text-xs rounded px-1" />
@@ -491,11 +411,7 @@ export function SubjectTracker({ studentClass = '' }: { studentClass?: string })
                                     <div className="grid grid-cols-3 gap-1">
                                       {PRIORITIES.map(priority => (
                                         <button key={priority.value} type="button" onClick={() => setEditPriority(priority.value)}
-<<<<<<< HEAD
-                                          className={`rounded border px-1.5 py-1 text-[9px] font-semibold ${editPriority === priority.value ? 'border-primary bg-primary/10 text-primary' : 'border-border text-muted-foreground'}`}>
-=======
                                           className={`rounded border px-1.5 py-1 text-xs font-semibold ${editPriority === priority.value ? 'border-primary bg-primary/10 text-primary' : 'border-border text-muted-foreground'}`}>
->>>>>>> 925ef42 (Initial commit)
                                           {priority.label}
                                         </button>
                                       ))}
@@ -510,30 +426,18 @@ export function SubjectTracker({ studentClass = '' }: { studentClass?: string })
                                   <div className="flex-1 min-w-0">
                                     <div className="flex items-center gap-1.5">
                                       <p className="text-xs font-medium truncate">{ch.chapter}</p>
-<<<<<<< HEAD
-                                      <span className={`text-[9px] font-semibold px-1.5 py-0.5 rounded-full flex items-center gap-0.5 ${priority.color}`}>
-=======
                                       <span className={`text-xs font-semibold px-1.5 py-0.5 rounded-full flex items-center gap-0.5 ${priority.color}`}>
->>>>>>> 925ef42 (Initial commit)
                                         <Flag className="h-2.5 w-2.5" />{priority.label}
                                       </span>
                                     </div>
                                     <div className="flex items-center gap-2 mt-1">
-<<<<<<< HEAD
-                                      <span className={`text-[9px] font-semibold px-1.5 py-0.5 rounded-full ${sConf.color}`}>{sConf.label}</span>
-=======
                                       <span className={`text-xs font-semibold px-1.5 py-0.5 rounded-full ${sConf.color}`}>{sConf.label}</span>
->>>>>>> 925ef42 (Initial commit)
                                       {ch.progress > 0 && (
                                         <div className="flex items-center gap-1 flex-1">
                                           <div className="flex-1 h-1 bg-muted rounded-full overflow-hidden">
                                             <div className="h-full bg-primary/60 rounded-full" style={{ width: `${ch.progress}%` }} />
                                           </div>
-<<<<<<< HEAD
-                                          <span className="text-[9px] text-muted-foreground">{ch.progress}%</span>
-=======
                                           <span className="text-xs text-muted-foreground">{ch.progress}%</span>
->>>>>>> 925ef42 (Initial commit)
                                         </div>
                                       )}
                                     </div>

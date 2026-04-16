@@ -175,11 +175,7 @@ function CategoryManager() {
           <div key={cat.id} className="flex items-center gap-2 bg-muted/30 rounded-lg px-3 py-2">
             <span className="text-base">{cat.emoji}</span>
             <span className="text-sm font-medium flex-1">{cat.name}</span>
-<<<<<<< HEAD
-            <span className="text-[10px] text-muted-foreground">{cat.habits?.length || 0} habits</span>
-=======
             <span className="text-xs text-muted-foreground">{cat.habits?.length || 0} habits</span>
->>>>>>> 925ef42 (Initial commit)
             <button
               onClick={() => deleteCategory(cat.id)}
               className="text-muted-foreground/50 hover:text-destructive transition-colors ml-1"
@@ -228,11 +224,7 @@ function AccordionRow({
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-sm font-medium">{label}</p>
-<<<<<<< HEAD
-          {subtitle && <p className="text-[11px] text-muted-foreground">{subtitle}</p>}
-=======
           {subtitle && <p className="text-xs text-muted-foreground">{subtitle}</p>}
->>>>>>> 925ef42 (Initial commit)
         </div>
         <motion.div
           animate={{ rotate: isOpen ? 90 : 0 }}
@@ -410,20 +402,11 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
   };
 
   const handleLogout = () => {
-<<<<<<< HEAD
-    localStorage.removeItem('nuviora-user-id');
-    localStorage.removeItem('nuviora-user-email');
-    localStorage.removeItem('nuviora-user-cache');
-    localStorage.removeItem('habitflow-active-tab');
-    sessionStorage.removeItem('nuviora-loading-shown');
-    document.cookie = 'nuviora-session=; Max-Age=0; path=/';
-=======
     ['nuviora-user-id','nuviora-user-email','nuviora-user-cache','nuviora-session-v2','habitflow-active-tab'].forEach(k => {
       try { localStorage.removeItem(k); } catch { /* ignore */ }
     });
     try { sessionStorage.removeItem('nuviora-loading-shown'); } catch { /* ignore */ }
     try { document.cookie = 'nuviora-session=; Max-Age=0; path=/; SameSite=None; Secure'; } catch { /* ignore */ }
->>>>>>> 925ef42 (Initial commit)
     window.location.reload();
   };
 
@@ -511,11 +494,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
             {/* XP bar */}
             {stats && (
               <div className="mt-3 bg-background/40 rounded-xl p-2.5">
-<<<<<<< HEAD
-                <div className="flex items-center justify-between text-[11px] mb-1.5">
-=======
                 <div className="flex items-center justify-between text-xs mb-1.5">
->>>>>>> 925ef42 (Initial commit)
                   <span className="font-medium text-foreground/80">Level {stats.level}</span>
                   <span className="text-muted-foreground">{stats.xpInCurrentLevel}/{stats.xpForNextLevel} XP</span>
                 </div>
@@ -553,11 +532,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
         >
           {/* Name */}
           <div>
-<<<<<<< HEAD
-            <Label className="text-[11px] uppercase tracking-wider text-muted-foreground">Display Name</Label>
-=======
             <Label className="text-xs uppercase tracking-wider text-muted-foreground">Display Name</Label>
->>>>>>> 925ef42 (Initial commit)
             <div className="flex gap-2 mt-1.5">
               <Input
                 placeholder="Your name..."
@@ -572,11 +547,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
           </div>
           {/* Gender */}
           <div>
-<<<<<<< HEAD
-            <Label className="text-[11px] uppercase tracking-wider text-muted-foreground">Gender</Label>
-=======
             <Label className="text-xs uppercase tracking-wider text-muted-foreground">Gender</Label>
->>>>>>> 925ef42 (Initial commit)
             <div className="grid grid-cols-3 gap-2 mt-1.5">
               {[{ id: 'female', label: 'Female' }, { id: 'male', label: 'Male' }, { id: 'other', label: 'Other' }].map(opt => (
                 <button
@@ -594,11 +565,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
           </div>
           {/* Study mode */}
           <div>
-<<<<<<< HEAD
-            <Label className="text-[11px] uppercase tracking-wider text-muted-foreground">Mode</Label>
-=======
             <Label className="text-xs uppercase tracking-wider text-muted-foreground">Mode</Label>
->>>>>>> 925ef42 (Initial commit)
             <div className="grid grid-cols-2 gap-2 mt-1.5">
               {(['pw', 'normal'] as StudyMode[]).map(mode => (
                 <button
@@ -609,11 +576,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
                   }`}
                 >
                   <p className="text-xs font-semibold">{mode === 'pw' ? 'Online Student' : 'Standard Mode'}</p>
-<<<<<<< HEAD
-                  <p className="text-[10px] text-muted-foreground mt-0.5">
-=======
                   <p className="text-xs text-muted-foreground mt-0.5">
->>>>>>> 925ef42 (Initial commit)
                     {mode === 'pw' ? 'Show Classes tab' : 'Hide Classes tab'}
                   </p>
                 </button>
@@ -638,11 +601,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
         >
           {/* Color theme — horizontal scroll */}
           <div>
-<<<<<<< HEAD
-            <Label className="text-[11px] uppercase tracking-wider text-muted-foreground">Color Theme</Label>
-=======
             <Label className="text-xs uppercase tracking-wider text-muted-foreground">Color Theme</Label>
->>>>>>> 925ef42 (Initial commit)
             <div className="flex gap-2.5 mt-2 overflow-x-auto pb-1 no-scrollbar">
               {THEMES.map(themeOption => (
                 <button
@@ -657,18 +616,8 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
                   <div className="w-10 h-10 rounded-xl shadow-sm border border-border/50 overflow-hidden" style={{ backgroundColor: themeOption.bg }}>
                     <div className="w-5 h-5 rounded-tr-xl" style={{ backgroundColor: themeOption.primary }} />
                   </div>
-<<<<<<< HEAD
                   <span className="text-[9px] text-muted-foreground font-medium w-12 text-center leading-tight">
                     {themeOption.name.split(' ')[0]}
-=======
-<<<<<<< HEAD
-                  <span className="text-xs text-muted-foreground font-medium w-12 text-center leading-tight">
-                    {themeOption.emoji} {themeOption.name.split(' ')[0]}
-=======
-                  <span className="text-[9px] text-muted-foreground font-medium w-12 text-center leading-tight">
-                    {themeOption.name.split(' ')[0]}
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
                   </span>
                 </button>
               ))}
@@ -676,11 +625,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
           </div>
           {/* Light / Dark / System */}
           <div>
-<<<<<<< HEAD
-            <Label className="text-[11px] uppercase tracking-wider text-muted-foreground">Display Mode</Label>
-=======
             <Label className="text-xs uppercase tracking-wider text-muted-foreground">Display Mode</Label>
->>>>>>> 925ef42 (Initial commit)
             <div className="flex rounded-xl overflow-hidden border border-border/60 bg-muted/30 p-0.5 gap-0.5 mt-1.5">
               {(['system', 'light', 'dark'] as const).map(val => {
                 const icons = { system: <Monitor className="h-3.5 w-3.5" />, light: <Sun className="h-3.5 w-3.5" />, dark: <Moon className="h-3.5 w-3.5" /> };
@@ -714,11 +659,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
         >
           {/* Class */}
           <div>
-<<<<<<< HEAD
-            <Label htmlFor="student-class" className="text-[11px] uppercase tracking-wider text-muted-foreground">Class</Label>
-=======
             <Label htmlFor="student-class" className="text-xs uppercase tracking-wider text-muted-foreground">Class</Label>
->>>>>>> 925ef42 (Initial commit)
             <select
               id="student-class"
               value={studentClass}
@@ -739,22 +680,14 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
                 transition={{ duration: 0.22, ease: 'easeInOut' }}
                 className="overflow-hidden space-y-2"
               >
-<<<<<<< HEAD
-                <Label className="text-[11px] uppercase tracking-wider text-muted-foreground">Stream</Label>
-=======
                 <Label className="text-xs uppercase tracking-wider text-muted-foreground">Stream</Label>
->>>>>>> 925ef42 (Initial commit)
                 <div className="grid grid-cols-3 gap-2">
                   {STREAM_OPTIONS.map(opt => (
                     <button
                       key={opt}
                       type="button"
                       onClick={() => { setStream(opt); if (opt !== 'Science') setScienceOption(''); }}
-<<<<<<< HEAD
-                      className={`rounded-xl border p-2 text-[11px] font-semibold transition-all ${stream === opt ? 'border-primary bg-primary/10 text-primary' : 'border-border/50 bg-muted/30 text-muted-foreground'}`}
-=======
                       className={`rounded-xl border p-2 text-xs font-semibold transition-all ${stream === opt ? 'border-primary bg-primary/10 text-primary' : 'border-border/50 bg-muted/30 text-muted-foreground'}`}
->>>>>>> 925ef42 (Initial commit)
                     >
                       {opt}
                     </button>
@@ -776,11 +709,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
                             key={opt}
                             type="button"
                             onClick={() => setScienceOption(opt)}
-<<<<<<< HEAD
-                            className={`rounded-xl border p-2 text-[11px] font-bold transition-all ${scienceOption === opt ? 'border-primary bg-primary/10 text-primary' : 'border-border/50 bg-muted/30 text-muted-foreground'}`}
-=======
                             className={`rounded-xl border p-2 text-xs font-bold transition-all ${scienceOption === opt ? 'border-primary bg-primary/10 text-primary' : 'border-border/50 bg-muted/30 text-muted-foreground'}`}
->>>>>>> 925ef42 (Initial commit)
                           >
                             {opt}
                           </button>
@@ -789,11 +718,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
                     </motion.div>
                   )}
                 </AnimatePresence>
-<<<<<<< HEAD
-                <p className="text-[10px] text-muted-foreground">Stream-specific templates appear for class 11/12 students.</p>
-=======
                 <p className="text-xs text-muted-foreground">Stream-specific templates appear for class 11/12 students.</p>
->>>>>>> 925ef42 (Initial commit)
               </motion.div>
             )}
           </AnimatePresence>
@@ -803,11 +728,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
               <GraduationCap className="h-4 w-4 text-muted-foreground" />
               <div>
                 <p className="text-sm font-medium">Exam Date</p>
-<<<<<<< HEAD
-                <p className="text-[11px] text-muted-foreground">
-=======
                 <p className="text-xs text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
                   {examDate ? `${Math.max(0, differenceInDays(new Date(examDate), new Date()))} days remaining` : 'Not set'}
                 </p>
               </div>
@@ -880,11 +801,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
               </div>
               <div>
                 <p className="text-sm font-medium">Notifications</p>
-<<<<<<< HEAD
-                <p className="text-[11px] text-muted-foreground">Browser reminders</p>
-=======
                 <p className="text-xs text-muted-foreground">Browser reminders</p>
->>>>>>> 925ef42 (Initial commit)
               </div>
             </div>
             <Button variant="outline" size="sm" className="h-8 px-3 rounded-lg text-xs" onClick={requestNotificationPermission}>
@@ -900,11 +817,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
                 </div>
                 <div>
                   <p className="text-sm font-medium">Auto Dark Mode</p>
-<<<<<<< HEAD
-                  <p className="text-[11px] text-muted-foreground">Switch by time of day</p>
-=======
                   <p className="text-xs text-muted-foreground">Switch by time of day</p>
->>>>>>> 925ef42 (Initial commit)
                 </div>
               </div>
               <Switch checked={darkModeSchedule} onCheckedChange={setDarkModeSchedule} />
@@ -921,19 +834,11 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
                 >
                   <div className="grid grid-cols-2 gap-3 pl-11">
                     <div>
-<<<<<<< HEAD
-                      <Label className="text-[10px] text-muted-foreground">Dark from</Label>
-                      <Input type="time" value={darkStart} onChange={e => setDarkStart(e.target.value)} className="h-9 rounded-lg mt-1 text-sm" />
-                    </div>
-                    <div>
-                      <Label className="text-[10px] text-muted-foreground">Light from</Label>
-=======
                       <Label className="text-xs text-muted-foreground">Dark from</Label>
                       <Input type="time" value={darkStart} onChange={e => setDarkStart(e.target.value)} className="h-9 rounded-lg mt-1 text-sm" />
                     </div>
                     <div>
                       <Label className="text-xs text-muted-foreground">Light from</Label>
->>>>>>> 925ef42 (Initial commit)
                       <Input type="time" value={darkEnd} onChange={e => setDarkEnd(e.target.value)} className="h-9 rounded-lg mt-1 text-sm" />
                     </div>
                   </div>
@@ -949,18 +854,8 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
                   <Umbrella className="h-4 w-4 text-sky-500" />
                 </div>
                 <div>
-<<<<<<< HEAD
                   <p className="text-sm font-medium">Break Mode</p>
                   <p className="text-[11px] text-muted-foreground">Freeze all streaks for a date range</p>
-=======
-<<<<<<< HEAD
-                  <p className="text-sm font-medium">Vacation / Holiday Mode</p>
-                  <p className="text-xs text-muted-foreground">Freeze all streaks for a date range</p>
-=======
-                  <p className="text-sm font-medium">Break Mode</p>
-                  <p className="text-[11px] text-muted-foreground">Freeze all streaks for a date range</p>
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
                 </div>
               </div>
               <Switch checked={vacationMode} onCheckedChange={setVacationMode} />
@@ -976,37 +871,18 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
                   className="overflow-hidden space-y-2 pl-11"
                 >
                   <div className="px-3 py-2 rounded-xl bg-sky-50 dark:bg-sky-900/20 border border-sky-200/50 dark:border-sky-700/20">
-<<<<<<< HEAD
                     <p className="text-[10px] text-sky-700 dark:text-sky-300 leading-snug flex items-start gap-1.5">
                       <Shield className="h-3 w-3 mt-0.5 flex-shrink-0" />
                       All habit streaks are protected during this period. Set your travel, holiday, or exam break dates here — no breaks, no guilt.
-=======
-<<<<<<< HEAD
-                    <p className="text-xs text-sky-700 dark:text-sky-300 leading-snug">
-                      🛡️ All habit streaks are protected during this period. Set your travel, holiday, or exam break dates here — no breaks, no guilt.
-=======
-                    <p className="text-[10px] text-sky-700 dark:text-sky-300 leading-snug flex items-start gap-1.5">
-                      <Shield className="h-3 w-3 mt-0.5 flex-shrink-0" />
-                      All habit streaks are protected during this period. Set your travel, holiday, or exam break dates here — no breaks, no guilt.
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-<<<<<<< HEAD
-                      <Label className="text-[10px] text-muted-foreground">Start Date</Label>
-                      <Input type="date" value={vacationStart} onChange={e => setVacationStart(e.target.value)} className="h-9 rounded-lg mt-1 text-sm" />
-                    </div>
-                    <div>
-                      <Label className="text-[10px] text-muted-foreground">End Date</Label>
-=======
                       <Label className="text-xs text-muted-foreground">Start Date</Label>
                       <Input type="date" value={vacationStart} onChange={e => setVacationStart(e.target.value)} className="h-9 rounded-lg mt-1 text-sm" />
                     </div>
                     <div>
                       <Label className="text-xs text-muted-foreground">End Date</Label>
->>>>>>> 925ef42 (Initial commit)
                       <Input type="date" value={vacationEnd} onChange={e => setVacationEnd(e.target.value)} className="h-9 rounded-lg mt-1 text-sm" />
                     </div>
                   </div>
@@ -1022,11 +898,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
               </div>
               <div>
                 <p className="text-sm font-medium">Word of the Month</p>
-<<<<<<< HEAD
-                <p className="text-[11px] text-muted-foreground">Shown as banner on home screen</p>
-=======
                 <p className="text-xs text-muted-foreground">Shown as banner on home screen</p>
->>>>>>> 925ef42 (Initial commit)
               </div>
             </div>
             <Input
@@ -1046,11 +918,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
                 </div>
                 <div>
                   <p className="text-sm font-medium">App PIN Lock</p>
-<<<<<<< HEAD
-                  <p className="text-[11px] text-muted-foreground">Require PIN to open app</p>
-=======
                   <p className="text-xs text-muted-foreground">Require PIN to open app</p>
->>>>>>> 925ef42 (Initial commit)
                 </div>
               </div>
               <Switch checked={pinEnabled} onCheckedChange={setPinEnabled} />
@@ -1065,11 +933,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
                   transition={{ duration: 0.2 }}
                   className="overflow-hidden pl-11"
                 >
-<<<<<<< HEAD
-                  <Label className="text-[10px] text-muted-foreground">PIN Code (4 digits)</Label>
-=======
                   <Label className="text-xs text-muted-foreground">PIN Code (4 digits)</Label>
->>>>>>> 925ef42 (Initial commit)
                   <Input
                     type="password"
                     maxLength={4}
@@ -1149,11 +1013,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
               <div key={item.label} className="bg-muted/40 rounded-xl p-3">
                 <div className="flex items-center gap-1.5 mb-1">
                   <item.icon className={`h-3.5 w-3.5 ${item.color}`} />
-<<<<<<< HEAD
-                  <span className="text-[10px] text-muted-foreground">{item.label}</span>
-=======
                   <span className="text-xs text-muted-foreground">{item.label}</span>
->>>>>>> 925ef42 (Initial commit)
                 </div>
                 <p className="text-sm font-bold">{item.value}</p>
               </div>
@@ -1179,11 +1039,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
               </div>
               <div className="text-left">
                 <p className="text-sm font-medium">Export Backup</p>
-<<<<<<< HEAD
-                <p className="text-[10px] text-muted-foreground">Download complete JSON backup</p>
-=======
                 <p className="text-xs text-muted-foreground">Download complete JSON backup</p>
->>>>>>> 925ef42 (Initial commit)
               </div>
             </Button>
             <Button variant="outline" className="w-full justify-start gap-3 rounded-xl h-11" onClick={handleSeed} disabled={isSeeding}>
@@ -1192,11 +1048,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
               </div>
               <div className="text-left">
                 <p className="text-sm font-medium">{isSeeding ? 'Loading...' : 'Load Sample Data'}</p>
-<<<<<<< HEAD
-                <p className="text-[10px] text-muted-foreground">Populate with demo habits</p>
-=======
                 <p className="text-xs text-muted-foreground">Populate with demo habits</p>
->>>>>>> 925ef42 (Initial commit)
               </div>
             </Button>
             <AlertDialog>
@@ -1207,11 +1059,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
                   </div>
                   <div className="text-left">
                     <p className="text-sm font-medium">{isResetting ? 'Resetting...' : 'Reset All Data'}</p>
-<<<<<<< HEAD
-                    <p className="text-[10px] text-muted-foreground">Wipe tracking data, keep settings</p>
-=======
                     <p className="text-xs text-muted-foreground">Wipe tracking data, keep settings</p>
->>>>>>> 925ef42 (Initial commit)
                   </div>
                 </Button>
               </AlertDialogTrigger>
@@ -1234,11 +1082,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
               </div>
               <div className="text-left">
                 <p className="text-sm font-medium">{isNewYearResetting ? 'Resetting...' : '🎉 New Year Reset'}</p>
-<<<<<<< HEAD
-                <p className="text-[10px] text-muted-foreground">Fresh start — keep habits, wipe logs</p>
-=======
                 <p className="text-xs text-muted-foreground">Fresh start — keep habits, wipe logs</p>
->>>>>>> 925ef42 (Initial commit)
               </div>
             </Button>
           </div>
@@ -1274,11 +1118,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
               </div>
               <div className="text-left">
                 <p className="text-sm font-medium">Period Tracker</p>
-<<<<<<< HEAD
-                <p className="text-[10px] text-muted-foreground">Track your cycle, symptoms & insights</p>
-=======
                 <p className="text-xs text-muted-foreground">Track your cycle, symptoms & insights</p>
->>>>>>> 925ef42 (Initial commit)
               </div>
               <ChevronRight className="h-4 w-4 text-muted-foreground ml-auto" />
             </Button>
@@ -1294,11 +1134,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
         className="rounded-2xl overflow-hidden border border-destructive/20 bg-destructive/[0.03] shadow-sm"
       >
         <div className="px-4 py-2.5 border-b border-destructive/15">
-<<<<<<< HEAD
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-destructive/70">Danger Zone</p>
-=======
           <p className="text-xs font-semibold uppercase tracking-wider text-destructive/70">Danger Zone</p>
->>>>>>> 925ef42 (Initial commit)
         </div>
         <div className="p-3 space-y-2">
           <Button
@@ -1311,11 +1147,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
             </div>
             <div className="text-left">
               <p className="text-sm font-medium">Log Out</p>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground">Return to the sign-in screen</p>
-=======
               <p className="text-xs text-muted-foreground">Return to the sign-in screen</p>
->>>>>>> 925ef42 (Initial commit)
             </div>
           </Button>
           <AlertDialog>
@@ -1326,11 +1158,7 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
                 </div>
                 <div className="text-left">
                   <p className="text-sm font-medium">Delete Account</p>
-<<<<<<< HEAD
-                  <p className="text-[10px] text-muted-foreground">Permanently remove this account's data</p>
-=======
                   <p className="text-xs text-muted-foreground">Permanently remove this account's data</p>
->>>>>>> 925ef42 (Initial commit)
                 </div>
               </Button>
             </AlertDialogTrigger>
@@ -1353,13 +1181,8 @@ export function SettingsScreen({ onProfileUpdate }: { onProfileUpdate?: (profile
       {/* ── About ──────────────────────────────────────────────────────────── */}
       <div className="text-center py-2 space-y-0.5">
         <p className="gradient-text text-sm font-bold">Nuviora</p>
-<<<<<<< HEAD
-        <p className="text-[11px] text-muted-foreground">Version 2.0.0 • Track habits. Build streaks. Level up.</p>
-        <p className="text-[11px] text-muted-foreground">Made by Kunal</p>
-=======
         <p className="text-xs text-muted-foreground">Version 2.0.0 • Track habits. Build streaks. Level up.</p>
         <p className="text-xs text-muted-foreground">Made by Kunal</p>
->>>>>>> 925ef42 (Initial commit)
       </div>
 
       {/* Achievement wall dialog */}

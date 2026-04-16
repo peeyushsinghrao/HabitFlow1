@@ -88,19 +88,11 @@ export function TopicTimerScreen() {
         <span className="ml-auto text-xs text-muted-foreground">Track hours per subject</span>
       </div>
 
-<<<<<<< HEAD
-      <Card className="border-0 shadow-sm">
-        <CardContent className="p-4 space-y-3">
-          <div className="grid grid-cols-2 gap-2">
-            <div>
-              <p className="text-[10px] text-muted-foreground mb-1">Subject</p>
-=======
       <Card className="border border-border/40 shadow-sm">
         <CardContent className="p-4 space-y-3">
           <div className="grid grid-cols-2 gap-2">
             <div>
               <p className="text-xs text-muted-foreground mb-1">Subject</p>
->>>>>>> 925ef42 (Initial commit)
               <Select value={subject} onValueChange={setSubject} disabled={running}>
                 <SelectTrigger className="rounded-xl h-9 text-sm">
                   <SelectValue />
@@ -111,11 +103,7 @@ export function TopicTimerScreen() {
               </Select>
             </div>
             <div>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground mb-1">Topic (optional)</p>
-=======
               <p className="text-xs text-muted-foreground mb-1">Topic (optional)</p>
->>>>>>> 925ef42 (Initial commit)
               <Input
                 value={topic}
                 onChange={e => setTopic(e.target.value)}
@@ -159,21 +147,13 @@ export function TopicTimerScreen() {
             </Button>
           </div>
           {elapsed > 0 && elapsed < 60 && !running && (
-<<<<<<< HEAD
-            <p className="text-[10px] text-muted-foreground text-center">Sessions under 1 minute won't be logged</p>
-=======
             <p className="text-xs text-muted-foreground text-center">Sessions under 1 minute won't be logged</p>
->>>>>>> 925ef42 (Initial commit)
           )}
         </CardContent>
       </Card>
 
       {bySubject.length > 0 && (
-<<<<<<< HEAD
-        <Card className="border-0 shadow-sm">
-=======
         <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
           <CardContent className="p-4">
             <div className="flex items-center gap-2 mb-3">
               <BookOpen className="h-4 w-4 text-primary" />
@@ -202,11 +182,7 @@ export function TopicTimerScreen() {
       )}
 
       {byTopic.filter(t => t.topic).length > 0 && (
-<<<<<<< HEAD
-        <Card className="border-0 shadow-sm">
-=======
         <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
           <CardContent className="p-4">
             <p className="text-sm font-semibold mb-3">By Topic</p>
             <div className="space-y-1.5 max-h-48 overflow-y-auto">

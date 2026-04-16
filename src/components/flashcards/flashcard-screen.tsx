@@ -190,11 +190,7 @@ export function FlashCardScreen() {
                 <div className="absolute inset-0 rounded-2xl bg-card border border-border shadow-sm flex flex-col items-center justify-center p-6" style={{ backfaceVisibility: 'hidden' }}>
                   <Badge className="mb-3 text-xs">{card?.subject}</Badge>
                   <p className="text-lg font-semibold text-center text-foreground">{card?.front}</p>
-<<<<<<< HEAD
-                  <p className="text-[11px] text-muted-foreground mt-4">Tap to reveal answer</p>
-=======
                   <p className="text-xs text-muted-foreground mt-4">Tap to reveal answer</p>
->>>>>>> 925ef42 (Initial commit)
                 </div>
                 <div className="absolute inset-0 rounded-2xl bg-primary/5 border border-primary/20 shadow-sm flex flex-col items-center justify-center p-6" style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
                   <p className="text-base text-center text-foreground">{card?.back}</p>
@@ -258,19 +254,11 @@ export function FlashCardScreen() {
             <div className="grid grid-cols-2 gap-3 max-w-xs mx-auto">
               <div className="bg-emerald-50 dark:bg-emerald-950/30 rounded-xl p-3 text-center">
                 <p className="text-xl font-bold text-emerald-600">{blitzScore}</p>
-<<<<<<< HEAD
-                <p className="text-[11px] text-muted-foreground">Known</p>
-              </div>
-              <div className="bg-rose-50 dark:bg-rose-950/30 rounded-xl p-3 text-center">
-                <p className="text-xl font-bold text-rose-500">{blitzMissed}</p>
-                <p className="text-[11px] text-muted-foreground">Missed</p>
-=======
                 <p className="text-xs text-muted-foreground">Known</p>
               </div>
               <div className="bg-rose-50 dark:bg-rose-950/30 rounded-xl p-3 text-center">
                 <p className="text-xl font-bold text-rose-500">{blitzMissed}</p>
                 <p className="text-xs text-muted-foreground">Missed</p>
->>>>>>> 925ef42 (Initial commit)
               </div>
             </div>
             <div className="flex gap-2 justify-center">
@@ -314,11 +302,7 @@ export function FlashCardScreen() {
                   <div className="absolute inset-0 rounded-2xl bg-card border border-border shadow-sm flex flex-col items-center justify-center p-6" style={{ backfaceVisibility: 'hidden' }}>
                     <Badge className="mb-3 text-xs">{card?.subject}</Badge>
                     <p className="text-lg font-semibold text-center">{card?.front}</p>
-<<<<<<< HEAD
-                    <p className="text-[11px] text-muted-foreground mt-4">Tap to reveal · {blitzTimeLeft}s remaining</p>
-=======
                     <p className="text-xs text-muted-foreground mt-4">Tap to reveal · {blitzTimeLeft}s remaining</p>
->>>>>>> 925ef42 (Initial commit)
                   </div>
                   <div className="absolute inset-0 rounded-2xl bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700/40 shadow-sm flex flex-col items-center justify-center p-6" style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
                     <p className="text-base text-center text-foreground">{card?.back}</p>
@@ -393,11 +377,7 @@ export function FlashCardScreen() {
           </div>
           <div className="flex-1">
             <p className="text-sm font-semibold text-amber-800 dark:text-amber-300">Quick Revision Blitz</p>
-<<<<<<< HEAD
-            <p className="text-[11px] text-amber-700/70 dark:text-amber-400/70">
-=======
             <p className="text-xs text-amber-700/70 dark:text-amber-400/70">
->>>>>>> 925ef42 (Initial commit)
               {Math.min(BLITZ_CARD_COUNT, cards.length)} cards · {BLITZ_SECONDS_PER_CARD}s each · Test yourself now
             </p>
           </div>
@@ -452,11 +432,7 @@ export function FlashCardScreen() {
           return (
             <div key={box} className={`rounded-xl p-2.5 text-center ${BOX_COLORS[box]}`}>
               <p className="text-lg font-bold">{count}</p>
-<<<<<<< HEAD
-              <p className="text-[10px]">{BOX_LABELS[box]}</p>
-=======
               <p className="text-xs">{BOX_LABELS[box]}</p>
->>>>>>> 925ef42 (Initial commit)
             </div>
           );
         })}
@@ -475,11 +451,7 @@ export function FlashCardScreen() {
         <div className="space-y-2.5">
           {filteredCards.map(card => (
             <motion.div key={card.id} layout initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-<<<<<<< HEAD
-              <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
-=======
               <Card className="border border-border/40 shadow-sm hover:shadow-md transition-shadow">
->>>>>>> 925ef42 (Initial commit)
                 <CardContent className="p-3">
                   <div className="flex items-start gap-2">
                     <div className="flex-1 min-w-0">
@@ -487,11 +459,7 @@ export function FlashCardScreen() {
                       <p className="text-xs text-muted-foreground mt-0.5 truncate">{card.back}</p>
                     </div>
                     <div className="flex items-center gap-2 flex-shrink-0">
-<<<<<<< HEAD
-                      <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${BOX_COLORS[card.box]}`}>{BOX_LABELS[card.box]}</span>
-=======
                       <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${BOX_COLORS[card.box]}`}>{BOX_LABELS[card.box]}</span>
->>>>>>> 925ef42 (Initial commit)
                       <button onClick={() => handleDelete(card.id)} className="p-1.5 rounded-lg hover:bg-red-100 dark:hover:bg-red-500/10 text-muted-foreground hover:text-red-500 transition-colors">
                         <Trash2 className="h-3.5 w-3.5" />
                       </button>

@@ -117,11 +117,7 @@ export function DoubtLog() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
           >
-<<<<<<< HEAD
-            <Card className="border-0 shadow-sm bg-primary/5">
-=======
             <Card className="border border-primary/10 shadow-sm bg-primary/5">
->>>>>>> 925ef42 (Initial commit)
               <CardContent className="p-4 space-y-3">
                 <Select value={subject} onValueChange={setSubject}>
                   <SelectTrigger className="rounded-xl h-9 text-sm">
@@ -166,21 +162,12 @@ export function DoubtLog() {
                     <div className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${d.isResolved ? 'bg-emerald-500' : 'bg-amber-400'}`} />
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-0.5">
-<<<<<<< HEAD
-                        <span className="text-[10px] font-semibold text-primary">{d.subject}</span>
-                        {d.isResolved && <span className="text-[10px] text-emerald-600 font-medium">✓ Resolved</span>}
-                      </div>
-                      <p className="text-xs text-foreground leading-relaxed">{d.doubt}</p>
-                      {d.isResolved && d.resolution && (
-                        <p className="text-[10px] text-muted-foreground mt-1 italic">→ {d.resolution}</p>
-=======
                         <span className="text-xs font-semibold text-primary">{d.subject}</span>
                         {d.isResolved && <span className="text-xs text-emerald-600 font-medium">✓ Resolved</span>}
                       </div>
                       <p className="text-xs text-foreground leading-relaxed">{d.doubt}</p>
                       {d.isResolved && d.resolution && (
                         <p className="text-xs text-muted-foreground mt-1 italic">→ {d.resolution}</p>
->>>>>>> 925ef42 (Initial commit)
                       )}
                     </div>
                     <div className="flex gap-1 flex-shrink-0">

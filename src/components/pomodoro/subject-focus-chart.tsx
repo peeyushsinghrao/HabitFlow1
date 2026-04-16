@@ -143,11 +143,7 @@ export function SubjectFocusChart() {
               <button
                 key={opt.days}
                 onClick={() => setRange(opt.days)}
-<<<<<<< HEAD
-                className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition-colors ${
-=======
                 className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-colors ${
->>>>>>> 925ef42 (Initial commit)
                   range === opt.days
                     ? 'bg-background text-foreground shadow-sm'
                     : 'text-muted-foreground hover:text-foreground'
@@ -182,11 +178,7 @@ export function SubjectFocusChart() {
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-xs font-medium text-foreground">{stat.subject}</span>
                   <div className="flex items-center gap-2">
-<<<<<<< HEAD
-                    <span className="text-[10px] text-muted-foreground">{stat.sessions} session{stat.sessions !== 1 ? 's' : ''}</span>
-=======
                     <span className="text-xs text-muted-foreground">{stat.sessions} session{stat.sessions !== 1 ? 's' : ''}</span>
->>>>>>> 925ef42 (Initial commit)
                     <span className="text-xs font-semibold text-foreground tabular-nums">{formatTime(stat.minutes)}</span>
                   </div>
                 </div>
@@ -209,11 +201,7 @@ export function SubjectFocusChart() {
             {stats.slice(0, 5).map(stat => (
               <div
                 key={stat.subject}
-<<<<<<< HEAD
-                className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-muted/50 text-[10px] font-medium"
-=======
                 className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-muted/50 text-xs font-medium"
->>>>>>> 925ef42 (Initial commit)
               >
                 <div className={`w-1.5 h-1.5 rounded-full ${stat.color}`} />
                 <span>{stat.subject}</span>

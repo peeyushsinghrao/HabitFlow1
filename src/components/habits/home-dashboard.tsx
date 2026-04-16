@@ -87,18 +87,8 @@ function MantraBanner({ mantra }: { mantra: string }) {
       animate={{ opacity: 1, y: 0 }}
       className="w-full px-4 py-2.5 rounded-xl bg-gradient-to-r from-primary/8 via-primary/5 to-transparent border border-primary/15 flex items-center gap-2"
     >
-<<<<<<< HEAD
       <Target className="h-3.5 w-3.5 text-primary/70 flex-shrink-0" />
       <p className="text-[11px] font-semibold text-primary/90 leading-snug truncate italic">&ldquo;{mantra}&rdquo;</p>
-=======
-<<<<<<< HEAD
-      <span className="text-base flex-shrink-0">🎯</span>
-      <p className="text-xs font-semibold text-primary/90 leading-snug truncate italic">&ldquo;{mantra}&rdquo;</p>
-=======
-      <Target className="h-3.5 w-3.5 text-primary/70 flex-shrink-0" />
-      <p className="text-[11px] font-semibold text-primary/90 leading-snug truncate italic">&ldquo;{mantra}&rdquo;</p>
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
     </motion.div>
   );
 }
@@ -154,11 +144,7 @@ function WeeklyDebriefCard() {
         exit={{ opacity: 0, scale: 0.98 }}
         transition={{ duration: 0.3 }}
       >
-<<<<<<< HEAD
-        <Card className="border-0 shadow-sm bg-gradient-to-br from-violet-50/80 to-purple-50/60 dark:from-violet-900/20 dark:to-purple-900/10 overflow-hidden">
-=======
         <Card className="border border-violet-200/40 dark:border-violet-800/20 shadow-sm bg-gradient-to-br from-violet-50/80 to-purple-50/60 dark:from-violet-900/20 dark:to-purple-900/10 overflow-hidden">
->>>>>>> 925ef42 (Initial commit)
           <CardContent className="p-4">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
@@ -167,11 +153,7 @@ function WeeklyDebriefCard() {
                 </div>
                 <div>
                   <p className="text-sm font-bold text-foreground">Aria&apos;s Monday Debrief</p>
-<<<<<<< HEAD
-                  <p className="text-[10px] text-muted-foreground">Your week at a glance</p>
-=======
                   <p className="text-xs text-muted-foreground">Your week at a glance</p>
->>>>>>> 925ef42 (Initial commit)
                 </div>
               </div>
               <button onClick={dismiss} className="text-muted-foreground hover:text-foreground transition-colors p-1 rounded-lg hover:bg-muted/50">
@@ -219,18 +201,8 @@ function VacationModeBanner({ vacationEnd }: { vacationEnd: string }) {
     >
       <Umbrella className="h-4 w-4 text-sky-500 flex-shrink-0" />
       <div className="flex-1 min-w-0">
-<<<<<<< HEAD
         <p className="text-[11px] font-bold text-sky-700 dark:text-sky-300">Break Mode Active</p>
         <p className="text-[10px] text-sky-600/70 dark:text-sky-400/60">Streaks are protected until {vacationEnd}</p>
-=======
-<<<<<<< HEAD
-        <p className="text-xs font-bold text-sky-700 dark:text-sky-300">Vacation Mode Active</p>
-        <p className="text-xs text-sky-600/70 dark:text-sky-400/60">Streaks are protected until {vacationEnd}</p>
-=======
-        <p className="text-[11px] font-bold text-sky-700 dark:text-sky-300">Break Mode Active</p>
-        <p className="text-[10px] text-sky-600/70 dark:text-sky-400/60">Streaks are protected until {vacationEnd}</p>
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
       </div>
     </motion.div>
   );
@@ -317,11 +289,7 @@ function QuickFocusWidget() {
   const reset = () => { setRunning(false); setSeconds(WORK_SECONDS); };
 
   return (
-<<<<<<< HEAD
-    <Card className="border-0 shadow-sm overflow-hidden">
-=======
     <Card className="border border-border/40 shadow-sm overflow-hidden">
->>>>>>> 925ef42 (Initial commit)
       <CardContent className="p-4">
         <div className="flex items-center gap-3">
           <div className="relative w-12 h-12 flex-shrink-0">
@@ -345,11 +313,7 @@ function QuickFocusWidget() {
             <p className={`text-2xl font-bold tabular-nums leading-tight flex items-center gap-1.5 ${isDone ? 'text-emerald-500' : 'text-foreground'}`}>
               {isDone ? <><CheckCircle2 className="h-5 w-5" /> Done!</> : `${mins}:${secs}`}
             </p>
-<<<<<<< HEAD
-            <p className="text-[10px] text-muted-foreground">25-min Pomodoro</p>
-=======
             <p className="text-xs text-muted-foreground">25-min Pomodoro</p>
->>>>>>> 925ef42 (Initial commit)
           </div>
           <div className="flex items-center gap-1.5">
             {!isDone ? (
@@ -385,15 +349,9 @@ function MiniCalendarStrip({ habits, today }: { habits: Habit[]; today: string }
   const days = Array.from({ length: 7 }, (_, i) => addDays(weekStart, i));
 
   return (
-<<<<<<< HEAD
-    <Card className="border-0 shadow-sm">
-      <CardContent className="p-4">
-        <p className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-3">This Week</p>
-=======
     <Card className="border border-border/40 shadow-sm">
       <CardContent className="p-4">
         <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">This Week</p>
->>>>>>> 925ef42 (Initial commit)
         <div className="flex justify-between gap-1">
           {days.map((day) => {
             const dateStr = format(day, 'yyyy-MM-dd');
@@ -412,17 +370,10 @@ function MiniCalendarStrip({ habits, today }: { habits: Habit[]; today: string }
             }
             return (
               <div key={dateStr} className="flex flex-col items-center gap-1.5">
-<<<<<<< HEAD
-                <span className={`text-[10px] font-medium ${isToday ? 'text-primary' : 'text-muted-foreground'}`}>
-                  {format(day, 'EEE').charAt(0)}
-                </span>
-                <div className={`w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold border-2 transition-colors ${
-=======
                 <span className={`text-xs font-medium ${isToday ? 'text-primary' : 'text-muted-foreground'}`}>
                   {format(day, 'EEE').charAt(0)}
                 </span>
                 <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border-2 transition-colors ${
->>>>>>> 925ef42 (Initial commit)
                   isToday ? 'border-primary text-primary' : 'border-transparent text-muted-foreground'
                 }`}>
                   {format(day, 'd')}
@@ -433,15 +384,9 @@ function MiniCalendarStrip({ habits, today }: { habits: Habit[]; today: string }
           })}
         </div>
         <div className="flex gap-3 mt-2.5">
-<<<<<<< HEAD
-          <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-primary" /><span className="text-[10px] text-muted-foreground">All done</span></div>
-          <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-primary/50" /><span className="text-[10px] text-muted-foreground">Partial</span></div>
-          <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-muted/40" /><span className="text-[10px] text-muted-foreground">None</span></div>
-=======
           <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-primary" /><span className="text-xs text-muted-foreground">All done</span></div>
           <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-primary/50" /><span className="text-xs text-muted-foreground">Partial</span></div>
           <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-muted/40" /><span className="text-xs text-muted-foreground">None</span></div>
->>>>>>> 925ef42 (Initial commit)
         </div>
       </CardContent>
     </Card>
@@ -488,11 +433,7 @@ function TodayIntentionWidget({ today }: { today: string }) {
           onKeyDown={e => { if (e.key === 'Enter') save(); if (e.key === 'Escape') setEditing(false); }}
           maxLength={80}
         />
-<<<<<<< HEAD
-        <button onClick={save} className="text-[10px] font-bold text-primary px-2 py-1 rounded-lg bg-primary/10">Save</button>
-=======
         <button onClick={save} className="text-xs font-bold text-primary px-2 py-1 rounded-lg bg-primary/10">Save</button>
->>>>>>> 925ef42 (Initial commit)
       </div>
     );
   }
@@ -526,11 +467,7 @@ function WeeklyPerformanceWidget({ habits, today }: { habits: Habit[]; today: st
   const bestDay = weeklyData.reduce((best, d) => d.pct > best.pct ? d : best, weeklyData[0] || { pct: 0, date: '' });
 
   return (
-<<<<<<< HEAD
-    <Card className="border-0 shadow-sm">
-=======
     <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
       <CardContent className="p-4">
         <div className="flex items-center gap-2 mb-3">
           <TrendingUp className="h-4 w-4 text-primary" />
@@ -539,17 +476,6 @@ function WeeklyPerformanceWidget({ habits, today }: { habits: Habit[]; today: st
         <div className="grid grid-cols-3 gap-2 mb-3">
           <div className="text-center bg-primary/5 rounded-xl p-2.5">
             <p className="text-lg font-bold text-primary">{avgPct}%</p>
-<<<<<<< HEAD
-            <p className="text-[10px] text-muted-foreground">Avg Rate</p>
-          </div>
-          <div className="text-center bg-amber-50 dark:bg-amber-500/10 rounded-xl p-2.5">
-            <p className="text-lg font-bold text-amber-600 dark:text-amber-400">{perfectDays}</p>
-            <p className="text-[10px] text-muted-foreground">Perfect Days</p>
-          </div>
-          <div className="text-center bg-emerald-50 dark:bg-emerald-500/10 rounded-xl p-2.5">
-            <p className="text-lg font-bold text-emerald-600 dark:text-emerald-400">{pastDays.length}</p>
-            <p className="text-[10px] text-muted-foreground">Days Active</p>
-=======
             <p className="text-xs text-muted-foreground">Avg Rate</p>
           </div>
           <div className="text-center bg-amber-50 dark:bg-amber-500/10 rounded-xl p-2.5">
@@ -559,7 +485,6 @@ function WeeklyPerformanceWidget({ habits, today }: { habits: Habit[]; today: st
           <div className="text-center bg-emerald-50 dark:bg-emerald-500/10 rounded-xl p-2.5">
             <p className="text-lg font-bold text-emerald-600 dark:text-emerald-400">{pastDays.length}</p>
             <p className="text-xs text-muted-foreground">Days Active</p>
->>>>>>> 925ef42 (Initial commit)
           </div>
         </div>
         <div className="flex gap-1 items-end h-10">
@@ -577,19 +502,11 @@ function WeeklyPerformanceWidget({ habits, today }: { habits: Habit[]; today: st
         </div>
         <div className="flex justify-between mt-1">
           {['M','T','W','T','F','S','S'].map((d, i) => (
-<<<<<<< HEAD
-            <span key={i} className="flex-1 text-center text-[9px] text-muted-foreground">{d}</span>
-          ))}
-        </div>
-        {bestDay && bestDay.pct > 0 && (
-          <p className="text-[10px] text-muted-foreground mt-2 text-center">
-=======
             <span key={i} className="flex-1 text-center text-xs text-muted-foreground">{d}</span>
           ))}
         </div>
         {bestDay && bestDay.pct > 0 && (
           <p className="text-xs text-muted-foreground mt-2 text-center">
->>>>>>> 925ef42 (Initial commit)
             Best day: {format(parseISO(bestDay.date), 'EEE')} — {bestDay.pct}% done
           </p>
         )}
@@ -655,11 +572,7 @@ function ProductivityScoreWidget({ habits, today }: { habits: Habit[]; today: st
         : 'Strong day. Keep the evening light and consistent.';
 
   return (
-<<<<<<< HEAD
-    <Card className="border-0 shadow-sm">
-=======
     <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
       <CardContent className="p-4">
         <div className="flex items-center justify-between">
           <div>
@@ -671,11 +584,7 @@ function ProductivityScoreWidget({ habits, today }: { habits: Habit[]; today: st
           </div>
           <div className="text-right">
             <p className={`text-3xl font-bold ${scoreColor}`}>{total}</p>
-<<<<<<< HEAD
-            <p className={`text-[10px] font-semibold ${scoreColor}`}>{scoreLabel}</p>
-=======
             <p className={`text-xs font-semibold ${scoreColor}`}>{scoreLabel}</p>
->>>>>>> 925ef42 (Initial commit)
           </div>
         </div>
         <div className="mt-3 h-2 rounded-full bg-muted/40 overflow-hidden">
@@ -686,11 +595,7 @@ function ProductivityScoreWidget({ habits, today }: { habits: Habit[]; today: st
             transition={{ duration: 0.8, ease: 'easeOut' }}
           />
         </div>
-<<<<<<< HEAD
-        <div className="flex justify-between mt-1.5 text-[10px] text-muted-foreground">
-=======
         <div className="flex justify-between mt-1.5 text-xs text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
           <span>Habits {habitScore}</span>
           <span>Focus {focusScore}</span>
           <span>Flow {consistencyScore + 10 - distractionPenalty}</span>
@@ -698,20 +603,6 @@ function ProductivityScoreWidget({ habits, today }: { habits: Habit[]; today: st
         <div className="grid grid-cols-3 gap-2 mt-3">
           <div className="rounded-xl bg-muted/40 p-2 text-center">
             <p className="text-sm font-bold">{completedToday}/{habits.length}</p>
-<<<<<<< HEAD
-            <p className="text-[9px] text-muted-foreground">habits</p>
-          </div>
-          <div className="rounded-xl bg-primary/8 p-2 text-center">
-            <p className="text-sm font-bold text-primary">{focusMinutes}m</p>
-            <p className="text-[9px] text-muted-foreground">focus</p>
-          </div>
-          <div className="rounded-xl bg-amber-500/10 p-2 text-center">
-            <p className="text-sm font-bold text-amber-600 dark:text-amber-400">-{distractionPenalty}</p>
-            <p className="text-[9px] text-muted-foreground">distraction</p>
-          </div>
-        </div>
-        <p className="text-[10px] text-muted-foreground mt-2 leading-snug">{nextAction}</p>
-=======
             <p className="text-xs text-muted-foreground">habits</p>
           </div>
           <div className="rounded-xl bg-primary/8 p-2 text-center">
@@ -724,7 +615,6 @@ function ProductivityScoreWidget({ habits, today }: { habits: Habit[]; today: st
           </div>
         </div>
         <p className="text-xs text-muted-foreground mt-2 leading-snug">{nextAction}</p>
->>>>>>> 925ef42 (Initial commit)
       </CardContent>
     </Card>
   );
@@ -783,38 +673,23 @@ function NextTwoHoursTimetablePreview() {
   if (blocks.length === 0) return null;
 
   return (
-<<<<<<< HEAD
-    <Card className="border-0 shadow-sm">
-=======
     <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
       <CardContent className="p-4">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
             <Clock className="h-4 w-4 text-primary" />
             <p className="text-sm font-semibold">Next 2 Hours</p>
           </div>
-<<<<<<< HEAD
-          <span className="text-[10px] text-muted-foreground">from timetable</span>
-=======
           <span className="text-xs text-muted-foreground">from timetable</span>
->>>>>>> 925ef42 (Initial commit)
         </div>
         {upcoming.length > 0 ? (
           <div className="space-y-2">
             {upcoming.map(block => (
               <div key={block.id} className="flex items-center gap-2 rounded-xl bg-muted/40 border border-border/40 p-2.5">
-<<<<<<< HEAD
-                <div className="w-16 text-[10px] font-semibold text-primary">{block.start}-{block.end}</div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs font-semibold truncate">{block.subject}</p>
-                  <p className="text-[10px] text-muted-foreground truncate">{block.task || 'Study block'}</p>
-=======
                 <div className="w-16 text-xs font-semibold text-primary">{block.start}-{block.end}</div>
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-semibold truncate">{block.subject}</p>
                   <p className="text-xs text-muted-foreground truncate">{block.task || 'Study block'}</p>
->>>>>>> 925ef42 (Initial commit)
                 </div>
               </div>
             ))}
@@ -963,11 +838,7 @@ function SmartDailyStudyPlanner({ today, studentClass }: { today: string; studen
   };
 
   return (
-<<<<<<< HEAD
-    <Card className="border-0 shadow-sm overflow-hidden">
-=======
     <Card className="border border-border/40 shadow-sm overflow-hidden">
->>>>>>> 925ef42 (Initial commit)
       <CardContent className="p-4 bg-gradient-to-br from-primary/8 via-background to-muted/50">
         <div className="flex items-start justify-between gap-3 mb-3">
           <div>
@@ -975,11 +846,7 @@ function SmartDailyStudyPlanner({ today, studentClass }: { today: string; studen
               <Sparkles className="h-4 w-4 text-primary" />
               <p className="text-sm font-semibold">Daily Study Planner</p>
             </div>
-<<<<<<< HEAD
-            <p className="text-[10px] text-muted-foreground mt-0.5">Auto plan for {today}</p>
-=======
             <p className="text-xs text-muted-foreground mt-0.5">Auto plan for {today}</p>
->>>>>>> 925ef42 (Initial commit)
           </div>
           <label className="flex items-center gap-1 rounded-xl bg-background/75 border border-border/40 px-2 py-1">
             <input
@@ -990,11 +857,7 @@ function SmartDailyStudyPlanner({ today, studentClass }: { today: string; studen
               onChange={e => saveHours(e.target.value)}
               className="w-8 bg-transparent text-xs font-bold outline-none text-right"
             />
-<<<<<<< HEAD
-            <span className="text-[10px] text-muted-foreground">hrs</span>
-=======
             <span className="text-xs text-muted-foreground">hrs</span>
->>>>>>> 925ef42 (Initial commit)
           </label>
         </div>
         <div className="space-y-2">
@@ -1003,15 +866,9 @@ function SmartDailyStudyPlanner({ today, studentClass }: { today: string; studen
               <div className="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center text-xs font-bold">{index + 1}</div>
               <div className="flex-1 min-w-0">
                 <p className="text-xs font-semibold truncate">{item.subject}</p>
-<<<<<<< HEAD
-                <p className="text-[10px] text-muted-foreground truncate">{item.task}</p>
-              </div>
-              <span className="text-[10px] font-semibold text-primary">{item.minutes}m</span>
-=======
                 <p className="text-xs text-muted-foreground truncate">{item.task}</p>
               </div>
               <span className="text-xs font-semibold text-primary">{item.minutes}m</span>
->>>>>>> 925ef42 (Initial commit)
             </div>
           ))}
         </div>
@@ -1031,22 +888,14 @@ function ExamRoadmapWidget({ examCountdown }: { examCountdown: number | null }) 
   const activePhase = phases.find(p => p.active) || phases[0];
 
   return (
-<<<<<<< HEAD
-    <Card className="border-0 shadow-sm">
-=======
     <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
       <CardContent className="p-4">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
             <CalendarDays className="h-4 w-4 text-amber-500" />
             <p className="text-sm font-semibold">Exam Milestone Roadmap</p>
           </div>
-<<<<<<< HEAD
-          <span className="text-[10px] font-semibold text-amber-600 dark:text-amber-400">{examCountdown} days left</span>
-=======
           <span className="text-xs font-semibold text-amber-600 dark:text-amber-400">{examCountdown} days left</span>
->>>>>>> 925ef42 (Initial commit)
         </div>
         <div className="grid grid-cols-4 gap-1.5">
           {phases.map(phase => (
@@ -1054,15 +903,6 @@ function ExamRoadmapWidget({ examCountdown }: { examCountdown: number | null }) 
               key={phase.label}
               className={`rounded-xl border p-2 min-h-[74px] ${phase.active ? 'border-amber-400 bg-amber-50 dark:bg-amber-500/10' : 'border-border/40 bg-muted/30'}`}
             >
-<<<<<<< HEAD
-              <p className={`text-[10px] font-bold ${phase.active ? 'text-amber-700 dark:text-amber-300' : 'text-muted-foreground'}`}>{phase.days} days</p>
-              <p className="text-[9px] text-muted-foreground mt-0.5 leading-snug">{phase.label}</p>
-              <p className="text-[9px] leading-snug mt-1">{phase.text}</p>
-            </div>
-          ))}
-        </div>
-        <p className="text-[10px] text-muted-foreground mt-3">
-=======
               <p className={`text-xs font-bold ${phase.active ? 'text-amber-700 dark:text-amber-300' : 'text-muted-foreground'}`}>{phase.days} days</p>
               <p className="text-xs text-muted-foreground mt-0.5 leading-snug">{phase.label}</p>
               <p className="text-xs leading-snug mt-1">{phase.text}</p>
@@ -1070,7 +910,6 @@ function ExamRoadmapWidget({ examCountdown }: { examCountdown: number | null }) 
           ))}
         </div>
         <p className="text-xs text-muted-foreground mt-3">
->>>>>>> 925ef42 (Initial commit)
           Current stage: <span className="font-semibold text-foreground">{activePhase.label}</span>
         </p>
       </CardContent>
@@ -1113,11 +952,7 @@ function WeakSubjectDetector({ studentClass }: { studentClass?: string }) {
   const weakest = scores[0];
 
   return (
-<<<<<<< HEAD
-    <Card className="border-0 shadow-sm">
-=======
     <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
       <CardContent className="p-4">
         <div className="flex items-center gap-2 mb-3">
           <AlertCircle className="h-4 w-4 text-rose-500" />
@@ -1131,21 +966,13 @@ function WeakSubjectDetector({ studentClass }: { studentClass?: string }) {
                 <p className="text-base font-bold text-rose-600 dark:text-rose-300">{weakest.subject}</p>
                 <p className="text-sm font-bold text-rose-600 dark:text-rose-300">{weakest.score}%</p>
               </div>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground mt-1">
-=======
               <p className="text-xs text-muted-foreground mt-1">
->>>>>>> 925ef42 (Initial commit)
                 Chapters {weakest.completion}% • Mocks {weakest.tests ? `${weakest.mockAverage}%` : 'not logged'}
               </p>
             </div>
             <div className="space-y-1.5">
               {scores.slice(0, 3).map(item => (
-<<<<<<< HEAD
-                <div key={item.subject} className="flex items-center gap-2 text-[10px]">
-=======
                 <div key={item.subject} className="flex items-center gap-2 text-xs">
->>>>>>> 925ef42 (Initial commit)
                   <span className="w-20 truncate text-muted-foreground">{item.subject}</span>
                   <div className="flex-1 h-1.5 rounded-full bg-muted overflow-hidden">
                     <div className="h-full rounded-full bg-primary/70" style={{ width: `${item.score}%` }} />
@@ -1182,24 +1009,14 @@ function StreamMobileWidgets({
 
   return (
     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.09 }}>
-<<<<<<< HEAD
-      <Card className="border-0 shadow-sm overflow-hidden">
-=======
       <Card className="border border-border/40 shadow-sm overflow-hidden">
->>>>>>> 925ef42 (Initial commit)
         <CardContent className="p-4 space-y-3 bg-gradient-to-br from-primary/8 via-background to-muted/60">
           <div className="flex items-center justify-between gap-3">
             <div>
               <p className="text-sm font-semibold">{info.title} Widgets</p>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground">Mobile home suggestions for {studentClass}</p>
-            </div>
-            <Button size="sm" variant="outline" className="h-8 rounded-xl text-[10px]" onClick={onOpenTemplates}>
-=======
               <p className="text-xs text-muted-foreground">Mobile home suggestions for {studentClass}</p>
             </div>
             <Button size="sm" variant="outline" className="h-8 rounded-xl text-xs" onClick={onOpenTemplates}>
->>>>>>> 925ef42 (Initial commit)
               <Package className="h-3 w-3 mr-1" />
               Templates
             </Button>
@@ -1208,30 +1025,15 @@ function StreamMobileWidgets({
             {widgets.map(({ label, value, icon: Icon }) => (
               <div key={label} className="rounded-xl bg-background/75 border border-border/40 p-2.5">
                 <Icon className="h-4 w-4 text-primary mb-1.5" />
-<<<<<<< HEAD
-                <p className="text-[9px] uppercase tracking-wide text-muted-foreground font-semibold">{label}</p>
-                <p className="text-[10px] font-semibold leading-snug mt-0.5">{value}</p>
-=======
                 <p className="text-xs uppercase tracking-wide text-muted-foreground font-semibold">{label}</p>
                 <p className="text-xs font-semibold leading-snug mt-0.5">{value}</p>
->>>>>>> 925ef42 (Initial commit)
               </div>
             ))}
           </div>
           <div className="flex gap-1.5 overflow-x-auto pb-0.5 custom-scrollbar">
             {info.suggestions.map(item => (
-<<<<<<< HEAD
               <span key={item.text} className="shrink-0 rounded-full bg-primary/10 text-primary px-2.5 py-1 text-[10px] font-semibold">
                 {item.text}
-=======
-<<<<<<< HEAD
-              <span key={item.text} className="shrink-0 rounded-full bg-primary/10 text-primary px-2.5 py-1 text-xs font-semibold">
-                {item.emoji} {item.text}
-=======
-              <span key={item.text} className="shrink-0 rounded-full bg-primary/10 text-primary px-2.5 py-1 text-[10px] font-semibold">
-                {item.text}
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
               </span>
             ))}
           </div>
@@ -1294,34 +1096,20 @@ function HomeMoodInsight() {
 
   return (
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
-<<<<<<< HEAD
-      <Card className="border-0 shadow-sm bg-gradient-to-r from-violet-50/80 to-pink-50/80 dark:from-violet-500/8 dark:to-pink-500/8">
-=======
       <Card className="border border-violet-200/40 dark:border-violet-800/20 shadow-sm bg-gradient-to-r from-violet-50/80 to-pink-50/80 dark:from-violet-500/8 dark:to-pink-500/8">
->>>>>>> 925ef42 (Initial commit)
         <CardContent className="p-3.5 flex items-start gap-3">
           <div className="w-9 h-9 rounded-xl bg-violet-100 dark:bg-violet-500/15 flex items-center justify-center flex-shrink-0 text-base mt-0.5">
             {data.yesterdayMood !== null ? moodEmojis[data.yesterdayMood] : '📊'}
           </div>
           <div className="flex-1 min-w-0">
-<<<<<<< HEAD
-            <p className="text-[11px] font-bold text-foreground">Mood × Habit Insight</p>
-            {diff >= 10 && (
-              <p className="text-[10px] text-muted-foreground mt-0.5 leading-snug">
-=======
             <p className="text-xs font-bold text-foreground">Mood × Habit Insight</p>
             {diff >= 10 && (
               <p className="text-xs text-muted-foreground mt-0.5 leading-snug">
->>>>>>> 925ef42 (Initial commit)
                 You complete <span className="font-semibold text-violet-600 dark:text-violet-400">{diff}% more habits</span> on high-mood days.
               </p>
             )}
             {yesterdayLow && (
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground mt-0.5 leading-snug">
-=======
               <p className="text-xs text-muted-foreground mt-0.5 leading-snug">
->>>>>>> 925ef42 (Initial commit)
                 Yesterday felt tough {moodEmojis[data.yesterdayMood!]} — consider setting a lighter goal today.
               </p>
             )}
@@ -1623,11 +1411,7 @@ export function HomeDashboard({
                   ? '✨ All habits complete — great day!'
                   : `${activeHabits.length - completedToday} habit${activeHabits.length - completedToday !== 1 ? 's' : ''} left to go`}
               </p>
-<<<<<<< HEAD
-              <p className="text-[11px] text-muted-foreground/70 mt-1 font-medium leading-snug">
-=======
               <p className="text-xs text-muted-foreground/70 mt-1 font-medium leading-snug">
->>>>>>> 925ef42 (Initial commit)
                 &ldquo;{MOTIVATIONAL_QUOTES[quoteIndex].text}&rdquo;
               </p>
             </div>
@@ -1652,13 +1436,8 @@ export function HomeDashboard({
                   </motion.div>
                 ) : (
                   <>
-<<<<<<< HEAD
-                    <span className="text-[14px] font-black text-primary leading-none">{progressPercent}%</span>
-                    <span className="text-[9px] text-muted-foreground leading-none mt-0.5 font-medium">{completedToday}/{activeHabits.length}</span>
-=======
                     <span className="text-sm font-black text-primary leading-none">{progressPercent}%</span>
                     <span className="text-xs text-muted-foreground leading-none mt-0.5 font-medium">{completedToday}/{activeHabits.length}</span>
->>>>>>> 925ef42 (Initial commit)
                   </>
                 )}
               </div>
@@ -1679,18 +1458,8 @@ export function HomeDashboard({
           <div className="flex flex-wrap gap-1.5 mt-3.5">
             {stats && stats.currentStreak > 0 && (
               <div className="flex items-center gap-1 bg-amber-500/10 border border-amber-500/15 rounded-full px-2.5 py-1">
-<<<<<<< HEAD
                 <Flame className="h-3 w-3 text-amber-500" />
                 <span className="text-[10px] font-bold text-amber-700 dark:text-amber-400">{stats.currentStreak}d streak</span>
-=======
-<<<<<<< HEAD
-                <span className="text-xs">🔥</span>
-                <span className="text-xs font-bold text-amber-700 dark:text-amber-400">{stats.currentStreak}d streak</span>
-=======
-                <Flame className="h-3 w-3 text-amber-500" />
-                <span className="text-[10px] font-bold text-amber-700 dark:text-amber-400">{stats.currentStreak}d streak</span>
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
                 <button
                   onClick={handleStreakFreeze}
                   disabled={streakFreezeUsed || streakFreezeLoading}
@@ -1703,18 +1472,8 @@ export function HomeDashboard({
             )}
             {stats && (
               <div className="flex items-center gap-1 bg-primary/8 border border-primary/12 rounded-full px-2.5 py-1">
-<<<<<<< HEAD
                 <Zap className="h-3 w-3 text-primary" />
                 <span className="text-[10px] font-bold text-primary">Lv {stats.level} · {stats.xp} XP</span>
-=======
-<<<<<<< HEAD
-                <span className="text-xs">⚡</span>
-                <span className="text-xs font-bold text-primary">Lv {stats.level} · {stats.xp} XP</span>
-=======
-                <Zap className="h-3 w-3 text-primary" />
-                <span className="text-[10px] font-bold text-primary">Lv {stats.level} · {stats.xp} XP</span>
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
               </div>
             )}
             {examCountdown !== null && examCountdown >= 0 && (() => {
@@ -1736,18 +1495,8 @@ export function HomeDashboard({
                   animate={urgent ? { scale: [1, 1.04, 1] } : {}}
                   transition={urgent ? { duration: 2.5, repeat: Infinity, ease: 'easeInOut' } : {}}
                 >
-<<<<<<< HEAD
                   <ExamIcon className={`h-3 w-3 ${textClass}`} />
                   <span className={`text-[10px] font-bold ${textClass}`}>
-=======
-<<<<<<< HEAD
-                  <span className="text-xs">{icon}</span>
-                  <span className={`text-xs font-bold ${textClass}`}>
-=======
-                  <ExamIcon className={`h-3 w-3 ${textClass}`} />
-                  <span className={`text-[10px] font-bold ${textClass}`}>
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
                     {examCountdown === 0 ? 'Exam today!' : `${examCountdown}d to ${examGoal || 'exam'}`}
                   </span>
                 </motion.div>
@@ -1769,41 +1518,25 @@ export function HomeDashboard({
       {/* ── PW QUICK STATS (if PW mode) ─────────────────────── */}
       {studyMode === 'pw' && (
         <div className="grid grid-cols-2 gap-3">
-<<<<<<< HEAD
-          <Card className="border-0 shadow-sm">
-=======
           <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
             <CardContent className="p-3 flex items-center gap-3">
               <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                 <ListTodo className="h-4 w-4 text-primary" />
               </div>
               <div>
                 <p className="text-xl font-bold text-primary leading-none">{pendingTodos}</p>
-<<<<<<< HEAD
-                <p className="text-[10px] text-muted-foreground mt-0.5">Pending tasks</p>
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="border-0 shadow-sm">
-=======
                 <p className="text-xs text-muted-foreground mt-0.5">Pending tasks</p>
               </div>
             </CardContent>
           </Card>
           <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
             <CardContent className="p-3 flex items-center gap-3">
               <div className="w-9 h-9 rounded-xl bg-chart-2/10 flex items-center justify-center flex-shrink-0">
                 <BookOpen className="h-4 w-4 text-chart-2" />
               </div>
               <div>
                 <p className="text-xl font-bold text-chart-2 leading-none">{todayClasses}</p>
-<<<<<<< HEAD
-                <p className="text-[10px] text-muted-foreground mt-0.5">Today&apos;s classes</p>
-=======
                 <p className="text-xs text-muted-foreground mt-0.5">Today&apos;s classes</p>
->>>>>>> 925ef42 (Initial commit)
               </div>
             </CardContent>
           </Card>
@@ -1826,11 +1559,7 @@ export function HomeDashboard({
                 Today&apos;s Habits
               </h3>
             </div>
-<<<<<<< HEAD
-            <button onClick={() => setShowTemplates(true)} className="text-[11px] text-primary/70 hover:text-primary flex items-center gap-1 transition-colors font-semibold">
-=======
             <button onClick={() => setShowTemplates(true)} className="text-xs text-primary/70 hover:text-primary flex items-center gap-1 transition-colors font-semibold">
->>>>>>> 925ef42 (Initial commit)
               <Package className="h-3 w-3" /> Templates
             </button>
           </div>
@@ -1857,11 +1586,7 @@ export function HomeDashboard({
           {/* Paused habits */}
           {pausedHabits.length > 0 && (
             <div className="mt-4">
-<<<<<<< HEAD
-              <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider px-1 mb-2">
-=======
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-1 mb-2">
->>>>>>> 925ef42 (Initial commit)
                 ⏸ Paused ({pausedHabits.length})
               </p>
               <div className="space-y-1.5 opacity-60">
@@ -1871,11 +1596,7 @@ export function HomeDashboard({
                     <p className="flex-1 text-xs text-muted-foreground line-through">{habit.name}</p>
                     <button
                       onClick={() => pauseHabit(habit.id, false)}
-<<<<<<< HEAD
-                      className="flex items-center gap-1 text-[10px] text-primary font-semibold hover:underline"
-=======
                       className="flex items-center gap-1 text-xs text-primary font-semibold hover:underline"
->>>>>>> 925ef42 (Initial commit)
                     >
                       <PlayCircle className="h-3.5 w-3.5" /> Resume
                     </button>
@@ -1916,11 +1637,7 @@ export function HomeDashboard({
             <div className="w-1 h-4 rounded-full bg-primary" />
             <h3 className="text-xs font-bold text-foreground/70 uppercase tracking-[0.08em]">Quick Widgets</h3>
           </div>
-<<<<<<< HEAD
-          <span className="text-[11px] text-muted-foreground/60 font-medium">Track your day</span>
-=======
           <span className="text-xs text-muted-foreground/60 font-medium">Track your day</span>
->>>>>>> 925ef42 (Initial commit)
         </div>
         <div className="space-y-3">
           <DailyStudyGoalWidget />
@@ -1948,11 +1665,7 @@ export function HomeDashboard({
             </div>
             <div className="text-left">
               <span className="text-sm font-semibold text-foreground">Insights &amp; Planning</span>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground font-medium mt-0.5">{showInsights ? 'Tap to collapse' : 'Tap to expand'}</p>
-=======
               <p className="text-xs text-muted-foreground font-medium mt-0.5">{showInsights ? 'Tap to collapse' : 'Tap to expand'}</p>
->>>>>>> 925ef42 (Initial commit)
             </div>
           </div>
           <motion.div animate={{ rotate: showInsights ? 180 : 0 }} transition={{ duration: 0.25, ease: 'easeInOut' }}>
@@ -1995,13 +1708,8 @@ export function HomeDashboard({
               <Coffee className="h-4 w-4 text-muted-foreground/70" />
             </div>
             <div>
-<<<<<<< HEAD
-              <p className="text-[13px] font-semibold text-foreground/90">Rest Day</p>
-              <p className="text-[10px] text-muted-foreground/70 font-medium mt-0.5">
-=======
               <p className="text-sm font-semibold text-foreground/90">Rest Day</p>
               <p className="text-xs text-muted-foreground/70 font-medium mt-0.5">
->>>>>>> 925ef42 (Initial commit)
                 {isRestDay ? "Taking a break today" : 'Pause your habits'}
               </p>
             </div>
@@ -2055,11 +1763,7 @@ function FlameIndicator({ streak }: { streak: number }) {
       ) : (
         <Flame className="h-3 w-3 text-orange-400 opacity-80" />
       )}
-<<<<<<< HEAD
-      <span className={`font-black leading-none ${isInferno ? 'text-[10px] text-orange-600 dark:text-orange-400' : isBig ? 'text-[9px] text-orange-500' : 'text-[9px] text-orange-400'}`}>
-=======
       <span className={`font-black leading-none ${isInferno ? 'text-xs text-orange-600 dark:text-orange-400' : isBig ? 'text-xs text-orange-500' : 'text-xs text-orange-400'}`}>
->>>>>>> 925ef42 (Initial commit)
         {streak}
       </span>
     </motion.span>
@@ -2156,71 +1860,34 @@ function HabitCard({
           {/* Habit info */}
           <div className="flex-1 min-w-0 cursor-pointer" onClick={onToggle}>
             <div className="flex items-center gap-1.5">
-<<<<<<< HEAD
-              <p className={`font-semibold text-[13px] transition-all duration-300 flex-1 min-w-0 leading-snug ${isCompleted ? 'line-through text-muted-foreground/60' : 'text-foreground'}`}>
-=======
               <p className={`font-semibold text-sm transition-all duration-300 flex-1 min-w-0 leading-snug ${isCompleted ? 'line-through text-muted-foreground/60' : 'text-foreground'}`}>
->>>>>>> 925ef42 (Initial commit)
                 <span className="mr-1.5 not-italic">{habit.icon}</span>
                 {habit.name}
               </p>
               <FlameIndicator streak={streak} />
             </div>
             <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground/70 font-medium">
-                {habit.type === 'daily' ? 'Daily' : habit.type === 'weekly' ? 'Weekly' : `${habit.targetValue} ${habit.unit || ''}`}
-              </p>
-              {category && (
-                <span className="text-[9px] px-1.5 py-0.5 rounded-full font-semibold border" style={{ backgroundColor: category.color + '18', color: category.color, borderColor: category.color + '30' }}>
-=======
               <p className="text-xs text-muted-foreground/70 font-medium">
                 {habit.type === 'daily' ? 'Daily' : habit.type === 'weekly' ? 'Weekly' : `${habit.targetValue} ${habit.unit || ''}`}
               </p>
               {category && (
                 <span className="text-xs px-1.5 py-0.5 rounded-full font-semibold border" style={{ backgroundColor: category.color + '18', color: category.color, borderColor: category.color + '30' }}>
->>>>>>> 925ef42 (Initial commit)
                   {category.emoji} {category.name}
                 </span>
               )}
               {deadline && !isCompleted && (
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
                 <span className="text-xs text-amber-600 dark:text-amber-400 font-medium">📅 {deadline}</span>
-              )}
-              {difficulty && (
-                <span className={`text-xs px-1.5 py-0.5 rounded-full font-semibold ${DIFFICULTY_STYLE[difficulty].bg}`}>
-                  {difficulty === 'Easy' ? '🟢' : difficulty === 'Medium' ? '🟡' : '🔴'} {difficulty}
-=======
->>>>>>> 925ef42 (Initial commit)
-                <span className="text-[9px] text-amber-600 dark:text-amber-400 font-medium flex items-center gap-0.5"><CalendarDays className="h-2.5 w-2.5" /> {deadline}</span>
               )}
               {difficulty && (
                 <span className={`text-[9px] px-1.5 py-0.5 rounded-full font-semibold ${DIFFICULTY_STYLE[difficulty].bg}`}>
                   {difficulty}
-<<<<<<< HEAD
-=======
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
                 </span>
               )}
             </div>
           </div>
 
-<<<<<<< HEAD
-          {/* Action buttons — more refined reveal */}
-          <div className="flex items-center gap-0.5 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-150"
-            style={{ opacity: undefined }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = '')}
-            onFocus={(e) => (e.currentTarget.style.opacity = '1')}
-            onBlur={(e) => (e.currentTarget.style.opacity = '')}
-          >
-=======
           {/* Action buttons — always visible at low opacity, full opacity on hover/touch */}
           <div className="flex items-center gap-0.5 opacity-40 hover:opacity-100 focus-within:opacity-100 transition-opacity duration-150">
->>>>>>> 925ef42 (Initial commit)
             <button
               onClick={(e) => { e.stopPropagation(); onPause(); }}
               title="Pause habit"

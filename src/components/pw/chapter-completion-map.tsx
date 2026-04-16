@@ -129,11 +129,7 @@ export function ChapterCompletionMap() {
               return (
                 <div key={s} className="flex items-center gap-1">
                   <div className={`w-2 h-2 rounded-full ${STATUS_CONFIG[s].dot}`} />
-<<<<<<< HEAD
-                  <span className="text-[10px] text-muted-foreground">{STATUS_CONFIG[s].label}: {count}</span>
-=======
                   <span className="text-xs text-muted-foreground">{STATUS_CONFIG[s].label}: {count}</span>
->>>>>>> 925ef42 (Initial commit)
                 </div>
               );
             })}
@@ -142,11 +138,7 @@ export function ChapterCompletionMap() {
       )}
 
       {isAdding && (
-<<<<<<< HEAD
-        <Card className="border-0 shadow-sm bg-primary/5">
-=======
         <Card className="border border-primary/10 shadow-sm bg-primary/5">
->>>>>>> 925ef42 (Initial commit)
           <CardContent className="p-3 space-y-2">
             <div className="grid grid-cols-2 gap-2">
               <Select value={newSubject} onValueChange={setNewSubject}>
@@ -200,11 +192,7 @@ export function ChapterCompletionMap() {
           const subjTotal = chs.length;
           const subjPct = subjTotal > 0 ? Math.round((subjDone / subjTotal) * 100) : 0;
           return (
-<<<<<<< HEAD
-            <Card key={subj} className="border-0 shadow-sm">
-=======
             <Card key={subj} className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
               <CardContent className="p-4">
                 <div className="flex items-center justify-between mb-2">
                   <p className="text-sm font-semibold">{subj}</p>
@@ -220,11 +208,7 @@ export function ChapterCompletionMap() {
                       <div key={ch.id} className={`flex items-center justify-between rounded-xl px-3 py-2 ${cfg.color} group cursor-pointer`} onClick={() => handleCycleStatus(ch)}>
                         <div className="flex items-center gap-2 min-w-0">
                           <div className={`w-2 h-2 rounded-full flex-shrink-0 ${cfg.dot}`} />
-<<<<<<< HEAD
-                          <p className="text-[11px] font-medium truncate">{ch.chapter}</p>
-=======
                           <p className="text-xs font-medium truncate">{ch.chapter}</p>
->>>>>>> 925ef42 (Initial commit)
                         </div>
                         <button
                           onClick={e => { e.stopPropagation(); handleDelete(ch.id); }}
@@ -236,11 +220,7 @@ export function ChapterCompletionMap() {
                     );
                   })}
                 </div>
-<<<<<<< HEAD
-                <p className="text-[10px] text-muted-foreground mt-2 text-center">Tap a chapter to update its status</p>
-=======
                 <p className="text-xs text-muted-foreground mt-2 text-center">Tap a chapter to update its status</p>
->>>>>>> 925ef42 (Initial commit)
               </CardContent>
             </Card>
           );

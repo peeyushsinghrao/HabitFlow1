@@ -216,11 +216,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
                 />
               </div>
               <motion.p
-<<<<<<< HEAD
-                className="text-[10px] text-muted-foreground text-center mt-2"
-=======
                 className="text-xs text-muted-foreground text-center mt-2"
->>>>>>> 925ef42 (Initial commit)
                 animate={{ opacity: [0.5, 1, 0.5] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               >

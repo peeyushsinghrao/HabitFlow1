@@ -83,11 +83,7 @@ function ExplainModal({ formula, subject, chapter, onClose }: {
               </div>
               <div>
                 <p className="text-sm font-bold text-foreground">Formula Explained</p>
-<<<<<<< HEAD
-                <p className="text-[10px] text-muted-foreground">{subject}{chapter ? ` · ${chapter}` : ''}</p>
-=======
                 <p className="text-xs text-muted-foreground">{subject}{chapter ? ` · ${chapter}` : ''}</p>
->>>>>>> 925ef42 (Initial commit)
               </div>
             </div>
             <button onClick={onClose} className="text-muted-foreground hover:text-foreground transition-colors">
@@ -103,11 +99,7 @@ function ExplainModal({ formula, subject, chapter, onClose }: {
                 {[1, 2, 3].map(i => (
                   <div key={i} className="h-3.5 rounded-full bg-muted/60 animate-pulse" style={{ width: `${70 + i * 10}%` }} />
                 ))}
-<<<<<<< HEAD
-                <p className="text-[11px] text-center text-muted-foreground mt-3">Aria is explaining this…</p>
-=======
                 <p className="text-xs text-center text-muted-foreground mt-3">Aria is explaining this…</p>
->>>>>>> 925ef42 (Initial commit)
               </div>
             ) : (
               <motion.div
@@ -120,11 +112,7 @@ function ExplainModal({ formula, subject, chapter, onClose }: {
                 ))}
               </motion.div>
             )}
-<<<<<<< HEAD
-            <p className="text-[10px] text-center text-muted-foreground">Powered by Aria · Your AI Study Buddy</p>
-=======
             <p className="text-xs text-center text-muted-foreground">Powered by Aria · Your AI Study Buddy</p>
->>>>>>> 925ef42 (Initial commit)
           </CardContent>
         </Card>
       </motion.div>
@@ -204,17 +192,6 @@ export function FormulaVault() {
       <AnimatePresence>
         {showAdd && (
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="overflow-hidden">
-<<<<<<< HEAD
-            <Card className="border-0 shadow-sm">
-              <CardContent className="p-4 space-y-2.5">
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <Label className="text-[10px] uppercase text-muted-foreground">Subject</Label>
-                    <select value={form.subject} onChange={e => setForm(f => ({ ...f, subject: e.target.value }))} className="mt-1 w-full h-9 px-2 rounded-lg border border-input bg-background text-xs">{SUBJECTS.map(s => <option key={s} value={s}>{s}</option>)}</select>
-                  </div>
-                  <div>
-                    <Label className="text-[10px] uppercase text-muted-foreground">Chapter</Label>
-=======
             <Card className="border border-border/40 shadow-sm">
               <CardContent className="p-4 space-y-2.5">
                 <div className="grid grid-cols-2 gap-2">
@@ -224,16 +201,11 @@ export function FormulaVault() {
                   </div>
                   <div>
                     <Label className="text-xs uppercase text-muted-foreground">Chapter</Label>
->>>>>>> 925ef42 (Initial commit)
                     <Input value={form.chapter} onChange={e => setForm(f => ({ ...f, chapter: e.target.value }))} placeholder="e.g., Kinematics" className="mt-1 h-9 rounded-lg text-xs" />
                   </div>
                 </div>
                 <div>
-<<<<<<< HEAD
-                  <Label className="text-[10px] uppercase text-muted-foreground">Formula</Label>
-=======
                   <Label className="text-xs uppercase text-muted-foreground">Formula</Label>
->>>>>>> 925ef42 (Initial commit)
                   <textarea value={form.formula} onChange={e => setForm(f => ({ ...f, formula: e.target.value }))} rows={2} placeholder="v = u + at" className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm font-mono resize-none focus:outline-none focus:ring-2 focus:ring-primary/30" />
                 </div>
                 <Input value={form.desc} onChange={e => setForm(f => ({ ...f, desc: e.target.value }))} placeholder="Description / what it means" className="h-9 rounded-lg text-xs" />
@@ -259,22 +231,14 @@ export function FormulaVault() {
           {Object.entries(grouped).map(([subject, items]) => {
             const color = SUBJECT_COLORS[subject] || '#6B7280';
             return (
-<<<<<<< HEAD
-              <Card key={subject} className="border-0 shadow-sm overflow-hidden">
-=======
               <Card key={subject} className="border border-border/40 shadow-sm overflow-hidden">
->>>>>>> 925ef42 (Initial commit)
                 <button
                   className="w-full flex items-center gap-2 p-3"
                   onClick={() => setExpandedSubject(expandedSubject === subject ? null : subject)}
                 >
                   <div className="w-5 h-5 rounded-full flex-shrink-0" style={{ backgroundColor: color + '30', border: `2px solid ${color}60` }} />
                   <span className="flex-1 text-left text-xs font-semibold">{subject}</span>
-<<<<<<< HEAD
-                  <span className="text-[10px] text-muted-foreground">{items.length} formulas</span>
-=======
                   <span className="text-xs text-muted-foreground">{items.length} formulas</span>
->>>>>>> 925ef42 (Initial commit)
                   <ChevronRight className={`h-4 w-4 text-muted-foreground transition-transform ${expandedSubject === subject ? 'rotate-90' : ''}`} />
                 </button>
                 <AnimatePresence>
@@ -285,26 +249,15 @@ export function FormulaVault() {
                           <div key={f.id} className="p-3">
                             <div className="flex items-start gap-2">
                               <div className="flex-1 min-w-0">
-<<<<<<< HEAD
-                                {f.chapter && <p className="text-[10px] text-muted-foreground mb-1">{f.chapter}</p>}
-                                <p className="font-mono text-sm text-foreground bg-muted/40 px-2 py-1.5 rounded-lg">{f.formula}</p>
-                                {f.desc && <p className="text-[11px] text-muted-foreground mt-1">{f.desc}</p>}
-                                {f.tags && <div className="flex gap-1 mt-1 flex-wrap">{f.tags.split(',').map(t => <span key={t} className="text-[9px] px-1.5 py-0.5 rounded-full" style={{ backgroundColor: color + '15', color }}>{t.trim()}</span>)}</div>}
-=======
                                 {f.chapter && <p className="text-xs text-muted-foreground mb-1">{f.chapter}</p>}
                                 <p className="font-mono text-sm text-foreground bg-muted/40 px-2 py-1.5 rounded-lg">{f.formula}</p>
                                 {f.desc && <p className="text-xs text-muted-foreground mt-1">{f.desc}</p>}
                                 {f.tags && <div className="flex gap-1 mt-1 flex-wrap">{f.tags.split(',').map(t => <span key={t} className="text-xs px-1.5 py-0.5 rounded-full" style={{ backgroundColor: color + '15', color }}>{t.trim()}</span>)}</div>}
->>>>>>> 925ef42 (Initial commit)
 
                                 {/* Explain this button */}
                                 <button
                                   onClick={() => setExplainFormula({ entry: f, subject, chapter: f.chapter })}
-<<<<<<< HEAD
-                                  className="mt-2 flex items-center gap-1 text-[10px] font-semibold px-2.5 py-1 rounded-full transition-colors"
-=======
                                   className="mt-2 flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full transition-colors"
->>>>>>> 925ef42 (Initial commit)
                                   style={{ backgroundColor: color + '15', color }}
                                 >
                                   <Sparkles className="h-3 w-3" />

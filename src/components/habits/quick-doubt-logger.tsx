@@ -153,11 +153,7 @@ export function QuickDoubtLogger({
                   <Send className="h-4 w-4" />
                 </button>
               </div>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground mt-1.5 text-right">{text.length}/500</p>
-=======
               <p className="text-xs text-muted-foreground mt-1.5 text-right">{text.length}/500</p>
->>>>>>> 925ef42 (Initial commit)
             </div>
 
             {/* List */}
@@ -181,11 +177,7 @@ export function QuickDoubtLogger({
                       <div className="flex-1 min-w-0">
                         <p className="text-sm text-foreground leading-snug">{d.question}</p>
                         {d.subject !== 'Quick Note' && (
-<<<<<<< HEAD
-                          <p className="text-[10px] text-muted-foreground mt-0.5">{d.subject} · {d.topic}</p>
-=======
                           <p className="text-xs text-muted-foreground mt-0.5">{d.subject} · {d.topic}</p>
->>>>>>> 925ef42 (Initial commit)
                         )}
                       </div>
                       <div className="flex gap-1 flex-shrink-0">

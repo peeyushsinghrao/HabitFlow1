@@ -81,13 +81,8 @@ export function BossChallengeWidget() {
 
           <div className="flex-1 min-w-0 text-left">
             <div className="flex items-center gap-1.5">
-<<<<<<< HEAD
-              <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Weekly Boss</p>
-              <span className="text-[9px] text-muted-foreground/60">{formatDate(weekStart)} – {formatDate(weekEnd)}</span>
-=======
               <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Weekly Boss</p>
               <span className="text-xs text-muted-foreground/60">{formatDate(weekStart)} – {formatDate(weekEnd)}</span>
->>>>>>> 925ef42 (Initial commit)
             </div>
             <p className="text-xs font-bold text-foreground truncate">{challenge.title}</p>
 
@@ -99,21 +94,13 @@ export function BossChallengeWidget() {
                 transition={{ duration: 0.7, ease: 'easeOut' }}
               />
             </div>
-<<<<<<< HEAD
-            <p className="text-[9px] text-muted-foreground mt-0.5">{progressLabel}</p>
-=======
             <p className="text-xs text-muted-foreground mt-0.5">{progressLabel}</p>
->>>>>>> 925ef42 (Initial commit)
           </div>
 
           <div className="flex flex-col items-end gap-1 flex-shrink-0">
             <div className="flex items-center gap-1">
               <Coins className="h-3 w-3 text-amber-500" />
-<<<<<<< HEAD
-              <span className="text-[11px] font-black text-amber-600 dark:text-amber-400">{challenge.coinsReward}</span>
-=======
               <span className="text-xs font-black text-amber-600 dark:text-amber-400">{challenge.coinsReward}</span>
->>>>>>> 925ef42 (Initial commit)
             </div>
             {expanded ? <ChevronUp className="h-3.5 w-3.5 text-muted-foreground" /> : <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" />}
           </div>
@@ -132,15 +119,9 @@ export function BossChallengeWidget() {
               <div className={`rounded-xl p-3 text-center ${isDone ? 'bg-violet-100/60 dark:bg-violet-900/20' : 'bg-red-100/60 dark:bg-red-900/20'}`}>
                 <p className="text-xs text-foreground/80 leading-relaxed">{challenge.description}</p>
                 {isDone ? (
-<<<<<<< HEAD
-                  <p className="text-[11px] font-bold text-violet-600 dark:text-violet-400 mt-2">🏆 Challenge Conquered! +{challenge.coinsReward} coins earned!</p>
-                ) : (
-                  <p className="text-[11px] text-muted-foreground mt-2">Complete it before Sunday for <span className="font-bold text-amber-600">{challenge.coinsReward} coins</span>!</p>
-=======
                   <p className="text-xs font-bold text-violet-600 dark:text-violet-400 mt-2">🏆 Challenge Conquered! +{challenge.coinsReward} coins earned!</p>
                 ) : (
                   <p className="text-xs text-muted-foreground mt-2">Complete it before Sunday for <span className="font-bold text-amber-600">{challenge.coinsReward} coins</span>!</p>
->>>>>>> 925ef42 (Initial commit)
                 )}
               </div>
             </div>
@@ -159,11 +140,7 @@ export function BossChallengeWidget() {
             <div className="text-center px-4">
               <div className="text-3xl mb-1">🏆</div>
               <p className="text-white font-black text-sm">Boss Defeated!</p>
-<<<<<<< HEAD
-              <p className="text-white/80 text-[11px] mt-0.5">+{challenge.coinsReward} coins earned!</p>
-=======
               <p className="text-white/80 text-xs mt-0.5">+{challenge.coinsReward} coins earned!</p>
->>>>>>> 925ef42 (Initial commit)
             </div>
           </motion.div>
         )}

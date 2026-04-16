@@ -96,11 +96,7 @@ export function WaterTracker() {
 
   if (isLoading) {
     return (
-<<<<<<< HEAD
-      <Card className="border-0 shadow-sm">
-=======
       <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
         <CardContent className="p-4">
           <div className="h-16 bg-muted animate-pulse rounded-lg" />
         </CardContent>
@@ -109,11 +105,7 @@ export function WaterTracker() {
   }
 
   return (
-<<<<<<< HEAD
-    <Card className="border-0 shadow-sm overflow-hidden">
-=======
     <Card className="border border-border/40 shadow-sm overflow-hidden">
->>>>>>> 925ef42 (Initial commit)
       <CardContent className="p-4">
         <div className="flex items-center gap-3">
           <div className="relative w-12 h-14 flex-shrink-0">
@@ -177,11 +169,7 @@ export function WaterTracker() {
                 transition={{ duration: 0.3 }}
               />
             </div>
-<<<<<<< HEAD
-            <p className="text-[11px] text-muted-foreground">
-=======
             <p className="text-xs text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
               {glasses} of {goal} glasses{isDone ? ' — goal reached! 💧' : ''}
             </p>
           </div>

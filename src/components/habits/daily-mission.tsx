@@ -69,11 +69,7 @@ export function DailyMissionWidget() {
   if (isLoading) return null;
 
   return (
-<<<<<<< HEAD
-    <Card className="border-0 shadow-sm overflow-hidden">
-=======
     <Card className="border border-border/40 shadow-sm overflow-hidden">
->>>>>>> 925ef42 (Initial commit)
       <CardContent className="p-0">
         {/* Header */}
         <div className="flex items-center gap-2 px-4 pt-3 pb-2 border-b border-border/30">
@@ -152,16 +148,6 @@ export function DailyMissionWidget() {
                   {mission.title}
                 </p>
                 {mission.description && (
-<<<<<<< HEAD
-                  <p className="text-[11px] text-muted-foreground mt-0.5">{mission.description}</p>
-                )}
-                {mission.isCompleted ? (
-                  <p className="text-[11px] text-emerald-600 dark:text-emerald-400 mt-1 font-semibold">
-                    ✅ Mission complete! +{mission.coinsReward}🪙 earned
-                  </p>
-                ) : (
-                  <button onClick={() => { setTitle(mission.title); setDesc(mission.description); setShowForm(true); }} className="text-[10px] text-primary hover:underline mt-1">
-=======
                   <p className="text-xs text-muted-foreground mt-0.5">{mission.description}</p>
                 )}
                 {mission.isCompleted ? (
@@ -170,7 +156,6 @@ export function DailyMissionWidget() {
                   </p>
                 ) : (
                   <button onClick={() => { setTitle(mission.title); setDesc(mission.description); setShowForm(true); }} className="text-xs text-primary hover:underline mt-1">
->>>>>>> 925ef42 (Initial commit)
                     Edit mission
                   </button>
                 )}

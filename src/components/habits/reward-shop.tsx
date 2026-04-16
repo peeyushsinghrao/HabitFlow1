@@ -118,59 +118,31 @@ export function RewardShop() {
 
       {/* Wallet header */}
       <div className="grid grid-cols-2 gap-2">
-<<<<<<< HEAD
-        <Card className="border-0 shadow-sm bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-500/10 dark:to-yellow-500/10">
-=======
         <Card className="border border-amber-200/40 dark:border-amber-800/20 shadow-sm bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-500/10 dark:to-yellow-500/10">
->>>>>>> 925ef42 (Initial commit)
           <CardContent className="p-3 flex items-center gap-2">
             <span className="text-2xl">🪙</span>
             <div>
               <p className="text-xl font-bold text-amber-600 dark:text-amber-400">{coins}</p>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground">Coins earned</p>
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="border-0 shadow-sm bg-gradient-to-br from-sky-50 to-blue-50 dark:from-sky-500/10 dark:to-blue-500/10">
-=======
               <p className="text-xs text-muted-foreground">Coins earned</p>
             </div>
           </CardContent>
         </Card>
         <Card className="border border-sky-200/40 dark:border-sky-800/20 shadow-sm bg-gradient-to-br from-sky-50 to-blue-50 dark:from-sky-500/10 dark:to-blue-500/10">
->>>>>>> 925ef42 (Initial commit)
           <CardContent className="p-3 flex items-center gap-2">
             <span className="text-2xl">🛡️</span>
             <div>
               <p className="text-xl font-bold text-sky-600 dark:text-sky-400">{freezes}</p>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground">Streak freezes</p>
-=======
               <p className="text-xs text-muted-foreground">Streak freezes</p>
->>>>>>> 925ef42 (Initial commit)
             </div>
           </CardContent>
         </Card>
       </div>
 
       {/* Coin info */}
-<<<<<<< HEAD
-      <Card className="border-0 shadow-sm">
+      <Card className="border border-border/50 shadow-sm">
         <CardContent className="p-3">
           <p className="text-xs font-semibold mb-2">How this Store works 🪙</p>
           <div className="grid grid-cols-2 gap-1.5 text-[10px] text-muted-foreground">
-=======
-      <Card className="border border-border/40 shadow-sm">
-        <CardContent className="p-3">
-<<<<<<< HEAD
-          <p className="text-xs font-semibold mb-2">How to earn coins 🪙</p>
-          <div className="grid grid-cols-2 gap-1.5 text-xs text-muted-foreground">
-=======
-          <p className="text-xs font-semibold mb-2">How this Store works 🪙</p>
-          <div className="grid grid-cols-2 gap-1.5 text-[10px] text-muted-foreground">
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
             <span>✅ Complete habit: +10</span>
             <span>📝 Log test: +15</span>
             <span>🎯 Daily mission: +20</span>
@@ -194,11 +166,7 @@ export function RewardShop() {
         <span className="text-2xl">🛡️</span>
         <div className="flex-1 text-left">
           <p className="text-xs font-semibold">Buy Streak Freeze</p>
-<<<<<<< HEAD
-          <p className="text-[10px] text-muted-foreground">Protect your streak for 1 missed day</p>
-=======
           <p className="text-xs text-muted-foreground">Protect your streak for 1 missed day</p>
->>>>>>> 925ef42 (Initial commit)
         </div>
         <span className="text-xs font-bold text-sky-600 dark:text-sky-400">100🪙</span>
       </button>
@@ -209,11 +177,7 @@ export function RewardShop() {
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-<<<<<<< HEAD
-            className={`flex-shrink-0 px-3 py-1.5 rounded-full text-[10px] font-semibold transition-all ${
-=======
             className={`flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
->>>>>>> 925ef42 (Initial commit)
               activeCategory === cat ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'
             }`}
           >
@@ -237,17 +201,6 @@ export function RewardShop() {
                     {reward.owned && <CheckCircle className="absolute -top-1 right-1 h-3.5 w-3.5 text-emerald-500" />}
                   </div>
                   <p className="text-xs font-semibold leading-tight">{reward.name}</p>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-                  <p className="text-xs text-muted-foreground mt-0.5">{CATEGORY_LABELS[reward.category] || reward.category}</p>
-                  <button
-                    onClick={() => canAfford && !redeeming && setConfirmReward(reward)}
-                    disabled={!canAfford || !!redeeming}
-                    className={`mt-2 w-full py-1.5 rounded-lg text-xs font-bold transition-all ${
-                      canAfford
-=======
->>>>>>> 925ef42 (Initial commit)
                   <p className="text-[10px] text-muted-foreground mt-0.5">{CATEGORY_LABELS[reward.category] || reward.category}</p>
                   <p className="text-[9px] text-muted-foreground/80 mt-1 leading-snug min-h-8">{reward.description}</p>
                   <div className="mt-1 flex justify-center">
@@ -267,10 +220,6 @@ export function RewardShop() {
                     disabled={!canRedeem || !!redeeming}
                     className={`mt-2 w-full py-1.5 rounded-lg text-[10px] font-bold transition-all ${
                       canRedeem
-<<<<<<< HEAD
-=======
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
                         ? 'bg-primary text-primary-foreground hover:bg-primary/90'
                         : 'bg-muted text-muted-foreground cursor-not-allowed'
                     }`}

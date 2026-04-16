@@ -473,11 +473,7 @@ export function HabitTemplatesDialog({
                   <button onClick={selectAll} className="text-xs font-medium text-primary hover:underline">
                     {selectedHabits.size === selectedPack.habits.length ? 'Deselect All' : 'Select All'}
                   </button>
-<<<<<<< HEAD
-                  <span className="text-[10px] text-muted-foreground">
-=======
                   <span className="text-xs text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
                     {getNewHabits(selectedPack).length} new of {selectedPack.habits.length} total
                   </span>
                 </div>
@@ -505,20 +501,12 @@ export function HabitTemplatesDialog({
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-xs font-medium truncate">{habit.name}</p>
-<<<<<<< HEAD
-                          <p className="text-[10px] text-muted-foreground">
-=======
                           <p className="text-xs text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
                             {habit.type === 'daily' ? 'Daily' : habit.type === 'weekly' ? 'Weekly' : `${habit.targetValue} ${habit.unit}`}
                           </p>
                         </div>
                         {alreadyExists ? (
-<<<<<<< HEAD
-                          <span className="text-[9px] text-muted-foreground bg-muted px-2 py-0.5 rounded-full font-medium">Exists</span>
-=======
                           <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-full font-medium">Exists</span>
->>>>>>> 925ef42 (Initial commit)
                         ) : (
                           <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center transition-all flex-shrink-0 ${isSelected ? 'border-primary bg-primary' : 'border-border/60'}`}>
                             {isSelected && <Check className="h-3 w-3 text-primary-foreground" strokeWidth={3} />}
@@ -543,11 +531,7 @@ export function HabitTemplatesDialog({
                 {/* Stream packs section — shown when stream is selected */}
                 {hasStreamPacks && (
                   <div className="mb-4">
-<<<<<<< HEAD
-                    <p className="text-[10px] font-semibold text-primary uppercase tracking-wide mb-2">
-=======
                     <p className="text-xs font-semibold text-primary uppercase tracking-wide mb-2">
->>>>>>> 925ef42 (Initial commit)
                       🎯 Your Stream Templates
                     </p>
                     <div className="grid grid-cols-2 gap-2.5">
@@ -568,15 +552,6 @@ export function HabitTemplatesDialog({
                                 {pack.icon}
                               </div>
                               {newCount === 0 && (
-<<<<<<< HEAD
-                                <span className="text-[9px] text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-1.5 py-0.5 rounded-full font-medium">Added</span>
-                              )}
-                            </div>
-                            <p className="text-xs font-semibold mb-0.5">{pack.name}</p>
-                            <p className="text-[10px] text-muted-foreground leading-relaxed line-clamp-2">{pack.description}</p>
-                            <div className="mt-2.5 flex items-center justify-between">
-                              <span className="text-[10px] text-muted-foreground">{pack.habits.length} habits</span>
-=======
                                 <span className="text-xs text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-1.5 py-0.5 rounded-full font-medium">Added</span>
                               )}
                             </div>
@@ -584,7 +559,6 @@ export function HabitTemplatesDialog({
                             <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">{pack.description}</p>
                             <div className="mt-2.5 flex items-center justify-between">
                               <span className="text-xs text-muted-foreground">{pack.habits.length} habits</span>
->>>>>>> 925ef42 (Initial commit)
                               <Plus className="h-3.5 w-3.5 text-muted-foreground/50 group-hover:text-primary transition-colors" />
                             </div>
                           </motion.button>
@@ -600,11 +574,7 @@ export function HabitTemplatesDialog({
                     <span className="text-2xl flex-shrink-0">🎓</span>
                     <div>
                       <p className="text-xs font-semibold text-foreground">Unlock Stream Templates</p>
-<<<<<<< HEAD
-                      <p className="text-[10px] text-muted-foreground mt-0.5">
-=======
                       <p className="text-xs text-muted-foreground mt-0.5">
->>>>>>> 925ef42 (Initial commit)
                         Go to Settings → choose your stream (PCM, PCB, Commerce…) for personalised packs.
                       </p>
                     </div>
@@ -614,11 +584,7 @@ export function HabitTemplatesDialog({
                 {/* General / lifestyle packs — always shown */}
                 {templatePacks.filter(p => !streamPacks.some(sp => sp.id === p.id)).length > 0 && (
                   <>
-<<<<<<< HEAD
-                    <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wide mb-2">
-=======
                     <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
->>>>>>> 925ef42 (Initial commit)
                       {hasStreamPacks ? '✨ General Packs' : 'All Packs'}
                     </p>
                     <div className="grid grid-cols-2 gap-2.5">
@@ -639,15 +605,6 @@ export function HabitTemplatesDialog({
                                 {pack.icon}
                               </div>
                               {newCount === 0 && (
-<<<<<<< HEAD
-                                <span className="text-[9px] text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-1.5 py-0.5 rounded-full font-medium">Added</span>
-                              )}
-                            </div>
-                            <p className="text-xs font-semibold mb-0.5">{pack.name}</p>
-                            <p className="text-[10px] text-muted-foreground leading-relaxed line-clamp-2">{pack.description}</p>
-                            <div className="mt-2.5 flex items-center justify-between">
-                              <span className="text-[10px] text-muted-foreground">{pack.habits.length} habits</span>
-=======
                                 <span className="text-xs text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-1.5 py-0.5 rounded-full font-medium">Added</span>
                               )}
                             </div>
@@ -655,7 +612,6 @@ export function HabitTemplatesDialog({
                             <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">{pack.description}</p>
                             <div className="mt-2.5 flex items-center justify-between">
                               <span className="text-xs text-muted-foreground">{pack.habits.length} habits</span>
->>>>>>> 925ef42 (Initial commit)
                               <Plus className="h-3.5 w-3.5 text-muted-foreground/50 group-hover:text-primary transition-colors" />
                             </div>
                           </motion.button>
@@ -666,11 +622,7 @@ export function HabitTemplatesDialog({
                 )}
 
                 <div className="mt-4 bg-muted/30 rounded-lg p-3">
-<<<<<<< HEAD
-                  <p className="text-[10px] text-muted-foreground leading-relaxed">
-=======
                   <p className="text-xs text-muted-foreground leading-relaxed">
->>>>>>> 925ef42 (Initial commit)
                     <span className="font-semibold text-foreground">Pro tip:</span> Duplicate habits are automatically skipped. All general packs are always available.
                   </p>
                 </div>

@@ -60,11 +60,7 @@ export function DoubtBank() {
         {(['all', 'open', 'resolved'] as const).map(f => (
           <button key={f} onClick={() => setFilter(f)} className={`p-2.5 rounded-xl text-center transition-all ${filter === f ? (f === 'open' ? 'bg-rose-500 text-white' : f === 'resolved' ? 'bg-emerald-500 text-white' : 'bg-primary text-primary-foreground') : 'bg-muted/60'}`}>
             <p className="text-lg font-bold">{f === 'all' ? doubts.length : f === 'open' ? open : resolved}</p>
-<<<<<<< HEAD
-            <p className="text-[10px] capitalize">{f}</p>
-=======
             <p className="text-xs capitalize">{f}</p>
->>>>>>> 925ef42 (Initial commit)
           </button>
         ))}
       </div>
@@ -76,17 +72,6 @@ export function DoubtBank() {
       <AnimatePresence>
         {showAdd && (
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="overflow-hidden">
-<<<<<<< HEAD
-            <Card className="border-0 shadow-sm">
-              <CardContent className="p-4 space-y-2.5">
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <Label className="text-[10px] uppercase text-muted-foreground">Subject</Label>
-                    <select value={form.subject} onChange={e => setForm(f => ({ ...f, subject: e.target.value }))} className="mt-1 w-full h-9 px-2 rounded-lg border border-input bg-background text-xs">{SUBJECTS.map(s => <option key={s} value={s}>{s}</option>)}</select>
-                  </div>
-                  <div>
-                    <Label className="text-[10px] uppercase text-muted-foreground">Topic</Label>
-=======
             <Card className="border border-border/40 shadow-sm">
               <CardContent className="p-4 space-y-2.5">
                 <div className="grid grid-cols-2 gap-2">
@@ -96,16 +81,11 @@ export function DoubtBank() {
                   </div>
                   <div>
                     <Label className="text-xs uppercase text-muted-foreground">Topic</Label>
->>>>>>> 925ef42 (Initial commit)
                     <Input value={form.topic} onChange={e => setForm(f => ({ ...f, topic: e.target.value }))} placeholder="Chapter / concept" className="mt-1 h-9 rounded-lg text-xs" />
                   </div>
                 </div>
                 <div>
-<<<<<<< HEAD
-                  <Label className="text-[10px] uppercase text-muted-foreground">Your Doubt / Question</Label>
-=======
                   <Label className="text-xs uppercase text-muted-foreground">Your Doubt / Question</Label>
->>>>>>> 925ef42 (Initial commit)
                   <textarea value={form.question} onChange={e => setForm(f => ({ ...f, question: e.target.value }))} rows={2} placeholder="What are you confused about?" className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 text-xs resize-none focus:outline-none focus:ring-2 focus:ring-primary/30" />
                 </div>
                 <Input value={form.source} onChange={e => setForm(f => ({ ...f, source: e.target.value }))} placeholder="Source (e.g., Classes lecture, DPP Q.5)" className="h-9 rounded-lg text-xs" />
@@ -136,19 +116,11 @@ export function DoubtBank() {
                   </button>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-1.5 flex-wrap">
-<<<<<<< HEAD
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary">{d.subject}</span>
-                      <span className="text-[10px] text-muted-foreground">{d.topic}</span>
-                    </div>
-                    <p className={`text-xs mt-1 ${d.isResolved ? 'line-through text-muted-foreground' : ''}`}>{d.question}</p>
-                    {d.source && <p className="text-[9px] text-muted-foreground mt-0.5">📌 {d.source}</p>}
-=======
                       <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary">{d.subject}</span>
                       <span className="text-xs text-muted-foreground">{d.topic}</span>
                     </div>
                     <p className={`text-xs mt-1 ${d.isResolved ? 'line-through text-muted-foreground' : ''}`}>{d.question}</p>
                     {d.source && <p className="text-xs text-muted-foreground mt-0.5">📌 {d.source}</p>}
->>>>>>> 925ef42 (Initial commit)
                   </div>
                   <div className="flex items-center gap-0.5 flex-shrink-0">
                     <button onClick={() => setExpandedId(expandedId === d.id ? null : d.id)} className="p-1.5 rounded-lg hover:bg-muted">
@@ -163,11 +135,7 @@ export function DoubtBank() {
                   {expandedId === d.id && (
                     <motion.div initial={{ height: 0 }} animate={{ height: 'auto' }} exit={{ height: 0 }} className="overflow-hidden border-t border-border/50">
                       <div className="p-3 bg-muted/30">
-<<<<<<< HEAD
-                        <p className="text-[10px] font-semibold text-muted-foreground uppercase mb-1">Answer / Resolution</p>
-=======
                         <p className="text-xs font-semibold text-muted-foreground uppercase mb-1">Answer / Resolution</p>
->>>>>>> 925ef42 (Initial commit)
                         {d.answer ? (
                           <p className="text-xs">{d.answer}</p>
                         ) : (

@@ -436,27 +436,6 @@ export default function Page() {
     init();
   }, [fetchHabits, fetchStats]);
 
-<<<<<<< HEAD
-  // Loading screen completes → check onboarding
-  const handleLoadingComplete = async () => {
-    let storedUserId = '';
-    let storedEmail = '';
-    try {
-      storedUserId = localStorage.getItem('nuviora-user-id') || '';
-      storedEmail = localStorage.getItem('nuviora-user-email') || '';
-    } catch { /* blocked */ }
-
-    // If localStorage keys are missing, try to recover from the session cookie (client-side first)
-    if (!storedUserId && !storedEmail) {
-      try {
-        const cookieMatch = document.cookie.match(/(?:^|;\s*)nuviora-session=([^;]*)/);
-        if (cookieMatch) {
-          const cookieUserId = decodeURIComponent(cookieMatch[1]);
-          if (cookieUserId && cookieUserId !== 'default-user') {
-            storedUserId = cookieUserId;
-            try { localStorage.setItem('nuviora-user-id', cookieUserId); } catch { /* ignore */ }
-          }
-=======
   // ─── Helpers ────────────────────────────────────────────────────────────────
   type SessionV2 = {
     userId: string; email: string; name: string; studyMode: string;
@@ -532,33 +511,10 @@ export default function Page() {
         if (m) {
           const v = decodeURIComponent(m[1]);
           if (v && v !== 'default-user') storedUserId = v;
->>>>>>> 925ef42 (Initial commit)
         }
       } catch { /* ignore */ }
     }
 
-<<<<<<< HEAD
-    // If still no session, ask the server — it can read the HTTP cookie reliably
-    // even when document.cookie is restricted (cross-origin iframes, browser policies, etc.)
-    if (!storedUserId && !storedEmail) {
-      try {
-        const sessionRes = await fetch('/api/auth/session');
-        if (sessionRes.ok) {
-          const sessionData = await sessionRes.json();
-          if (sessionData.authenticated && sessionData.userId) {
-            storedUserId = sessionData.userId;
-            if (sessionData.email) storedEmail = sessionData.email;
-            try {
-              localStorage.setItem('nuviora-user-id', sessionData.userId);
-              if (sessionData.email) localStorage.setItem('nuviora-user-email', sessionData.email);
-            } catch { /* ignore */ }
-          }
-        }
-      } catch { /* ignore */ }
-    }
-
-    // No session at all → hide loader and show login
-=======
     // Priority 4 — server-side cookie verification (handles cross-origin iframe restrictions)
     if (!storedUserId && !storedEmail) {
       try {
@@ -574,27 +530,12 @@ export default function Page() {
     }
 
     // No session anywhere → show login
->>>>>>> 925ef42 (Initial commit)
     if (!storedUserId && !storedEmail) {
       setIsLoading(false);
       setShowSplash(true);
       return;
     }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    // Session found — ALWAYS send explicit headers so the profile call succeeds
-    // regardless of whether the fetch-wrapper useEffect has been installed yet
-    const profileHeaders: Record<string, string> = {};
-    if (storedUserId) profileHeaders['x-nuviora-user-id'] = storedUserId;
-    if (storedEmail) profileHeaders['x-nuviora-email'] = storedEmail;
-
-    try {
-      const res = await fetch('/api/profile', { headers: profileHeaders });
-
-=======
->>>>>>> 925ef42 (Initial commit)
     // Session exists → verify silently without ever showing the login screen.
     // Build auth headers explicitly — the window.fetch interceptor runs in a
     // useEffect and may not be attached yet when this function fires.
@@ -604,11 +545,6 @@ export default function Page() {
 
     try {
       const res = await fetch('/api/profile', { headers: authHeaders });
-<<<<<<< HEAD
-      if (res.ok) {
-        const profile = await res.json();
-=======
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
       if (res.ok) {
         const profile = await res.json();
 
@@ -633,7 +569,6 @@ export default function Page() {
         if (profile.pinEnabled && profile.pinCode) setPinLock({ enabled: true, code: profile.pinCode });
 
         // Hydrate UI state
->>>>>>> 925ef42 (Initial commit)
         setUserName(profile.name || '');
         setStudyMode(profile.studyMode === 'normal' ? 'normal' : 'pw');
         setExamDate(profile.examDate || '');
@@ -642,62 +577,6 @@ export default function Page() {
         setUserGender(profile.gender || '');
         setUserUsername(profile.username || null);
 
-<<<<<<< HEAD
-        // Restore saved theme and sync to localStorage
-        if (profile.theme) {
-          const THEMES_MAP: Record<string, string> = {
-            'warm-brown': '', 'forest-green': 'theme-forest-green',
-            'sunset-orange': 'theme-sunset-orange', 'midnight-purple': 'theme-midnight-purple',
-            'rose-gold': 'theme-rose-gold', 'cyber-dark': 'theme-cyber-dark',
-            'mint-breeze': 'theme-mint-breeze', 'classic-navy': 'theme-classic-navy',
-            'blush-pink': 'theme-blush-pink', 'deep-ocean': 'theme-deep-ocean',
-          };
-          const themeClass = THEMES_MAP[profile.theme];
-          Object.values(THEMES_MAP).forEach(cls => { if (cls) document.documentElement.classList.remove(cls); });
-          if (themeClass) document.documentElement.classList.add(themeClass);
-          try { localStorage.setItem('nuviora-color-theme', profile.theme); } catch { /* ignore */ }
-        }
-
-        // Dark mode scheduling
-        if (profile.darkModeSchedule && profile.darkModeStart && profile.darkModeEnd) {
-          const checkDarkSchedule = () => {
-            const now = new Date();
-            const h = now.getHours(), m = now.getMinutes();
-            const currentMins = h * 60 + m;
-            const [startH, startM] = (profile.darkModeStart as string).split(':').map(Number);
-            const [endH, endM] = (profile.darkModeEnd as string).split(':').map(Number);
-            const startMins = startH * 60 + startM;
-            const endMins = endH * 60 + endM;
-            let isDarkTime: boolean;
-            if (startMins <= endMins) {
-              isDarkTime = currentMins >= startMins && currentMins < endMins;
-            } else {
-              isDarkTime = currentMins >= startMins || currentMins < endMins;
-            }
-            setTheme(isDarkTime ? 'dark' : 'light');
-          };
-          checkDarkSchedule();
-          darkScheduleRef.current = setInterval(checkDarkSchedule, 60000);
-        }
-
-        if (profile.pinEnabled && profile.pinCode) {
-          setPinLock({ enabled: true, code: profile.pinCode });
-        }
-
-        try {
-          localStorage.setItem('nuviora-user-cache', JSON.stringify({
-            name: profile.name || '',
-            examDate: profile.examDate || '',
-          }));
-        } catch { /* ignore */ }
-
-        // Now that we have all data, hide the loader
-        setIsLoading(false);
-
-        if (!profile.onboardingDone) {
-          // Need to complete onboarding — show that flow, not the login screen.
-          // Pre-fill with whatever profile data we already have.
-=======
         // Persist comprehensive session so next load is instant
         writeSessionV2({
           userId: storedUserId || `email:${storedEmail.trim().toLowerCase()}`,
@@ -714,7 +593,6 @@ export default function Page() {
         setIsLoading(false);
 
         if (!profile.onboardingDone) {
->>>>>>> 925ef42 (Initial commit)
           setPendingSignupName(profile.name || '');
           setPendingSignupGender(profile.gender || '');
           setShowOnboarding(true);
@@ -725,64 +603,14 @@ export default function Page() {
         return;
       }
 
-<<<<<<< HEAD
-      // Only clear session on a real auth rejection (401/403).
-      // Anything else (5xx, network blip) should fall through to the cache path
-      // so the user is NOT logged out just because of a temporary server hiccup.
-      if (res.status === 401 || res.status === 403) {
-        try {
-          localStorage.removeItem('nuviora-user-id');
-          localStorage.removeItem('nuviora-user-email');
-          localStorage.removeItem('nuviora-user-cache');
-        } catch { /* ignore */ }
-        try { document.cookie = 'nuviora-session=; Max-Age=0; path=/'; } catch { /* ignore */ }
-=======
       // Real auth rejection → clear everything and show login
       if (res.status === 401 || res.status === 403) {
         clearSession();
->>>>>>> 925ef42 (Initial commit)
         setIsLoading(false);
         setShowSplash(true);
         return;
       }
 
-<<<<<<< HEAD
-      // Temporary server error — recover from cache so the user stays logged in
-      let cache: { name?: string; examDate?: string } | null = null;
-      try {
-        const raw = localStorage.getItem('nuviora-user-cache');
-        if (raw) cache = JSON.parse(raw);
-      } catch { /* ignore */ }
-
-      setIsLoading(false);
-
-      if (cache) {
-        setUserName(cache.name || '');
-        setExamDate(cache.examDate || '');
-        setAppReady(true);
-      } else {
-        setShowSplash(true);
-      }
-    } catch {
-      // Network failure — try to recover with cached profile so the user isn't
-      // kicked to the login screen just because of a bad connection.
-      let cache: { name?: string; examDate?: string } | null = null;
-      try {
-        const raw = localStorage.getItem('nuviora-user-cache');
-        if (raw) cache = JSON.parse(raw);
-      } catch { /* ignore */ }
-
-      setIsLoading(false);
-
-      if (cache) {
-        // Restore from cache and let the user in — data will refresh on next
-        // successful fetch
-        setUserName(cache.name || '');
-        setExamDate(cache.examDate || '');
-        setAppReady(true);
-      } else {
-        // No cache available — show login so the user can re-authenticate
-=======
       // Temporary server/network error → use the comprehensive cache so user stays in
       const sess = readSessionV2();
       setIsLoading(false);
@@ -831,7 +659,6 @@ export default function Page() {
             return;
           }
         } catch { /* ignore */ }
->>>>>>> 925ef42 (Initial commit)
         setShowSplash(true);
       }
     }
@@ -847,9 +674,6 @@ export default function Page() {
       const authData = await res.json().catch(() => ({}));
       if (!res.ok) return { success: false, error: authData.error || 'Invalid email or password.' };
       const profile = authData.profile;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
       // Persist comprehensive session so the next app open is instant and reliable
       writeSessionV2({
         userId: authData.userId,
@@ -862,8 +686,6 @@ export default function Page() {
         examGoal: profile.examGoal || '',
         gender: profile.gender || '',
       });
-=======
->>>>>>> 925ef42 (Initial commit)
       localStorage.setItem('nuviora-user-id', authData.userId);
       localStorage.setItem('nuviora-user-email', data.email);
       // Write session cookie so next app open restores the session even if localStorage is cleared
@@ -877,10 +699,6 @@ export default function Page() {
           examDate: profile.examDate || '',
         }));
       } catch { /* ignore */ }
-<<<<<<< HEAD
-=======
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
       setUserName(profile.name || '');
       setStudyMode(profile.studyMode === 'normal' ? 'normal' : 'pw');
       setExamDate(profile.examDate || '');
@@ -998,8 +816,6 @@ export default function Page() {
         setStudentClass(profile.studentClass || '');
         setExamDate(profile.examDate || '');
         setExamGoal(profile.examGoal || '');
-<<<<<<< HEAD
-=======
         // Refresh the session cache now that onboarding is complete
         const userId = (() => { try { return localStorage.getItem('nuviora-user-id') || ''; } catch { return ''; } })();
         const email = (() => { try { return localStorage.getItem('nuviora-user-email') || ''; } catch { return ''; } })();
@@ -1014,7 +830,6 @@ export default function Page() {
           examGoal: profile.examGoal || '',
           gender: profile.gender || '',
         });
->>>>>>> 925ef42 (Initial commit)
       }
     } catch { /* ignore */ }
     setAppReady(true);
@@ -1062,9 +877,6 @@ export default function Page() {
       {!isLoading && !pinLock?.enabled && showSplash && !showOnboarding && (
         <SplashLoginScreen
           onStartJourney={async (data) => {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
             writeSessionV2({
               userId: data.userId,
               email: data.email,
@@ -1076,8 +888,6 @@ export default function Page() {
               examGoal: '',
               gender: data.gender || '',
             });
-=======
->>>>>>> 925ef42 (Initial commit)
             localStorage.setItem('nuviora-user-id', data.userId);
             localStorage.setItem('nuviora-user-email', data.email);
             // Write session cookie immediately on signup so next app open skips login
@@ -1088,10 +898,6 @@ export default function Page() {
             try {
               localStorage.setItem('nuviora-user-cache', JSON.stringify({ name: data.name, examDate: '' }));
             } catch { /* ignore */ }
-<<<<<<< HEAD
-=======
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
             setUserName(data.name);
             setUserUsername(data.username || null);
             setPendingSignupName(data.name);

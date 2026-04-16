@@ -116,11 +116,7 @@ export function YearlyView() {
       </div>
 
       {/* Yearly summary */}
-<<<<<<< HEAD
-      <Card className="border-0 shadow-sm overflow-hidden">
-=======
       <Card className="border border-border/40 shadow-sm overflow-hidden">
->>>>>>> 925ef42 (Initial commit)
         <div className="bg-gradient-to-br from-rose-50 via-pink-50 to-violet-50 dark:from-rose-500/10 dark:via-pink-500/10 dark:to-violet-500/5 p-5">
           <p className="text-sm font-medium text-muted-foreground mb-4">
             {currentYear} Overview
@@ -131,22 +127,14 @@ export function YearlyView() {
                 <Trophy className="h-4 w-4 text-rose-500" />
               </div>
               <p className="text-xl font-bold">{Math.round(avgRate * 100)}%</p>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground">Avg Rate</p>
-=======
               <p className="text-xs text-muted-foreground">Avg Rate</p>
->>>>>>> 925ef42 (Initial commit)
             </div>
             <div>
               <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-500/20 flex items-center justify-center mx-auto mb-2">
                 <TrendingUp className="h-4 w-4 text-emerald-500" />
               </div>
               <p className="text-xl font-bold">{totalCompletions}</p>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground">Completions</p>
-=======
               <p className="text-xs text-muted-foreground">Completions</p>
->>>>>>> 925ef42 (Initial commit)
             </div>
             <div>
               <div className="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-500/20 flex items-center justify-center mx-auto mb-2">
@@ -155,22 +143,14 @@ export function YearlyView() {
               <p className="text-xl font-bold">
                 {monthlyData.reduce((sum, m) => sum + m.perfectDays, 0)}
               </p>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground">Perfect Days</p>
-=======
               <p className="text-xs text-muted-foreground">Perfect Days</p>
->>>>>>> 925ef42 (Initial commit)
             </div>
           </div>
         </div>
       </Card>
 
       {/* Monthly mini heatmaps */}
-<<<<<<< HEAD
-      <Card className="border-0 shadow-sm">
-=======
       <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
         <CardContent className="p-4">
           <p className="text-sm font-semibold mb-4">Monthly Activity</p>
           <div className="grid grid-cols-4 gap-3">
@@ -189,11 +169,7 @@ export function YearlyView() {
                       : 'border-transparent bg-muted/40 hover:bg-muted/60'
                   } ${isCurrentMonth ? 'ring-1 ring-primary/30' : ''}`}
                 >
-<<<<<<< HEAD
-                  <p className="text-[10px] font-semibold text-muted-foreground mb-1.5">
-=======
                   <p className="text-xs font-semibold text-muted-foreground mb-1.5">
->>>>>>> 925ef42 (Initial commit)
                     {data.monthShort}
                   </p>
                   {/* Mini bar */}
@@ -233,19 +209,11 @@ export function YearlyView() {
                     })}
                   </div>
                   <div className="flex items-center justify-between">
-<<<<<<< HEAD
-                    <span className="text-[10px] text-muted-foreground">
-                      {Math.round(data.rate * 100)}%
-                    </span>
-                    {data.perfectDays > 0 && (
-                      <span className="text-[10px] text-amber-500 font-medium">
-=======
                     <span className="text-xs text-muted-foreground">
                       {Math.round(data.rate * 100)}%
                     </span>
                     {data.perfectDays > 0 && (
                       <span className="text-xs text-amber-500 font-medium">
->>>>>>> 925ef42 (Initial commit)
                         {data.perfectDays}⭐
                       </span>
                     )}
@@ -258,17 +226,10 @@ export function YearlyView() {
       </Card>
 
       {/* Chain visualization */}
-<<<<<<< HEAD
-      <Card className="border-0 shadow-sm">
-        <CardContent className="p-4">
-          <p className="text-sm font-semibold mb-1">🔗 Activity Chain</p>
-          <p className="text-[10px] text-muted-foreground mb-4">Consecutive months of activity</p>
-=======
       <Card className="border border-border/40 shadow-sm">
         <CardContent className="p-4">
           <p className="text-sm font-semibold mb-1">🔗 Activity Chain</p>
           <p className="text-xs text-muted-foreground mb-4">Consecutive months of activity</p>
->>>>>>> 925ef42 (Initial commit)
           <div className="flex items-center">
             {monthlyData.map((data, i) => {
               const isActive = data.rate > 0;
@@ -287,11 +248,7 @@ export function YearlyView() {
                     animate={{ scale: 1 }}
                     transition={{ delay: i * 0.04, type: 'spring', stiffness: 300, damping: 20 }}
                     title={`${data.monthShort}: ${Math.round(data.rate * 100)}%`}
-<<<<<<< HEAD
-                    className={`w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-[9px] font-bold shadow-sm ${
-=======
                     className={`w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold shadow-sm ${
->>>>>>> 925ef42 (Initial commit)
                       isActive
                         ? data.rate >= 0.7
                           ? 'bg-emerald-500 text-white shadow-emerald-200'
@@ -322,15 +279,6 @@ export function YearlyView() {
           <div className="flex items-center gap-4 mt-3 pt-3 border-t border-border/40">
             <div className="flex items-center gap-1.5">
               <div className="w-3 h-3 rounded-full bg-emerald-500" />
-<<<<<<< HEAD
-              <span className="text-[10px] text-muted-foreground">Active (&ge;70%)</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-amber-400" />
-              <span className="text-[10px] text-muted-foreground">Partial</span>
-            </div>
-            <div className="flex items-center gap-1.5 text-[10px]">
-=======
               <span className="text-xs text-muted-foreground">Active (&ge;70%)</span>
             </div>
             <div className="flex items-center gap-1.5">
@@ -338,7 +286,6 @@ export function YearlyView() {
               <span className="text-xs text-muted-foreground">Partial</span>
             </div>
             <div className="flex items-center gap-1.5 text-xs">
->>>>>>> 925ef42 (Initial commit)
               <span>💔</span>
               <span className="text-muted-foreground">Chain break</span>
             </div>
@@ -352,11 +299,7 @@ export function YearlyView() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
         >
-<<<<<<< HEAD
-          <Card className="border-0 shadow-sm">
-=======
           <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
             <CardContent className="p-4">
               <div className="flex items-center justify-between mb-3">
                 <p className="text-sm font-semibold">
@@ -384,11 +327,7 @@ export function YearlyView() {
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between mb-1">
                           <span className="text-xs font-medium truncate">{habit.name}</span>
-<<<<<<< HEAD
-                          <span className="text-[10px] text-muted-foreground ml-2">
-=======
                           <span className="text-xs text-muted-foreground ml-2">
->>>>>>> 925ef42 (Initial commit)
                             {completedDays}/{monthlyData[selectedMonth].daysInMonth}
                           </span>
                         </div>
@@ -410,21 +349,13 @@ export function YearlyView() {
               {/* Best and worst months */}
               <div className="mt-4 pt-3 border-t border-border/50 grid grid-cols-2 gap-3">
                 <div className="text-center">
-<<<<<<< HEAD
-                  <p className="text-[10px] text-muted-foreground mb-0.5">Best Month</p>
-=======
                   <p className="text-xs text-muted-foreground mb-0.5">Best Month</p>
->>>>>>> 925ef42 (Initial commit)
                   <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
                     🏆 {bestMonth.monthShort} ({Math.round(bestMonth.rate * 100)}%)
                   </p>
                 </div>
                 <div className="text-center">
-<<<<<<< HEAD
-                  <p className="text-[10px] text-muted-foreground mb-0.5">Needs Work</p>
-=======
                   <p className="text-xs text-muted-foreground mb-0.5">Needs Work</p>
->>>>>>> 925ef42 (Initial commit)
                   <p className="text-xs font-semibold text-rose-600 dark:text-rose-400">
                     💪 {worstMonth.monthShort} ({Math.round(worstMonth.rate * 100)}%)
                   </p>
@@ -436,11 +367,7 @@ export function YearlyView() {
       )}
 
       {/* Full year bar chart */}
-<<<<<<< HEAD
-      <Card className="border-0 shadow-sm">
-=======
       <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
         <CardContent className="p-4">
           <p className="text-sm font-semibold mb-4">Year Progress</p>
           <div className="flex items-end justify-between gap-1 h-32">
@@ -459,11 +386,7 @@ export function YearlyView() {
                     transition={{ duration: 0.5, delay: data.index * 0.03 }}
                   />
                 </div>
-<<<<<<< HEAD
-                <span className="text-[9px] text-muted-foreground font-medium">
-=======
                 <span className="text-xs text-muted-foreground font-medium">
->>>>>>> 925ef42 (Initial commit)
                   {data.monthShort}
                 </span>
               </div>

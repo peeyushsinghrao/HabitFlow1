@@ -51,15 +51,9 @@ export function StatsWidgetCard({ today }: StatsWidgetCardProps) {
         <Share2 className="h-4 w-4 text-primary flex-shrink-0" />
         <div className="flex-1 min-w-0">
           <p className="text-sm font-semibold text-foreground">Share My Stats</p>
-<<<<<<< HEAD
-          <p className="text-[10px] text-muted-foreground">Widget-style card · Perfect for WhatsApp status</p>
-        </div>
-        <div className="text-[11px] font-bold text-primary bg-primary/10 px-2 py-1 rounded-full">{todayPct}%</div>
-=======
           <p className="text-xs text-muted-foreground">Widget-style card · Perfect for WhatsApp status</p>
         </div>
         <div className="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded-full">{todayPct}%</div>
->>>>>>> 925ef42 (Initial commit)
       </button>
 
       <AnimatePresence>
@@ -97,21 +91,12 @@ export function StatsWidgetCard({ today }: StatsWidgetCardProps) {
                     {/* Top row */}
                     <div className="flex items-start justify-between mb-4">
                       <div>
-<<<<<<< HEAD
-                        <p className="text-white/50 text-[10px] font-medium uppercase tracking-widest">Nuviora</p>
-                        <p className="text-white text-lg font-bold mt-0.5">{profile?.name || 'Student'}</p>
-                        <p className="text-white/40 text-[10px]">{day}</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-white/40 text-[9px] uppercase tracking-wide">Level</p>
-=======
                         <p className="text-white/50 text-xs font-medium uppercase tracking-widest">Nuviora</p>
                         <p className="text-white text-lg font-bold mt-0.5">{profile?.name || 'Student'}</p>
                         <p className="text-white/40 text-xs">{day}</p>
                       </div>
                       <div className="text-right">
                         <p className="text-white/40 text-xs uppercase tracking-wide">Level</p>
->>>>>>> 925ef42 (Initial commit)
                         <p className="text-white text-2xl font-black">{level}</p>
                       </div>
                     </div>
@@ -140,22 +125,14 @@ export function StatsWidgetCard({ today }: StatsWidgetCardProps) {
                           <Flame className="h-4 w-4 text-orange-400" />
                           <div>
                             <p className="text-white text-sm font-bold">{streak} days</p>
-<<<<<<< HEAD
-                            <p className="text-white/40 text-[9px]">Streak</p>
-=======
                             <p className="text-white/40 text-xs">Streak</p>
->>>>>>> 925ef42 (Initial commit)
                           </div>
                         </div>
                         <div className="bg-white/5 rounded-xl px-3 py-2 flex items-center gap-2">
                           <Zap className="h-4 w-4 text-yellow-400" />
                           <div>
                             <p className="text-white text-sm font-bold">{xp.toLocaleString()} XP</p>
-<<<<<<< HEAD
-                            <p className="text-white/40 text-[9px]">Total XP</p>
-=======
                             <p className="text-white/40 text-xs">Total XP</p>
->>>>>>> 925ef42 (Initial commit)
                           </div>
                         </div>
                       </div>
@@ -166,13 +143,8 @@ export function StatsWidgetCard({ today }: StatsWidgetCardProps) {
                       <Target className="h-4 w-4 text-primary" style={{ color: '#C08552' }} />
                       <div className="flex-1">
                         <div className="flex justify-between mb-1">
-<<<<<<< HEAD
-                          <p className="text-white/60 text-[10px]">Habits today</p>
-                          <p className="text-white text-[10px] font-bold">{completedToday}/{totalHabits}</p>
-=======
                           <p className="text-white/60 text-xs">Habits today</p>
                           <p className="text-white text-xs font-bold">{completedToday}/{totalHabits}</p>
->>>>>>> 925ef42 (Initial commit)
                         </div>
                         <div className="w-full h-1.5 rounded-full bg-white/10">
                           <div
@@ -190,13 +162,8 @@ export function StatsWidgetCard({ today }: StatsWidgetCardProps) {
                     {/* Goal */}
                     {profile?.examGoal && (
                       <div className="text-center pt-1 pb-0.5">
-<<<<<<< HEAD
-                        <p className="text-white/30 text-[9px] font-medium uppercase tracking-widest">Goal</p>
-                        <p className="text-white/60 text-[11px] font-medium mt-0.5">{profile.examGoal}</p>
-=======
                         <p className="text-white/30 text-xs font-medium uppercase tracking-widest">Goal</p>
                         <p className="text-white/60 text-xs font-medium mt-0.5">{profile.examGoal}</p>
->>>>>>> 925ef42 (Initial commit)
                       </div>
                     )}
                   </div>
@@ -211,11 +178,7 @@ export function StatsWidgetCard({ today }: StatsWidgetCardProps) {
                     <Share2 className="h-4 w-4" />
                     Share Stats
                   </button>
-<<<<<<< HEAD
-                  <p className="text-center text-white/50 text-[10px]">Take a screenshot to save as wallpaper</p>
-=======
                   <p className="text-center text-white/50 text-xs">Take a screenshot to save as wallpaper</p>
->>>>>>> 925ef42 (Initial commit)
                 </div>
               </div>
             </motion.div>

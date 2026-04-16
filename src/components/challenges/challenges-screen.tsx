@@ -201,11 +201,7 @@ export function ChallengesScreen() {
         >
           <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-violet-500/10 via-primary/10 to-amber-500/10 border border-primary/20 p-4">
             <div className="absolute top-2 right-2">
-<<<<<<< HEAD
-              <span className="text-[10px] font-bold uppercase tracking-widest bg-primary/15 text-primary px-2 py-0.5 rounded-full">
-=======
               <span className="text-xs font-bold uppercase tracking-widest bg-primary/15 text-primary px-2 py-0.5 rounded-full">
->>>>>>> 925ef42 (Initial commit)
                 This Week
               </span>
             </div>
@@ -214,11 +210,7 @@ export function ChallengesScreen() {
                 <Sparkles className="h-5 w-5 text-primary" />
               </div>
               <div className="flex-1 min-w-0 pr-8">
-<<<<<<< HEAD
-                <p className="text-[10px] font-semibold text-primary uppercase tracking-wider mb-0.5">⚡ Weekly Challenge</p>
-=======
                 <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-0.5">⚡ Weekly Challenge</p>
->>>>>>> 925ef42 (Initial commit)
                 <p className="text-sm font-bold text-foreground">{weeklyChallenge.title}</p>
                 <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{weeklyChallenge.description}</p>
               </div>
@@ -232,11 +224,7 @@ export function ChallengesScreen() {
                 <Zap className="h-3.5 w-3.5" />
                 {weeklyAccepting ? 'Accepting...' : 'Accept Challenge'}
               </button>
-<<<<<<< HEAD
-              <span className="text-[10px] text-muted-foreground">+bonus XP on completion</span>
-=======
               <span className="text-xs text-muted-foreground">+bonus XP on completion</span>
->>>>>>> 925ef42 (Initial commit)
             </div>
           </div>
         </motion.div>
@@ -308,11 +296,7 @@ export function ChallengesScreen() {
             const { logs, loggedToday, daysLeft, streak, percent } = getProgress(challenge);
             return (
               <motion.div key={challenge.id} layout>
-<<<<<<< HEAD
-                <Card className="border-0 shadow-sm">
-=======
                 <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
                   <CardContent className="p-4 space-y-3">
                     <div className="flex items-start gap-2">
                       <div className="flex-1">
@@ -330,13 +314,8 @@ export function ChallengesScreen() {
                     {/* Progress bar */}
                     <div>
                       <div className="flex items-center justify-between mb-1.5">
-<<<<<<< HEAD
-                        <span className="text-[11px] text-muted-foreground">{logs.length}/30 days</span>
-                        <span className="text-[11px] font-semibold text-primary">{percent}%</span>
-=======
                         <span className="text-xs text-muted-foreground">{logs.length}/30 days</span>
                         <span className="text-xs font-semibold text-primary">{percent}%</span>
->>>>>>> 925ef42 (Initial commit)
                       </div>
                       <div className="h-2 bg-muted rounded-full overflow-hidden">
                         <motion.div
@@ -398,11 +377,7 @@ export function ChallengesScreen() {
         <div className="space-y-3">
           <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Completed 🎉</p>
           {completed.map(challenge => (
-<<<<<<< HEAD
-            <Card key={challenge.id} className="border-0 shadow-sm bg-emerald-50 dark:bg-emerald-500/10">
-=======
             <Card key={challenge.id} className="border border-emerald-200/40 dark:border-emerald-800/20 shadow-sm bg-emerald-50 dark:bg-emerald-500/10">
->>>>>>> 925ef42 (Initial commit)
               <CardContent className="p-3">
                 <div className="flex items-center gap-2">
                   <Trophy className="h-4 w-4 text-emerald-500 flex-shrink-0" />

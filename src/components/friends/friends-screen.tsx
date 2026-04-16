@@ -182,11 +182,7 @@ export function FriendsScreen() {
             )}
           </button>
         </form>
-<<<<<<< HEAD
-        <p className="text-[11px] text-muted-foreground mt-2">Enter your friend's exact username to send a request.</p>
-=======
         <p className="text-xs text-muted-foreground mt-2">Enter your friend's exact username to send a request.</p>
->>>>>>> 925ef42 (Initial commit)
       </div>
 
       {/* Tabs */}
@@ -202,11 +198,7 @@ export function FriendsScreen() {
           >
             {tab.label}
             {tab.count > 0 && (
-<<<<<<< HEAD
-              <span className={`px-1.5 py-0.5 rounded-full text-[10px] font-black ${activeTab === tab.id ? 'bg-primary/10 text-primary' : 'bg-muted text-muted-foreground'}`}>
-=======
               <span className={`px-1.5 py-0.5 rounded-full text-xs font-black ${activeTab === tab.id ? 'bg-primary/10 text-primary' : 'bg-muted text-muted-foreground'}`}>
->>>>>>> 925ef42 (Initial commit)
                 {tab.count}
               </span>
             )}
@@ -249,11 +241,7 @@ export function FriendsScreen() {
                         <p className="text-sm font-bold text-foreground truncate">{friend.name}</p>
                         <p className="text-xs text-muted-foreground">@{friend.username || 'unknown'}</p>
                         {(friend.studentClass || friend.examGoal) && (
-<<<<<<< HEAD
-                          <p className="text-[11px] text-primary/70 font-medium mt-0.5">
-=======
                           <p className="text-xs text-primary/70 font-medium mt-0.5">
->>>>>>> 925ef42 (Initial commit)
                             {friend.studentClass}{friend.studentClass && friend.examGoal ? ' · ' : ''}{friend.examGoal}
                           </p>
                         )}
@@ -274,33 +262,21 @@ export function FriendsScreen() {
                           <Flame className="h-3 w-3 text-amber-500" />
                           <span className="text-sm font-black text-foreground">{friend.stats.currentStreak}</span>
                         </div>
-<<<<<<< HEAD
-                        <p className="text-[10px] text-muted-foreground">Streak</p>
-=======
                         <p className="text-xs text-muted-foreground">Streak</p>
->>>>>>> 925ef42 (Initial commit)
                       </div>
                       <div className="flex flex-col items-center gap-0.5">
                         <div className="flex items-center gap-1">
                           <Trophy className="h-3 w-3 text-primary" />
                           <span className="text-sm font-black text-foreground">Lv {friend.stats.level}</span>
                         </div>
-<<<<<<< HEAD
-                        <p className="text-[10px] text-muted-foreground">Level</p>
-=======
                         <p className="text-xs text-muted-foreground">Level</p>
->>>>>>> 925ef42 (Initial commit)
                       </div>
                       <div className="flex flex-col items-center gap-0.5">
                         <div className="flex items-center gap-1">
                           <Star className="h-3 w-3 text-violet-500" />
                           <span className="text-sm font-black text-foreground">{friend.stats.totalCompleted}</span>
                         </div>
-<<<<<<< HEAD
-                        <p className="text-[10px] text-muted-foreground">Done</p>
-=======
                         <p className="text-xs text-muted-foreground">Done</p>
->>>>>>> 925ef42 (Initial commit)
                       </div>
                     </div>
                   )}

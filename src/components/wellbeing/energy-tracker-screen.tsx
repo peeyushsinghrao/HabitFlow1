@@ -73,17 +73,10 @@ export function EnergyTrackerScreen() {
           </div>
           <div>
             <h2 className="text-base font-bold leading-tight tracking-tight">Energy Tracker</h2>
-<<<<<<< HEAD
-            <p className="text-[10px] text-muted-foreground font-medium">Log morning &amp; evening energy</p>
-          </div>
-        </div>
-        <span className="text-[11px] text-muted-foreground font-medium bg-muted/50 px-2.5 py-1 rounded-full">{format(new Date(), 'MMM d')}</span>
-=======
             <p className="text-xs text-muted-foreground font-medium">Log morning &amp; evening energy</p>
           </div>
         </div>
         <span className="text-xs text-muted-foreground font-medium bg-muted/50 px-2.5 py-1 rounded-full">{format(new Date(), 'MMM d')}</span>
->>>>>>> 925ef42 (Initial commit)
       </motion.div>
 
       <div className="grid grid-cols-2 gap-3">
@@ -136,19 +129,11 @@ export function EnergyTrackerScreen() {
           <div className="grid grid-cols-2 gap-2 mb-3">
             <div className="bg-amber-50 dark:bg-amber-500/10 rounded-xl p-3 text-center border border-amber-200/40 dark:border-amber-500/20">
               <p className="text-lg font-bold text-amber-600 dark:text-amber-400">{avgMorning}</p>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground font-medium">Avg Morning</p>
-            </div>
-            <div className="bg-indigo-50 dark:bg-indigo-500/10 rounded-xl p-3 text-center border border-indigo-200/40 dark:border-indigo-500/20">
-              <p className="text-lg font-bold text-indigo-600 dark:text-indigo-400">{avgEvening}</p>
-              <p className="text-[10px] text-muted-foreground font-medium">Avg Evening</p>
-=======
               <p className="text-xs text-muted-foreground font-medium">Avg Morning</p>
             </div>
             <div className="bg-indigo-50 dark:bg-indigo-500/10 rounded-xl p-3 text-center border border-indigo-200/40 dark:border-indigo-500/20">
               <p className="text-lg font-bold text-indigo-600 dark:text-indigo-400">{avgEvening}</p>
               <p className="text-xs text-muted-foreground font-medium">Avg Evening</p>
->>>>>>> 925ef42 (Initial commit)
             </div>
           </div>
           <div className="h-36">

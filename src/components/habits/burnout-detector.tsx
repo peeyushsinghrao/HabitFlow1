@@ -59,11 +59,7 @@ export function BurnoutDetector({ habits, today, avgMood }: BurnoutDetectorProps
   const Icon = level === 'high' ? BatteryLow : level === 'medium' ? BatteryMedium : Battery;
 
   return (
-<<<<<<< HEAD
-    <Card className="border-0 shadow-sm overflow-hidden">
-=======
     <Card className="border border-border/40 shadow-sm overflow-hidden">
->>>>>>> 925ef42 (Initial commit)
       <CardContent className={`p-3 bg-gradient-to-r ${m.bg}`}>
         <div className="flex items-center gap-3">
           <div className="flex-shrink-0 text-xl">{m.icon}</div>
@@ -72,19 +68,11 @@ export function BurnoutDetector({ habits, today, avgMood }: BurnoutDetectorProps
               <p className={`text-xs font-bold ${m.color}`}>{m.title}</p>
               <Icon className={`h-3.5 w-3.5 ${m.color}`} />
             </div>
-<<<<<<< HEAD
-            <p className="text-[10px] text-muted-foreground leading-tight mt-0.5">{m.tip}</p>
-          </div>
-          <div className="flex-shrink-0 text-right">
-            <div className={`text-xs font-bold ${m.color}`}>{score}<span className="text-[9px]">/100</span></div>
-            <div className="text-[9px] text-muted-foreground">burnout</div>
-=======
             <p className="text-xs text-muted-foreground leading-tight mt-0.5">{m.tip}</p>
           </div>
           <div className="flex-shrink-0 text-right">
             <div className={`text-xs font-bold ${m.color}`}>{score}<span className="text-xs">/100</span></div>
             <div className="text-xs text-muted-foreground">burnout</div>
->>>>>>> 925ef42 (Initial commit)
           </div>
         </div>
         <div className="mt-2 h-1.5 bg-black/10 dark:bg-white/10 rounded-full overflow-hidden">

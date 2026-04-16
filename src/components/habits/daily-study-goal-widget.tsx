@@ -73,11 +73,7 @@ export function DailyStudyGoalWidget() {
   };
 
   return (
-<<<<<<< HEAD
-    <Card className="border-0 shadow-sm overflow-hidden">
-=======
     <Card className="border border-border/40 shadow-sm overflow-hidden">
->>>>>>> 925ef42 (Initial commit)
       <CardContent className="p-4">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
@@ -89,11 +85,7 @@ export function DailyStudyGoalWidget() {
             </div>
             <div>
               <p className="text-sm font-semibold">Daily Study Goal</p>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground">Focus sessions today</p>
-=======
               <p className="text-xs text-muted-foreground">Focus sessions today</p>
->>>>>>> 925ef42 (Initial commit)
             </div>
           </div>
 
@@ -142,11 +134,7 @@ export function DailyStudyGoalWidget() {
                 transition={{ duration: 0.7, ease: 'easeOut' }}
               />
             </div>
-<<<<<<< HEAD
-            <div className="flex justify-between text-[11px]">
-=======
             <div className="flex justify-between text-xs">
->>>>>>> 925ef42 (Initial commit)
               <span className={isGoalMet ? 'text-emerald-600 dark:text-emerald-400 font-semibold' : 'text-muted-foreground'}>
                 {isGoalMet ? '🎉 Goal reached!' : `${formatTime(minutesLogged)} studied`}
               </span>

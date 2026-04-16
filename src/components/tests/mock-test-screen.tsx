@@ -189,17 +189,6 @@ export function MockTestScreen() {
         <div className="grid grid-cols-3 gap-2">
           <div className="bg-card border border-border/50 rounded-xl p-3 text-center">
             <p className={`text-2xl font-bold ${getGradeColor(avgPct)}`}>{avgPct}%</p>
-<<<<<<< HEAD
-            <p className="text-[10px] text-muted-foreground">Average</p>
-          </div>
-          <div className="bg-card border border-border/50 rounded-xl p-3 text-center">
-            <p className={`text-2xl font-bold ${getGradeColor(bestPct)}`}>{bestPct}%</p>
-            <p className="text-[10px] text-muted-foreground">Best</p>
-          </div>
-          <div className="bg-card border border-border/50 rounded-xl p-3 text-center">
-            <p className="text-2xl font-bold text-foreground">{tests.length}</p>
-            <p className="text-[10px] text-muted-foreground">Tests</p>
-=======
             <p className="text-xs text-muted-foreground">Average</p>
           </div>
           <div className="bg-card border border-border/50 rounded-xl p-3 text-center">
@@ -209,18 +198,13 @@ export function MockTestScreen() {
           <div className="bg-card border border-border/50 rounded-xl p-3 text-center">
             <p className="text-2xl font-bold text-foreground">{tests.length}</p>
             <p className="text-xs text-muted-foreground">Tests</p>
->>>>>>> 925ef42 (Initial commit)
           </div>
         </div>
       )}
 
       {/* Progress Chart */}
       {chartData.length > 1 && (
-<<<<<<< HEAD
-        <Card className="border-0 shadow-sm">
-=======
         <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
           <CardContent className="p-4">
             <div className="flex items-center gap-2 mb-3">
               <TrendingUp className="h-4 w-4 text-primary" />
@@ -278,21 +262,13 @@ export function MockTestScreen() {
           {filtered.map(t => {
             const pct = Math.round((t.score / t.totalMarks) * 100);
             return (
-<<<<<<< HEAD
-              <Card key={t.id} className="border-0 shadow-sm">
-=======
               <Card key={t.id} className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
                 <CardContent className="p-3">
                   <div className="flex items-start gap-2">
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
                         <p className="text-sm font-semibold truncate">{t.testName}</p>
-<<<<<<< HEAD
-                        {t.subject && <span className="text-[10px] bg-muted px-1.5 py-0.5 rounded text-muted-foreground flex-shrink-0">{t.subject}</span>}
-=======
                         {t.subject && <span className="text-xs bg-muted px-1.5 py-0.5 rounded text-muted-foreground flex-shrink-0">{t.subject}</span>}
->>>>>>> 925ef42 (Initial commit)
                       </div>
                       <div className="flex items-center gap-3 mt-1">
                         <span className={`text-sm font-bold ${getGradeColor(pct)}`}>{pct}%</span>

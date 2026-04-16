@@ -94,11 +94,7 @@ export function WeeklyTimetableBuilder({ studentClass = '' }: { studentClass?: s
 
   return (
     <div className="space-y-4">
-<<<<<<< HEAD
-      <Card className="border-0 shadow-sm overflow-hidden">
-=======
       <Card className="border border-border/40 shadow-sm overflow-hidden">
->>>>>>> 925ef42 (Initial commit)
         <CardContent className="p-4 bg-gradient-to-br from-primary/8 via-background to-muted/40">
           <div className="flex items-start gap-3 mb-4">
             <div className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -115,11 +111,7 @@ export function WeeklyTimetableBuilder({ studentClass = '' }: { studentClass?: s
               <button
                 key={label}
                 onClick={() => setDay(index)}
-<<<<<<< HEAD
-                className={`rounded-xl py-2 text-[10px] font-semibold transition-colors ${
-=======
                 className={`rounded-xl py-2 text-xs font-semibold transition-colors ${
->>>>>>> 925ef42 (Initial commit)
                   day === index ? 'bg-primary text-primary-foreground' : 'bg-background/70 text-muted-foreground hover:bg-muted'
                 }`}
               >
@@ -167,22 +159,14 @@ export function WeeklyTimetableBuilder({ studentClass = '' }: { studentClass?: s
         </CardContent>
       </Card>
 
-<<<<<<< HEAD
-      <Card className="border-0 shadow-sm">
-=======
       <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
         <CardContent className="p-4">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <Clock className="h-4 w-4 text-primary" />
               <p className="text-sm font-semibold">{DAYS[day]} schedule</p>
             </div>
-<<<<<<< HEAD
-            <span className="text-[10px] text-muted-foreground">{weeklyCount} weekly blocks</span>
-=======
             <span className="text-xs text-muted-foreground">{weeklyCount} weekly blocks</span>
->>>>>>> 925ef42 (Initial commit)
           </div>
 
           {visibleBlocks.length > 0 ? (
@@ -195,20 +179,12 @@ export function WeeklyTimetableBuilder({ studentClass = '' }: { studentClass?: s
                   transition={{ delay: index * 0.03 }}
                   className="flex items-center gap-3 rounded-2xl border border-border/40 bg-muted/30 p-3"
                 >
-<<<<<<< HEAD
-                  <div className="w-16 text-[10px] font-bold text-primary">
-=======
                   <div className="w-16 text-xs font-bold text-primary">
->>>>>>> 925ef42 (Initial commit)
                     {block.start}<br />{block.end}
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-semibold truncate">{block.subject}</p>
-<<<<<<< HEAD
-                    <p className="text-[11px] text-muted-foreground truncate">{block.task}</p>
-=======
                     <p className="text-xs text-muted-foreground truncate">{block.task}</p>
->>>>>>> 925ef42 (Initial commit)
                   </div>
                   <button
                     onClick={() => deleteBlock(block.id)}

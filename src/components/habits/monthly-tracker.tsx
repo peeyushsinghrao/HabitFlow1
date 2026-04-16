@@ -82,11 +82,7 @@ export function MonthlyTracker() {
       </div>
 
       {/* Spreadsheet-style grid */}
-<<<<<<< HEAD
-      <Card className="border-0 shadow-sm overflow-hidden">
-=======
       <Card className="border border-border/40 shadow-sm overflow-hidden">
->>>>>>> 925ef42 (Initial commit)
         <CardContent className="p-0">
           <div className="overflow-x-auto custom-scrollbar">
             <div className="min-w-[600px]">
@@ -94,11 +90,7 @@ export function MonthlyTracker() {
               <div className="flex sticky top-0 z-10 bg-background/95 glass">
                 {/* Habit name column */}
                 <div className="w-[100px] flex-shrink-0 px-3 py-2.5 border-b border-r border-border/50">
-<<<<<<< HEAD
-                  <span className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">
-=======
                   <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
->>>>>>> 925ef42 (Initial commit)
                     Habit
                   </span>
                 </div>
@@ -118,15 +110,9 @@ export function MonthlyTracker() {
                         }`}
                       >
                         <span
-<<<<<<< HEAD
-                          className={`text-[10px] font-medium inline-flex items-center justify-center w-5 h-5 rounded-full ${
-                            isTodayDate
-                              ? 'bg-primary text-primary-foreground text-[9px] font-bold'
-=======
                           className={`text-xs font-medium inline-flex items-center justify-center w-5 h-5 rounded-full ${
                             isTodayDate
                               ? 'bg-primary text-primary-foreground text-xs font-bold'
->>>>>>> 925ef42 (Initial commit)
                               : 'text-muted-foreground'
                           }`}
                         >
@@ -168,11 +154,7 @@ export function MonthlyTracker() {
                       {/* Habit name cell */}
                       <div className="w-[100px] flex-shrink-0 px-2 py-2 border-b border-r border-border/50 flex items-center gap-1.5">
                         <span className="text-sm">{habit.icon}</span>
-<<<<<<< HEAD
-                        <span className="text-[11px] font-medium text-foreground truncate">
-=======
                         <span className="text-xs font-medium text-foreground truncate">
->>>>>>> 925ef42 (Initial commit)
                           {habit.name}
                         </span>
                       </div>
@@ -246,11 +228,7 @@ export function MonthlyTracker() {
               {activeHabits.length > 0 && (
                 <div className="flex sticky bottom-0 z-10 bg-background/95 glass border-t border-border/50">
                   <div className="w-[100px] flex-shrink-0 px-3 py-2 flex items-center">
-<<<<<<< HEAD
-                    <span className="text-[10px] font-semibold text-muted-foreground uppercase">
-=======
                     <span className="text-xs font-semibold text-muted-foreground uppercase">
->>>>>>> 925ef42 (Initial commit)
                       Rate
                     </span>
                   </div>
@@ -293,11 +271,7 @@ export function MonthlyTracker() {
       </Card>
 
       {/* Legend */}
-<<<<<<< HEAD
-      <div className="flex items-center justify-center gap-4 text-[10px] text-muted-foreground py-1">
-=======
       <div className="flex items-center justify-center gap-4 text-xs text-muted-foreground py-1">
->>>>>>> 925ef42 (Initial commit)
         <div className="flex items-center gap-1.5">
           <span>Less</span>
           <div className="flex gap-0.5">
@@ -314,11 +288,7 @@ export function MonthlyTracker() {
       {/* Monthly stats */}
       {activeHabits.length > 0 && analytics && (
         <div className="grid grid-cols-3 gap-3">
-<<<<<<< HEAD
-          <Card className="border-0 shadow-sm bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-500/10 dark:to-green-500/10">
-=======
           <Card className="border border-emerald-200/40 dark:border-emerald-800/20 shadow-sm bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-500/10 dark:to-green-500/10">
->>>>>>> 925ef42 (Initial commit)
             <CardContent className="p-3 text-center">
               <p className="text-lg font-bold">
                 {days.filter((d) => {
@@ -330,17 +300,10 @@ export function MonthlyTracker() {
                   return count === activeHabits.length;
                 }).length}
               </p>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground">Perfect Days</p>
-            </CardContent>
-          </Card>
-          <Card className="border-0 shadow-sm bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-500/10 dark:to-yellow-500/10">
-=======
               <p className="text-xs text-muted-foreground">Perfect Days</p>
             </CardContent>
           </Card>
           <Card className="border border-amber-200/40 dark:border-amber-800/20 shadow-sm bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-500/10 dark:to-yellow-500/10">
->>>>>>> 925ef42 (Initial commit)
             <CardContent className="p-3 text-center">
               <p className="text-lg font-bold">
                 {Math.round(
@@ -354,17 +317,10 @@ export function MonthlyTracker() {
                   }, 0) / days.length) * 100
                 )}%
               </p>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground">Avg Completion</p>
-            </CardContent>
-          </Card>
-          <Card className="border-0 shadow-sm bg-gradient-to-br from-rose-50 to-pink-50 dark:from-rose-500/10 dark:to-pink-500/10">
-=======
               <p className="text-xs text-muted-foreground">Avg Completion</p>
             </CardContent>
           </Card>
           <Card className="border border-rose-200/40 dark:border-rose-800/20 shadow-sm bg-gradient-to-br from-rose-50 to-pink-50 dark:from-rose-500/10 dark:to-pink-500/10">
->>>>>>> 925ef42 (Initial commit)
             <CardContent className="p-3 text-center">
               <p className="text-lg font-bold">
                 {activeHabits.reduce((acc, h) => {
@@ -373,11 +329,7 @@ export function MonthlyTracker() {
                   return acc + completedDays;
                 }, 0)}
               </p>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground">Total Done</p>
-=======
               <p className="text-xs text-muted-foreground">Total Done</p>
->>>>>>> 925ef42 (Initial commit)
             </CardContent>
           </Card>
         </div>

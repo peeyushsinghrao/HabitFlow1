@@ -90,11 +90,7 @@ function LabelledInput({
 }) {
   return (
     <div className="flex flex-col gap-1">
-<<<<<<< HEAD
-      <label className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-=======
       <label className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
         {icon && <span className="opacity-70">{icon}</span>}
         {label}
       </label>
@@ -132,11 +128,7 @@ function ClassCard({
       <div className="flex items-center justify-between px-4 py-2.5 bg-muted/30 border-b border-border/40">
         <div className="flex items-center gap-2">
           <div className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center">
-<<<<<<< HEAD
-            <span className="text-[10px] font-bold text-primary">{idx + 1}</span>
-=======
             <span className="text-xs font-bold text-primary">{idx + 1}</span>
->>>>>>> 925ef42 (Initial commit)
           </div>
           <span className="text-xs font-semibold text-foreground/70">
             {cls.subject || `Class ${idx + 1}`}
@@ -196,11 +188,7 @@ function ClassCard({
 
         {/* Attendance row */}
         <div>
-<<<<<<< HEAD
-          <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-=======
           <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
->>>>>>> 925ef42 (Initial commit)
             Attendance
           </p>
           <div className="grid grid-cols-2 gap-2">
@@ -485,11 +473,7 @@ export function PWSection() {
             <Coffee className="w-4.5 h-4.5 text-muted-foreground" style={{ width: '1.1rem', height: '1.1rem' }} />
             <span className="text-sm font-semibold text-foreground">Rest Day</span>
             {isRestDay && (
-<<<<<<< HEAD
-              <Badge className="text-[10px] px-2 py-0 border-none bg-amber-100 text-amber-700 dark:bg-amber-950/40 dark:text-amber-400">
-=======
               <Badge className="text-xs px-2 py-0 border-none bg-amber-100 text-amber-700 dark:bg-amber-950/40 dark:text-amber-400">
->>>>>>> 925ef42 (Initial commit)
                 No classes today
               </Badge>
             )}
@@ -512,11 +496,7 @@ export function PWSection() {
             icon={<BookOpen className="w-4 h-4" />}
             title="Class Log"
             badge={
-<<<<<<< HEAD
-              <span className="text-[10px] font-semibold text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
-=======
               <span className="text-xs font-semibold text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
->>>>>>> 925ef42 (Initial commit)
                 {classes.length} {classes.length === 1 ? 'class' : 'classes'}
               </span>
             }
@@ -581,11 +561,7 @@ export function PWSection() {
           <CardContent className="p-4 space-y-3">
             {/* Yes / No toggle */}
             <div>
-<<<<<<< HEAD
-              <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-=======
               <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
->>>>>>> 925ef42 (Initial commit)
                 Did you have a test today?
               </p>
               <div className="grid grid-cols-2 gap-2">
@@ -706,11 +682,7 @@ export function PWSection() {
           title="To-Do List"
           badge={
             todoTotal > 0 ? (
-<<<<<<< HEAD
-              <Badge className="text-[10px] px-2 py-0 border-none bg-primary/15 text-primary">
-=======
               <Badge className="text-xs px-2 py-0 border-none bg-primary/15 text-primary">
->>>>>>> 925ef42 (Initial commit)
                 {todoCompleted}/{todoTotal}
               </Badge>
             ) : undefined
@@ -743,13 +715,8 @@ export function PWSection() {
             {todoTotal > 0 && (
               <div>
                 <div className="flex items-center justify-between mb-1.5">
-<<<<<<< HEAD
-                  <span className="text-[11px] text-muted-foreground font-medium">Progress</span>
-                  <span className="text-[11px] font-semibold text-primary">{todoPct}%</span>
-=======
                   <span className="text-xs text-muted-foreground font-medium">Progress</span>
                   <span className="text-xs font-semibold text-primary">{todoPct}%</span>
->>>>>>> 925ef42 (Initial commit)
                 </div>
                 <div className="w-full h-1.5 rounded-full bg-muted/60 overflow-hidden">
                   <motion.div
@@ -823,11 +790,7 @@ export function PWSection() {
           icon={<BarChart3 className="w-4 h-4" />}
           title="Quick Stats"
           badge={
-<<<<<<< HEAD
-            <span className="text-[10px] font-semibold text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
-=======
             <span className="text-xs font-semibold text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
->>>>>>> 925ef42 (Initial commit)
               Weekly
             </span>
           }
@@ -876,11 +839,7 @@ export function PWSection() {
                 {stat.icon}
               </div>
               <p className="text-2xl font-bold text-foreground leading-none">{stat.value}</p>
-<<<<<<< HEAD
-              <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wide leading-none">
-=======
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide leading-none">
->>>>>>> 925ef42 (Initial commit)
                 {stat.label}
               </p>
             </motion.div>

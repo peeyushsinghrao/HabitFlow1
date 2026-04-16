@@ -123,33 +123,21 @@ export function MistakeNotebook() {
           className={`p-2.5 rounded-xl text-center transition-all ${filterStatus === 'all' ? 'bg-primary text-primary-foreground' : 'bg-muted/60'}`}
         >
           <p className="text-lg font-bold">{mistakes.length}</p>
-<<<<<<< HEAD
-          <p className="text-[10px] text-current opacity-80">Total</p>
-=======
           <p className="text-xs text-current opacity-80">Total</p>
->>>>>>> 925ef42 (Initial commit)
         </button>
         <button
           onClick={() => setFilterStatus('open')}
           className={`p-2.5 rounded-xl text-center transition-all ${filterStatus === 'open' ? 'bg-rose-500 text-white' : 'bg-muted/60'}`}
         >
           <p className="text-lg font-bold">{openCount}</p>
-<<<<<<< HEAD
-          <p className="text-[10px] text-current opacity-80">Open</p>
-=======
           <p className="text-xs text-current opacity-80">Open</p>
->>>>>>> 925ef42 (Initial commit)
         </button>
         <button
           onClick={() => setFilterStatus('resolved')}
           className={`p-2.5 rounded-xl text-center transition-all ${filterStatus === 'resolved' ? 'bg-emerald-500 text-white' : 'bg-muted/60'}`}
         >
           <p className="text-lg font-bold">{resolvedCount}</p>
-<<<<<<< HEAD
-          <p className="text-[10px] text-current opacity-80">Resolved</p>
-=======
           <p className="text-xs text-current opacity-80">Resolved</p>
->>>>>>> 925ef42 (Initial commit)
         </button>
       </div>
 
@@ -193,19 +181,11 @@ export function MistakeNotebook() {
             exit={{ opacity: 0, height: 0 }}
             className="overflow-hidden"
           >
-<<<<<<< HEAD
-            <Card className="border-0 shadow-sm">
-              <CardContent className="p-4 space-y-3">
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <Label className="text-[10px] uppercase tracking-wider text-muted-foreground">Subject</Label>
-=======
             <Card className="border border-border/40 shadow-sm">
               <CardContent className="p-4 space-y-3">
                 <div className="grid grid-cols-2 gap-2">
                   <div>
                     <Label className="text-xs uppercase tracking-wider text-muted-foreground">Subject</Label>
->>>>>>> 925ef42 (Initial commit)
                     <select
                       value={form.subject}
                       onChange={e => setForm(f => ({ ...f, subject: e.target.value }))}
@@ -215,11 +195,7 @@ export function MistakeNotebook() {
                     </select>
                   </div>
                   <div>
-<<<<<<< HEAD
-                    <Label className="text-[10px] uppercase tracking-wider text-muted-foreground">Topic / Chapter</Label>
-=======
                     <Label className="text-xs uppercase tracking-wider text-muted-foreground">Topic / Chapter</Label>
->>>>>>> 925ef42 (Initial commit)
                     <Input
                       value={form.topic}
                       onChange={e => setForm(f => ({ ...f, topic: e.target.value }))}
@@ -229,11 +205,7 @@ export function MistakeNotebook() {
                   </div>
                 </div>
                 <div>
-<<<<<<< HEAD
-                  <Label className="text-[10px] uppercase tracking-wider text-muted-foreground">Mistake / Error</Label>
-=======
                   <Label className="text-xs uppercase tracking-wider text-muted-foreground">Mistake / Error</Label>
->>>>>>> 925ef42 (Initial commit)
                   <textarea
                     value={form.mistake}
                     onChange={e => setForm(f => ({ ...f, mistake: e.target.value }))}
@@ -243,11 +215,7 @@ export function MistakeNotebook() {
                   />
                 </div>
                 <div>
-<<<<<<< HEAD
-                  <Label className="text-[10px] uppercase tracking-wider text-muted-foreground">Correction / Right Answer</Label>
-=======
                   <Label className="text-xs uppercase tracking-wider text-muted-foreground">Correction / Right Answer</Label>
->>>>>>> 925ef42 (Initial commit)
                   <textarea
                     value={form.correction}
                     onChange={e => setForm(f => ({ ...f, correction: e.target.value }))}
@@ -257,11 +225,7 @@ export function MistakeNotebook() {
                   />
                 </div>
                 <div>
-<<<<<<< HEAD
-                  <Label className="text-[10px] uppercase tracking-wider text-muted-foreground">Source (optional)</Label>
-=======
                   <Label className="text-xs uppercase tracking-wider text-muted-foreground">Source (optional)</Label>
->>>>>>> 925ef42 (Initial commit)
                   <Input
                     value={form.source}
                     onChange={e => setForm(f => ({ ...f, source: e.target.value }))}
@@ -315,15 +279,9 @@ export function MistakeNotebook() {
                     </button>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-1.5 flex-wrap">
-<<<<<<< HEAD
-                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary">{m.subject}</span>
-                        <span className="text-[10px] text-muted-foreground">{m.topic}</span>
-                        {m.source && <span className="text-[10px] text-muted-foreground">• {m.source}</span>}
-=======
                         <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary">{m.subject}</span>
                         <span className="text-xs text-muted-foreground">{m.topic}</span>
                         {m.source && <span className="text-xs text-muted-foreground">• {m.source}</span>}
->>>>>>> 925ef42 (Initial commit)
                       </div>
                       <p className={`text-xs mt-1 line-clamp-2 ${m.isResolved ? 'line-through text-muted-foreground' : 'text-foreground'}`}>
                         {m.mistake}
@@ -353,11 +311,7 @@ export function MistakeNotebook() {
                         className="overflow-hidden border-t border-border/50"
                       >
                         <div className="px-3 py-2.5 bg-emerald-50 dark:bg-emerald-950/20">
-<<<<<<< HEAD
-                          <p className="text-[10px] font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider mb-1">Correction</p>
-=======
                           <p className="text-xs font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider mb-1">Correction</p>
->>>>>>> 925ef42 (Initial commit)
                           <p className="text-xs text-emerald-900 dark:text-emerald-300">{m.correction}</p>
                         </div>
                       </motion.div>

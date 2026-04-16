@@ -99,11 +99,7 @@ export function SleepTrackerScreen() {
           </div>
           <div>
             <h2 className="text-base font-bold leading-tight tracking-tight">Sleep Tracker</h2>
-<<<<<<< HEAD
-            <p className="text-[10px] text-muted-foreground font-medium">Track rest for better focus</p>
-=======
             <p className="text-xs text-muted-foreground font-medium">Track rest for better focus</p>
->>>>>>> 925ef42 (Initial commit)
           </div>
         </div>
         <div className="flex gap-2">
@@ -141,11 +137,7 @@ export function SleepTrackerScreen() {
               />
               <div className="grid grid-cols-2 gap-2">
                 <div>
-<<<<<<< HEAD
-                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1.5 flex items-center gap-1"><Moon className="h-3 w-3" /> Bedtime</p>
-=======
                   <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1.5 flex items-center gap-1"><Moon className="h-3 w-3" /> Bedtime</p>
->>>>>>> 925ef42 (Initial commit)
                   <input
                     type="time"
                     value={bedtime}
@@ -154,11 +146,7 @@ export function SleepTrackerScreen() {
                   />
                 </div>
                 <div>
-<<<<<<< HEAD
-                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1.5 flex items-center gap-1"><Sun className="h-3 w-3" /> Wake time</p>
-=======
                   <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1.5 flex items-center gap-1"><Sun className="h-3 w-3" /> Wake time</p>
->>>>>>> 925ef42 (Initial commit)
                   <input
                     type="time"
                     value={wakeTime}
@@ -168,11 +156,7 @@ export function SleepTrackerScreen() {
                 </div>
               </div>
               <div>
-<<<<<<< HEAD
-                <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-2">Sleep quality</p>
-=======
                 <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">Sleep quality</p>
->>>>>>> 925ef42 (Initial commit)
                 <div className="flex gap-1.5">
                   {[1, 2, 3, 4, 5].map(q => (
                     <button
@@ -209,17 +193,6 @@ export function SleepTrackerScreen() {
         <div className="grid grid-cols-3 gap-2">
           <div className="bg-card border border-border/50 rounded-xl p-3 text-center">
             <p className="text-2xl font-bold text-primary">{avgDuration}h</p>
-<<<<<<< HEAD
-            <p className="text-[10px] text-muted-foreground">Avg sleep</p>
-          </div>
-          <div className="bg-card border border-border/50 rounded-xl p-3 text-center">
-            <p className="text-2xl font-bold text-foreground">{avgQuality}/5</p>
-            <p className="text-[10px] text-muted-foreground">Avg quality</p>
-          </div>
-          <div className="bg-card border border-border/50 rounded-xl p-3 text-center">
-            <p className="text-2xl font-bold text-foreground">{logs.length}</p>
-            <p className="text-[10px] text-muted-foreground">Nights logged</p>
-=======
             <p className="text-xs text-muted-foreground">Avg sleep</p>
           </div>
           <div className="bg-card border border-border/50 rounded-xl p-3 text-center">
@@ -229,7 +202,6 @@ export function SleepTrackerScreen() {
           <div className="bg-card border border-border/50 rounded-xl p-3 text-center">
             <p className="text-2xl font-bold text-foreground">{logs.length}</p>
             <p className="text-xs text-muted-foreground">Nights logged</p>
->>>>>>> 925ef42 (Initial commit)
           </div>
         </div>
       )}
@@ -242,11 +214,7 @@ export function SleepTrackerScreen() {
                 <Moon className="h-3.5 w-3.5 text-indigo-500" />
               </div>
               <p className="text-sm font-semibold tracking-tight">Sleep Duration</p>
-<<<<<<< HEAD
-              <span className="ml-auto text-[10px] text-muted-foreground">last 14 nights</span>
-=======
               <span className="ml-auto text-xs text-muted-foreground">last 14 nights</span>
->>>>>>> 925ef42 (Initial commit)
             </div>
             <div className="h-48">
               <ResponsiveContainer width="100%" height="100%">
@@ -294,11 +262,7 @@ export function SleepTrackerScreen() {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
                   <p className="text-xs font-semibold text-foreground">{log.date}</p>
-<<<<<<< HEAD
-                  <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${QUALITY_COLORS[log.quality]}`}>
-=======
                   <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${QUALITY_COLORS[log.quality]}`}>
->>>>>>> 925ef42 (Initial commit)
                     {QUALITY_LABELS[log.quality]}
                   </span>
                 </div>

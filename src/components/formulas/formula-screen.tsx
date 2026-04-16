@@ -43,17 +43,10 @@ function FlipCard({ formula, onClose }: { formula: FormulaEntry; onClose: () => 
           style={{ backfaceVisibility: 'hidden' }}
           className="w-full min-h-[200px] bg-gradient-to-br from-primary/5 to-chart-2/5 border border-primary/20 rounded-2xl flex flex-col items-center justify-center p-6 cursor-pointer select-none"
         >
-<<<<<<< HEAD
-          <p className="text-[10px] font-bold text-primary uppercase tracking-widest mb-3">Formula</p>
-          <p className="text-3xl font-black font-mono text-center text-foreground leading-tight">{formula.formula}</p>
-          {formula.chapter && (
-            <span className="mt-3 text-[10px] bg-muted px-2 py-0.5 rounded-full text-muted-foreground">{formula.subject} · {formula.chapter}</span>
-=======
           <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Formula</p>
           <p className="text-3xl font-black font-mono text-center text-foreground leading-tight">{formula.formula}</p>
           {formula.chapter && (
             <span className="mt-3 text-xs bg-muted px-2 py-0.5 rounded-full text-muted-foreground">{formula.subject} · {formula.chapter}</span>
->>>>>>> 925ef42 (Initial commit)
           )}
           <p className="text-xs text-muted-foreground mt-4">Tap to reveal description</p>
         </div>
@@ -63,11 +56,7 @@ function FlipCard({ formula, onClose }: { formula: FormulaEntry; onClose: () => 
           style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)', position: 'absolute', inset: 0 }}
           className="w-full min-h-[200px] bg-gradient-to-br from-emerald-500/5 to-primary/5 border border-emerald-500/20 rounded-2xl flex flex-col items-center justify-center p-6 cursor-pointer select-none"
         >
-<<<<<<< HEAD
-          <p className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-3">Description</p>
-=======
           <p className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-3">Description</p>
->>>>>>> 925ef42 (Initial commit)
           <p className="text-xl font-mono font-bold text-center text-primary mb-2">{formula.formula}</p>
           <p className="text-base text-center text-foreground font-medium leading-relaxed">{formula.desc || 'No description added'}</p>
           <p className="text-xs text-muted-foreground mt-4">Tap to flip back</p>
@@ -199,17 +188,10 @@ function QuizMode({ formulas, onClose }: { formulas: FormulaEntry[]; onClose: ()
                     style={{ backfaceVisibility: 'hidden' }}
                     className="w-full min-h-[180px] bg-gradient-to-br from-primary/5 to-chart-2/5 border-2 border-primary/15 rounded-2xl flex flex-col items-center justify-center p-5 select-none"
                   >
-<<<<<<< HEAD
-                    <p className="text-[10px] font-bold text-primary uppercase tracking-widest mb-2">What does this formula describe?</p>
-                    <p className="text-2xl font-black font-mono text-center text-foreground">{current.formula}</p>
-                    {current.chapter && (
-                      <span className="mt-3 text-[10px] bg-muted px-2 py-0.5 rounded-full text-muted-foreground">{current.subject} · {current.chapter}</span>
-=======
                     <p className="text-xs font-bold text-primary uppercase tracking-widest mb-2">What does this formula describe?</p>
                     <p className="text-2xl font-black font-mono text-center text-foreground">{current.formula}</p>
                     {current.chapter && (
                       <span className="mt-3 text-xs bg-muted px-2 py-0.5 rounded-full text-muted-foreground">{current.subject} · {current.chapter}</span>
->>>>>>> 925ef42 (Initial commit)
                     )}
                     <p className="text-xs text-muted-foreground mt-3 opacity-60">Tap to reveal</p>
                   </div>
@@ -219,11 +201,7 @@ function QuizMode({ formulas, onClose }: { formulas: FormulaEntry[]; onClose: ()
                     style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)', position: 'absolute', inset: 0 }}
                     className="w-full min-h-[180px] bg-gradient-to-br from-emerald-500/5 to-primary/5 border-2 border-emerald-400/20 rounded-2xl flex flex-col items-center justify-center p-5 select-none"
                   >
-<<<<<<< HEAD
-                    <p className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-2">Answer</p>
-=======
                     <p className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-2">Answer</p>
->>>>>>> 925ef42 (Initial commit)
                     <p className="text-base text-center font-semibold text-foreground">{current.desc || 'No description'}</p>
                     <p className="text-lg font-mono font-bold text-primary mt-2">{current.formula}</p>
                   </div>
@@ -491,22 +469,14 @@ export function FormulaScreen() {
               <div className="space-y-2">
                 {items.map(f => (
                   <motion.div key={f.id} layout initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-<<<<<<< HEAD
-                    <Card className="border-0 shadow-sm">
-=======
                     <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
                       <CardContent className="p-3">
                         <div className="flex items-start gap-2">
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2 flex-wrap">
                               <span className="text-base font-mono font-bold text-primary">{f.formula}</span>
                               {f.chapter && (
-<<<<<<< HEAD
-                                <span className="text-[10px] bg-muted px-1.5 py-0.5 rounded text-muted-foreground">{f.chapter}</span>
-=======
                                 <span className="text-xs bg-muted px-1.5 py-0.5 rounded text-muted-foreground">{f.chapter}</span>
->>>>>>> 925ef42 (Initial commit)
                               )}
                             </div>
                             {f.desc && <p className="text-xs text-muted-foreground mt-0.5">{f.desc}</p>}

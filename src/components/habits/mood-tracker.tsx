@@ -85,11 +85,7 @@ export function MoodTracker() {
   const selected = MOODS.find(m => m.value === currentMood);
 
   return (
-<<<<<<< HEAD
-    <Card className="border-0 shadow-sm">
-=======
     <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
       <CardContent className="p-4">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
@@ -111,9 +107,6 @@ export function MoodTracker() {
         </div>
 
         <div className="flex items-center justify-between gap-1">
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
           {MOODS.map(mood => (
             <motion.button
               key={mood.value}
@@ -134,8 +127,6 @@ export function MoodTracker() {
               </span>
             </motion.button>
           ))}
-=======
->>>>>>> 925ef42 (Initial commit)
           {MOODS.map(mood => {
             const MoodIcon = mood.Icon;
             const isSelected = currentMood === mood.value;
@@ -166,10 +157,6 @@ export function MoodTracker() {
               </motion.button>
             );
           })}
-<<<<<<< HEAD
-=======
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
         </div>
 
         {isLoading && (

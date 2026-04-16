@@ -602,11 +602,7 @@ function GrowingTree({ growth, treeType = 'oak', size = 90 }: { growth: number; 
         )}
       </svg>
       <motion.p key={stage} initial={{ opacity: 0, y: 3 }} animate={{ opacity: 1, y: 0 }}
-<<<<<<< HEAD
-        className={`font-medium text-muted-foreground ${size >= 130 ? 'text-xs' : 'text-[9px]'}`}>
-=======
         className={`font-medium text-muted-foreground ${size >= 130 ? 'text-xs' : 'text-xs'}`}>
->>>>>>> 925ef42 (Initial commit)
         {stage}
       </motion.p>
     </div>
@@ -653,11 +649,7 @@ function TreeStorePicker({
           </button>
         ))}
       </div>
-<<<<<<< HEAD
-      <p className="text-[9px] text-muted-foreground/70 text-center mt-2.5 italic">
-=======
       <p className="text-xs text-muted-foreground/70 text-center mt-2.5 italic">
->>>>>>> 925ef42 (Initial commit)
         {TREE_TYPES.find(t => t.id === current)?.desc}
       </p>
     </motion.div>
@@ -1337,374 +1329,6 @@ export function PomodoroScreen({ studentClass }: { studentClass?: string } = {})
         )}
       </AnimatePresence>
 
-      {/* ── Normal View ─────────────────────────────────────────────────── */}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-      <div className={cn('space-y-6 pb-6 rounded-3xl transition-colors duration-300', getThemeClasses(visualTheme, false))}>
-        {/* Header */}
-        <div className="flex items-center justify-between">
-          <div>
-            <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
-              <Timer className="h-5 w-5 text-primary" />
-              Pomodoro Timer
-            </h2>
-            <p className="text-sm text-muted-foreground mt-1">
-              Stay focused, take breaks, build momentum
-            </p>
-          </div>
-          <div className="flex items-center gap-2">
-            {todayStats.completed > 0 && (
-              <Badge className="bg-primary/10 text-primary border-primary/20 font-semibold">
-                <CheckCircle2 className="h-3 w-3 mr-1" />
-                {todayStats.completed} today
-              </Badge>
-            )}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-9 w-9 rounded-full hover:bg-muted/80"
-              onClick={() => setSettingsOpen(true)}
-              aria-label="Pomodoro settings"
-            >
-              <Settings2 className="h-4.5 w-4.5 text-muted-foreground" />
-            </Button>
-          </div>
-        </div>
-
-        {/* Subject / Session Label Selector */}
-        {mode === 'work' && !isRunning && (
-          <div className="space-y-2">
-            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Session Label</p>
-            <div className="flex flex-wrap gap-1.5">
-              {getUserSubjects(studentClass).map(subj => {
-                const colors = getSubjectColors();
-                const dotColor = colors[subj] || '#6366f1';
-                const isActive = selectedSubject === subj;
-                return (
-                  <button
-                    key={subj}
-                    onClick={() => setSelectedSubject(prev => prev === subj ? '' : subj)}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-colors border ${
-                      isActive
-                        ? 'bg-primary text-primary-foreground border-primary'
-                        : 'border-border text-muted-foreground hover:border-primary/50 hover:text-foreground'
-                    }`}
-                  >
-                    <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: isActive ? 'currentColor' : dotColor }} />
-                    {subj}
-                  </button>
-                );
-              })}
-            </div>
-            <input
-              className="w-full h-9 px-3 rounded-xl text-sm bg-muted/40 border border-border placeholder-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
-              placeholder="Or type a custom label..."
-              value={customSubjectInput}
-              onChange={e => { setCustomSubjectInput(e.target.value); if (e.target.value) setSelectedSubject(e.target.value); }}
-            />
-          </div>
-        )}
-
-        {/* Long Session mode toggle */}
-        {mode === 'work' && (
-          <div className="flex items-center gap-3 bg-muted/30 rounded-xl px-4 py-3">
-            <div className="flex-1">
-              <p className="text-sm font-medium">Deep Work Mode</p>
-              <p className="text-xs text-muted-foreground">90-min ultradian rhythm session</p>
-            </div>
-            <button
-              onClick={() => {
-                const next = !isLongSession;
-                setIsLongSession(next);
-                const dur = next ? 90 : settings.workDuration;
-                setTotalSeconds(dur * 60);
-                setRemainingSeconds(dur * 60);
-                setIsRunning(false);
-              }}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
-                isLongSession ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground hover:bg-muted/80'
-              }`}
-            >
-              {isLongSession ? '90 min ON' : '25 min'}
-            </button>
-          </div>
-        )}
-
-        {/* Mode Selector */}
-        <div className="flex gap-2 p-1 bg-muted/50 rounded-xl">
-          {(Object.entries(MODE_CONFIG) as [TimerMode, typeof MODE_CONFIG.work][]).map(([key, config]) => {
-            const Icon = config.icon;
-            const isActive = mode === key;
-            return (
-              <button
-                key={key}
-                onClick={() => {
-                  if (settings.soundEnabled) playClickSound();
-                  switchMode(key);
-                  setCurrentSession(1);
-                }}
-                className={cn(
-                  'flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 min-h-[44px]',
-                  isActive
-                    ? cn(config.color, 'shadow-sm')
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted',
-                )}
-              >
-                <Icon className="h-4 w-4" />
-                <span className="hidden sm:inline">{config.label}</span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Timer Ring */}
-        <Card className="border-none shadow-sm rounded-2xl p-6 md:p-8 bg-card">
-          <div className="flex flex-col items-center">
-            {/* SVG Progress Ring + Timer Display */}
-            <div className="relative w-60 h-60 md:w-72 md:h-72">
-              <svg className="w-full h-full -rotate-90" viewBox="0 0 280 280">
-                {/* Background ring */}
-                <circle
-                  cx="140" cy="140" r={RING_RADIUS}
-                  fill="none"
-                  className="stroke-warm-200 dark:stroke-warm-800"
-                  strokeWidth="10"
-                />
-                {/* Progress ring */}
-                <motion.circle
-                  cx="140" cy="140" r={RING_RADIUS}
-                  fill="none"
-                  className="stroke-primary"
-                  strokeWidth="10"
-                  strokeLinecap="round"
-                  strokeDasharray={RING_CIRCUMFERENCE}
-                  strokeDashoffset={RING_CIRCUMFERENCE}
-                  animate={{ strokeDashoffset: dashOffset }}
-                  transition={{ duration: 0.5, ease: 'easeOut' }}
-                />
-              </svg>
-
-              {/* Timer text in center */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                {/* Flip-clock style digits */}
-                <div className="flex items-baseline gap-1">
-                  <div className="bg-warm-100 dark:bg-warm-800/60 rounded-lg px-3 py-1.5 md:px-4 md:py-2 shadow-inner">
-                    <span className="text-5xl md:text-6xl font-mono font-bold text-foreground tracking-wider">
-                      {displayMinutes}
-                    </span>
-                  </div>
-                  <span
-                    className={cn(
-                      'text-4xl md:text-5xl font-bold text-muted-foreground mx-0.5',
-                      isRunning && 'animate-pulse',
-                    )}
-                  >
-                    :
-                  </span>
-                  <div className="bg-warm-100 dark:bg-warm-800/60 rounded-lg px-3 py-1.5 md:px-4 md:py-2 shadow-inner">
-                    <span className="text-5xl md:text-6xl font-mono font-bold text-foreground tracking-wider">
-                      {displaySeconds}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Mode label under timer */}
-                <span className="text-xs text-muted-foreground mt-2.5 font-medium uppercase tracking-wider">
-                  {MODE_CONFIG[mode].label}
-                </span>
-=======
->>>>>>> 925ef42 (Initial commit)
-      <div className={cn('relative overflow-hidden rounded-[2rem] border border-border/60 bg-background/70 shadow-sm transition-colors duration-300', getThemeClasses(visualTheme, false))}>
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,hsl(var(--primary)/0.18),transparent_38%),radial-gradient(circle_at_90%_18%,hsl(var(--primary)/0.08),transparent_28%)]" />
-        <div className="relative space-y-5 px-4 py-5 md:px-6 md:py-6">
-          <div className="flex items-start justify-between gap-3">
-            <div className="min-w-0">
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-primary">
-                <Timer className="h-3.5 w-3.5" />
-                Focus Studio
-<<<<<<< HEAD
-=======
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
-              </div>
-              <h2 className="mt-3 text-2xl font-black tracking-tight text-foreground md:text-3xl">
-                {isRunning ? 'Stay with this session' : 'Ready for deep work?'}
-              </h2>
-              <p className="mt-1 text-sm text-muted-foreground">
-                A calm timer space for study sprints, breaks, notes, and focus patterns.
-              </p>
-            </div>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-            {/* Tree + Tree Store */}
-            {mode === 'work' && (
-              <div className="relative flex flex-col items-center mt-3">
-                <GrowingTree growth={1 - progress} treeType={treeType} size={120} />
-                <AnimatePresence>
-                  {showTreeStore && (
-                    <TreeStorePicker
-                      current={treeType}
-                      onChange={(t) => {
-                        setTreeType(t);
-                        if (typeof window !== 'undefined') localStorage.setItem('nuviora-tree-type', t);
-                      }}
-                      onClose={() => setShowTreeStore(false)}
-                    />
-                  )}
-                </AnimatePresence>
-                <button
-                  onClick={() => setShowTreeStore(v => !v)}
-                  className="flex items-center gap-1.5 text-xs text-primary hover:text-primary/80 font-semibold mt-2 px-3 py-1.5 rounded-lg hover:bg-primary/10 transition-all"
-                >
-                  {TREE_TYPES.find(t => t.id === treeType)?.emoji} Change Tree
-                </button>
-              </div>
-            )}
-          </div>
-        </Card>
-
-        {/* Control Buttons */}
-        <div className="flex items-center justify-center gap-4">
-          {/* Reset */}
-          <motion.button
-            whileTap={{ scale: 0.9 }}
-            onClick={resetTimer}
-            className="w-12 h-12 rounded-full bg-muted/80 dark:bg-muted/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-            aria-label="Reset timer"
-          >
-            <RotateCcw className="h-5 w-5" />
-          </motion.button>
-
-          {/* Play / Pause */}
-          <motion.button
-            whileTap={{ scale: 0.92 }}
-            whileHover={{ scale: 1.04 }}
-            onClick={isRunning ? pauseTimer : startTimer}
-            className="w-18 h-18 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 transition-shadow"
-            aria-label={isRunning ? 'Pause timer' : 'Start timer'}
-          >
-            {isRunning ? (
-              <Pause className="h-8 w-8" />
-            ) : (
-              <Play className="h-8 w-8 ml-1" />
-            )}
-          </motion.button>
-
-          {/* Skip */}
-          <motion.button
-            whileTap={{ scale: 0.9 }}
-            onClick={skipToNext}
-            className="w-12 h-12 rounded-full bg-muted/80 dark:bg-muted/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-            aria-label="Skip to next"
-          >
-            <SkipForward className="h-5 w-5" />
-          </motion.button>
-        </div>
-
-        {/* Focus Task Input + Enter Focus Mode — below the Start button */}
-        <div className="space-y-2">
-          <Input
-            placeholder="What are you working on? (optional for focus mode)"
-            value={focusTask}
-            onChange={(e) => setFocusTask(e.target.value)}
-            className="bg-muted/50 border-0 text-sm h-11 rounded-xl"
-            onKeyDown={(e) => { if (e.key === 'Enter') setFocusMode(true); }}
-          />
-          <Button
-            variant="outline"
-            onClick={() => setFocusMode(true)}
-            className="w-full h-10 rounded-xl text-sm font-medium border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 transition-all"
-          >
-            <Maximize2 className="h-4 w-4 mr-2" />
-            Enter Focus Mode
-          </Button>
-        </div>
-
-        {/* Distraction Tally — shows when session is running */}
-        <AnimatePresence>
-          {isRunning && mode === 'work' && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              className="flex items-center gap-3 bg-muted/30 rounded-xl px-4 py-3"
-            >
-              <div className="flex-1">
-                <p className="text-xs font-semibold text-muted-foreground">Distraction Tally</p>
-                <p className="text-xs text-muted-foreground">Tap when distracted to track focus quality</p>
-              </div>
-              <button
-                onClick={() => setDistractionCount(c => c + 1)}
-                className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-100 dark:bg-amber-500/15 text-amber-700 dark:text-amber-400 rounded-lg text-xs font-semibold hover:bg-amber-200 dark:hover:bg-amber-500/25 transition-colors"
-=======
->>>>>>> 925ef42 (Initial commit)
-            <div className="flex items-center gap-2">
-              {todayStats.completed > 0 && (
-                <Badge className="hidden border-primary/20 bg-primary/10 font-semibold text-primary shadow-none sm:inline-flex">
-                  <CheckCircle2 className="mr-1 h-3 w-3" />
-                  {todayStats.completed} today
-                </Badge>
-              )}
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-10 w-10 rounded-full border border-border/60 bg-background/70 hover:bg-background"
-                onClick={() => setSettingsOpen(true)}
-                aria-label="Pomodoro settings"
-<<<<<<< HEAD
-=======
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
-              >
-                <Settings2 className="h-4.5 w-4.5 text-muted-foreground" />
-              </Button>
-            </div>
-          </div>
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        {/* Auto-break suggestion after session */}
-        <AnimatePresence>
-          {showBreakSuggestion && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 rounded-2xl p-4 text-center"
-            >
-              <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-400 mb-1">Break time!</p>
-              <p className="text-sm text-emerald-600 dark:text-emerald-300">{breakSuggestions[breakSuggestionIdx]}</p>
-              <button onClick={() => setShowBreakSuggestion(false)} className="mt-2 text-xs text-muted-foreground hover:underline">Dismiss</button>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Distraction journal prompt after session */}
-        <AnimatePresence>
-          {pendingJournal && (
-            <motion.div
-              initial={{ opacity: 0, y: 12, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 12, scale: 0.98 }}
-              className="rounded-2xl border border-amber-200/70 dark:border-amber-500/20 bg-amber-50 dark:bg-amber-500/10 p-4"
-            >
-              <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-xl bg-amber-100 dark:bg-amber-500/15 flex items-center justify-center flex-shrink-0">
-                  <MessageSquareWarning className="h-4 w-4 text-amber-600 dark:text-amber-400" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-amber-800 dark:text-amber-300">What pulled your focus?</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">
-                    You marked {pendingJournal.count} distraction{pendingJournal.count !== 1 ? 's' : ''}. Logging the pattern helps reduce repeats.
-                  </p>
-                  <div className="grid grid-cols-2 gap-2 mt-3">
-                    {DISTRACTION_REASONS.map(reason => (
-=======
->>>>>>> 925ef42 (Initial commit)
           <Card className="overflow-hidden rounded-[1.75rem] border border-border/60 bg-card/90 p-0 shadow-xl shadow-primary/5 backdrop-blur">
             <div className="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
               <div className="relative flex flex-col items-center justify-center px-4 py-6 md:px-8 md:py-8">
@@ -1713,10 +1337,6 @@ export function PomodoroScreen({ studentClass }: { studentClass?: string } = {})
                     const Icon = config.icon;
                     const isActive = mode === key;
                     return (
-<<<<<<< HEAD
-=======
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
                       <button
                         key={key}
                         onClick={() => {
@@ -1731,18 +1351,8 @@ export function PomodoroScreen({ studentClass }: { studentClass?: string } = {})
                             : 'text-muted-foreground hover:bg-background/70 hover:text-foreground',
                         )}
                       >
-<<<<<<< HEAD
                         <Icon className="h-4 w-4" />
                         <span>{config.label}</span>
-=======
-<<<<<<< HEAD
-                        <p className="text-xs font-semibold">{reason.label}</p>
-                        <p className="text-xs text-muted-foreground leading-snug">{reason.hint}</p>
-=======
-                        <Icon className="h-4 w-4" />
-                        <span>{config.label}</span>
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
                       </button>
                     );
                   })}
@@ -1989,48 +1599,8 @@ export function PomodoroScreen({ studentClass }: { studentClass?: string } = {})
             </div>
           </Card>
 
-<<<<<<< HEAD
           <AnimatePresence>
             {showBreakSuggestion && (
-=======
-<<<<<<< HEAD
-        {/* Ambient Sounds */}
-        <Card className="border-none shadow-sm rounded-xl p-4 bg-card">
-          <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                <Volume2 className="h-4 w-4 text-primary" />
-              </div>
-              <p className="text-sm font-semibold">Ambient Sounds</p>
-              {ambientSound !== 'none' && (
-                <span className="ml-auto text-xs text-primary font-medium bg-primary/10 px-2 py-0.5 rounded-full">
-                  Playing
-                </span>
-              )}
-            </div>
-            <div className="grid grid-cols-3 gap-2">
-              {AMBIENT_SOUNDS.map(sound => (
-                <motion.button
-                  key={sound.id}
-                  whileTap={{ scale: 0.92 }}
-                  onClick={() => handleAmbientChange(sound.id)}
-                  className={`flex flex-col items-center gap-1 py-2.5 rounded-xl text-center transition-all ${
-                    ambientSound === sound.id
-                      ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20'
-                      : 'bg-muted/60 text-muted-foreground hover:bg-muted'
-                  }`}
-                >
-                  <span className="text-xl">{sound.emoji}</span>
-                  <span className="text-xs font-medium">{sound.label}</span>
-                </motion.button>
-              ))}
-            </div>
-            {ambientSound !== 'none' && (
-=======
-          <AnimatePresence>
-            {showBreakSuggestion && (
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -2044,112 +1614,8 @@ export function PomodoroScreen({ studentClass }: { studentClass?: string } = {})
             )}
           </AnimatePresence>
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        {/* Ambient Visual Themes */}
-        <Card className="border-none shadow-sm rounded-xl p-4 bg-card">
-          <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                <LampDesk className="h-4 w-4 text-primary" />
-              </div>
-              <div>
-                <p className="text-sm font-semibold">Ambient Visual Themes</p>
-                <p className="text-xs text-muted-foreground">CSS-only focus skins for the timer and full-screen mode</p>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              {VISUAL_THEMES.map(theme => {
-                const Icon = theme.icon;
-                return (
-                  <motion.button
-                    key={theme.id}
-                    whileTap={{ scale: 0.96 }}
-                    onClick={() => handleVisualThemeChange(theme.id)}
-                    className={cn(
-                      'rounded-xl border p-3 text-left transition-colors overflow-hidden relative',
-                      visualTheme === theme.id
-                        ? 'border-primary bg-primary/10 text-primary'
-                        : 'border-border/50 bg-muted/40 text-muted-foreground hover:bg-muted',
-                    )}
-                  >
-                    <div className={cn('absolute inset-0 opacity-40', getThemeClasses(theme.id, false))} />
-                    <div className="relative flex items-start gap-2">
-                      <Icon className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p className="text-xs font-semibold">{theme.label}</p>
-                        <p className="text-xs leading-snug opacity-80">{theme.description}</p>
-                      </div>
-                    </div>
-                  </motion.button>
-                );
-              })}
-            </div>
-          </div>
-        </Card>
 
-        {/* 14-day distraction insight */}
-        {distractionInsight && (
-          <Card className="border-none shadow-sm rounded-xl p-4 bg-card">
-            <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-500/15 flex items-center justify-center flex-shrink-0">
-                <MessageSquareWarning className="h-4 w-4 text-rose-500" />
-              </div>
-              <div>
-                <p className="text-sm font-semibold">14-Day Distraction Pattern</p>
-                <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-                  Main blocker: <span className="font-semibold text-foreground">{distractionInsight.label}</span> ({distractionInsight.count} marks across {distractionInsight.sessions} logged sessions).
-                </p>
-                <p className="text-xs text-muted-foreground mt-1">{distractionInsight.tip}</p>
-              </div>
-            </div>
-          </Card>
-        )}
-
-        {/* Session Notes */}
-        <Card className="border-none shadow-sm rounded-xl p-4 bg-card">
-          <div className="space-y-2">
-            <p className="text-sm font-semibold">Session Notes</p>
-            <textarea
-              placeholder="What are you working on? Any thoughts to capture..."
-              value={sessionNotes}
-              onChange={e => setSessionNotes(e.target.value)}
-              className="w-full bg-muted/50 border-0 rounded-lg p-3 text-sm text-foreground placeholder:text-muted-foreground resize-none focus:outline-none focus:ring-2 focus:ring-primary/30 min-h-[80px]"
-            />
-            <p className="text-xs text-muted-foreground">Notes are saved when a focus session completes.</p>
-          </div>
-        </Card>
-
-        {/* Session History */}
-        {(historyLoaded && sessionHistory.length > 0) && (
-          <Card className="border-none shadow-sm rounded-xl p-4 bg-card">
-            <div className="flex items-center gap-2 mb-3">
-              <CheckCircle2 className="h-4 w-4 text-primary" />
-              <p className="text-sm font-semibold">Recent Sessions</p>
-            </div>
-            <div className="space-y-2">
-              {sessionHistory.slice(0, 5).map((session, i) => (
-                <motion.div
-                  key={session.id}
-                  initial={{ opacity: 0, x: -12 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                  className="flex items-center gap-3 py-2 border-b border-border/30 last:border-0"
-                >
-                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Target className="h-3.5 w-3.5 text-primary" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs font-medium">{session.duration} min focus session</p>
-                    {session.notes && (
-                      <p className="text-xs text-muted-foreground truncate mt-0.5">{session.notes}</p>
-                    )}
-                    <p className="text-xs text-muted-foreground mt-0.5">
-                      {new Date(session.createdAt).toLocaleDateString(undefined, { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
-=======
->>>>>>> 925ef42 (Initial commit)
-          <AnimatePresence>
+        <AnimatePresence>
             {pendingJournal && (
               <motion.div
                 initial={{ opacity: 0, y: 12, scale: 0.98 }}
@@ -2165,10 +1631,6 @@ export function PomodoroScreen({ studentClass }: { studentClass?: string } = {})
                     <p className="text-sm font-bold text-amber-800 dark:text-amber-300">What pulled your focus?</p>
                     <p className="mt-0.5 text-[10px] text-muted-foreground">
                       You marked {pendingJournal.count} distraction{pendingJournal.count !== 1 ? 's' : ''}. Logging the pattern helps reduce repeats.
-<<<<<<< HEAD
-=======
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
                     </p>
                     <div className="mt-3 grid grid-cols-2 gap-2">
                       {DISTRACTION_REASONS.map(reason => (
@@ -2202,30 +1664,13 @@ export function PomodoroScreen({ studentClass }: { studentClass?: string } = {})
                       </Button>
                     </div>
                   </div>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-                  <span className="text-xs font-semibold text-amber-600 dark:text-amber-400 flex-shrink-0">
-                    +{session.xpEarned} XP
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-          </Card>
-        )}
-=======
->>>>>>> 925ef42 (Initial commit)
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
-<<<<<<< HEAD
-=======
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
 
-          <AnimatePresence>
-            {showXPReward && (
+        <AnimatePresence>
+          {showXPReward && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, y: -20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -2401,8 +1846,6 @@ export function PomodoroScreen({ studentClass }: { studentClass?: string } = {})
           </div>
 
           <SubjectFocusChart />
-        </div>
-      </div>
 
       {/* ── Settings Dialog ─────────────────────────────────────────────── */}
       <Dialog open={settingsOpen} onOpenChange={setSettingsOpen}>
@@ -2437,11 +1880,7 @@ export function PomodoroScreen({ studentClass }: { studentClass?: string } = {})
                 step={5}
                 className="w-full"
               />
-<<<<<<< HEAD
-              <div className="flex justify-between text-[10px] text-muted-foreground">
-=======
               <div className="flex justify-between text-xs text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
                 <span>15 min</span>
                 <span>60 min</span>
               </div>
@@ -2466,11 +1905,7 @@ export function PomodoroScreen({ studentClass }: { studentClass?: string } = {})
                 step={1}
                 className="w-full"
               />
-<<<<<<< HEAD
-              <div className="flex justify-between text-[10px] text-muted-foreground">
-=======
               <div className="flex justify-between text-xs text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
                 <span>1 min</span>
                 <span>15 min</span>
               </div>
@@ -2495,11 +1930,7 @@ export function PomodoroScreen({ studentClass }: { studentClass?: string } = {})
                 step={5}
                 className="w-full"
               />
-<<<<<<< HEAD
-              <div className="flex justify-between text-[10px] text-muted-foreground">
-=======
               <div className="flex justify-between text-xs text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
                 <span>5 min</span>
                 <span>30 min</span>
               </div>
@@ -2523,11 +1954,7 @@ export function PomodoroScreen({ studentClass }: { studentClass?: string } = {})
                 step={1}
                 className="w-full"
               />
-<<<<<<< HEAD
-              <div className="flex justify-between text-[10px] text-muted-foreground">
-=======
               <div className="flex justify-between text-xs text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
                 <span>2</span>
                 <span>8</span>
               </div>

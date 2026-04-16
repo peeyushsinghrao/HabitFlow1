@@ -55,11 +55,7 @@ function ShareCardContent({
             <h3 className="text-lg font-black text-foreground mt-0.5">
               {userName ? `${userName.split(' ')[0]}'s Week` : 'My Progress'}
             </h3>
-<<<<<<< HEAD
-            <p className="text-[11px] text-muted-foreground">{format(new Date(), 'MMMM d, yyyy')}</p>
-=======
             <p className="text-xs text-muted-foreground">{format(new Date(), 'MMMM d, yyyy')}</p>
->>>>>>> 925ef42 (Initial commit)
           </div>
           <div className="flex items-center gap-1.5 bg-amber-100 dark:bg-amber-500/15 px-3 py-2 rounded-2xl">
             <Flame className="h-5 w-5 text-amber-500" />
@@ -73,39 +69,23 @@ function ShareCardContent({
           <div className="bg-primary/8 dark:bg-primary/10 rounded-2xl p-3 text-center">
             <Zap className="h-4 w-4 text-primary mx-auto mb-1" />
             <p className="text-xl font-black text-primary">{stats?.xp ?? 0}</p>
-<<<<<<< HEAD
-            <p className="text-[9px] font-semibold text-muted-foreground uppercase tracking-wide">Total XP</p>
-=======
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Total XP</p>
->>>>>>> 925ef42 (Initial commit)
           </div>
           <div className="bg-emerald-50 dark:bg-emerald-500/10 rounded-2xl p-3 text-center">
             <CheckCircle2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400 mx-auto mb-1" />
             <p className="text-xl font-black text-emerald-600 dark:text-emerald-400">{completedToday}/{habits.length}</p>
-<<<<<<< HEAD
-            <p className="text-[9px] font-semibold text-muted-foreground uppercase tracking-wide">Today</p>
-=======
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Today</p>
->>>>>>> 925ef42 (Initial commit)
           </div>
           <div className="bg-violet-50 dark:bg-violet-500/10 rounded-2xl p-3 text-center">
             <Calendar className="h-4 w-4 text-violet-600 dark:text-violet-400 mx-auto mb-1" />
             <p className="text-xl font-black text-violet-600 dark:text-violet-400">{weeklyHours}h</p>
-<<<<<<< HEAD
-            <p className="text-[9px] font-semibold text-muted-foreground uppercase tracking-wide">This Week</p>
-=======
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">This Week</p>
->>>>>>> 925ef42 (Initial commit)
           </div>
         </div>
 
         {/* Weekly bar chart */}
         <div>
-<<<<<<< HEAD
-          <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-2">Weekly Habit Rate</p>
-=======
           <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">Weekly Habit Rate</p>
->>>>>>> 925ef42 (Initial commit)
           <div className="flex items-end gap-1 h-14">
             {weeklyCompletions.map((pct, i) => {
               const dayLabel = ['M', 'T', 'W', 'T', 'F', 'S', 'S'][i];
@@ -123,11 +103,7 @@ function ShareCardContent({
                           : 'var(--muted)',
                     }}
                   />
-<<<<<<< HEAD
-                  <span className={`text-[9px] font-semibold ${isToday ? 'text-primary' : 'text-muted-foreground'}`}>
-=======
                   <span className={`text-xs font-semibold ${isToday ? 'text-primary' : 'text-muted-foreground'}`}>
->>>>>>> 925ef42 (Initial commit)
                     {dayLabel}
                   </span>
                 </div>
@@ -142,11 +118,7 @@ function ShareCardContent({
             <Trophy className="h-5 w-5 text-primary" />
             <div>
               <p className="text-xs font-bold text-foreground">Level {stats?.level ?? 1}</p>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground">Longest streak: {stats?.longestStreak ?? 0} days</p>
-=======
               <p className="text-xs text-muted-foreground">Longest streak: {stats?.longestStreak ?? 0} days</p>
->>>>>>> 925ef42 (Initial commit)
             </div>
           </div>
           <div className="text-right">
@@ -156,11 +128,7 @@ function ShareCardContent({
         </div>
 
         {/* Footer */}
-<<<<<<< HEAD
-        <p className="text-center text-[10px] text-muted-foreground/60">
-=======
         <p className="text-center text-xs text-muted-foreground/60">
->>>>>>> 925ef42 (Initial commit)
           Track habits · Build streaks · Level up · nuviora.app
         </p>
       </div>
@@ -213,11 +181,7 @@ export function ProgressShareCard({ stats, habits, userName }: ShareCardProps) {
       >
         <Share2 className="h-4 w-4 text-primary" />
         <span className="text-sm font-semibold text-foreground">Share Progress Card</span>
-<<<<<<< HEAD
-        <span className="ml-auto text-[10px] text-muted-foreground bg-muted px-1.5 py-0.5 rounded-full">Screenshot to share</span>
-=======
         <span className="ml-auto text-xs text-muted-foreground bg-muted px-1.5 py-0.5 rounded-full">Screenshot to share</span>
->>>>>>> 925ef42 (Initial commit)
       </button>
 
       <AnimatePresence>

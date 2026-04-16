@@ -107,11 +107,7 @@ export function PetCompanion({ todayProgress, habitsCompleted }: PetCompanionPro
         onComplete={() => setShowLevelUp(false)}
       />
 
-<<<<<<< HEAD
-      <Card className="border-0 shadow-sm overflow-hidden">
-=======
       <Card className="border border-border/40 shadow-sm overflow-hidden">
->>>>>>> 925ef42 (Initial commit)
         <CardContent className="p-0">
           <button className="w-full text-left" onClick={() => setIsOpen(v => !v)}>
             <div className={`bg-gradient-to-r ${stage.color} p-4 flex items-center gap-3`}>
@@ -125,15 +121,9 @@ export function PetCompanion({ todayProgress, habitsCompleted }: PetCompanionPro
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
                   <p className="text-sm font-bold text-foreground/90">{pet.petName}</p>
-<<<<<<< HEAD
-                  <span className="text-[10px] bg-white/60 text-foreground/70 px-2 py-0.5 rounded-full font-medium">Lv.{pet.petLevel} {stage.name}</span>
-                </div>
-                <p className="text-[11px] text-foreground/60 mt-0.5">{mood.emoji} {mood.label} — {mood.desc}</p>
-=======
                   <span className="text-xs bg-white/60 text-foreground/70 px-2 py-0.5 rounded-full font-medium">Lv.{pet.petLevel} {stage.name}</span>
                 </div>
                 <p className="text-xs text-foreground/60 mt-0.5">{mood.emoji} {mood.label} — {mood.desc}</p>
->>>>>>> 925ef42 (Initial commit)
                 <div className="mt-1.5 h-1.5 rounded-full bg-white/40 overflow-hidden">
                   <motion.div
                     className="h-full rounded-full bg-white/80"
@@ -142,11 +132,7 @@ export function PetCompanion({ todayProgress, habitsCompleted }: PetCompanionPro
                     transition={{ duration: 0.6 }}
                   />
                 </div>
-<<<<<<< HEAD
-                <p className="text-[9px] text-foreground/50 mt-0.5">{xpInLevel}/{XP_PER_LEVEL} XP to next level</p>
-=======
                 <p className="text-xs text-foreground/50 mt-0.5">{xpInLevel}/{XP_PER_LEVEL} XP to next level</p>
->>>>>>> 925ef42 (Initial commit)
               </div>
             </div>
           </button>
@@ -169,17 +155,6 @@ export function PetCompanion({ todayProgress, habitsCompleted }: PetCompanionPro
                   <div className="grid grid-cols-3 gap-2 text-center">
                     <div className="bg-muted/40 rounded-xl p-2">
                       <p className="text-sm font-bold">{pet.petLevel}</p>
-<<<<<<< HEAD
-                      <p className="text-[10px] text-muted-foreground">Level</p>
-                    </div>
-                    <div className="bg-muted/40 rounded-xl p-2">
-                      <p className="text-sm font-bold">{pet.petXP}</p>
-                      <p className="text-[10px] text-muted-foreground">Total XP</p>
-                    </div>
-                    <div className="bg-muted/40 rounded-xl p-2">
-                      <p className="text-sm font-bold">{todayProgress}%</p>
-                      <p className="text-[10px] text-muted-foreground">Today</p>
-=======
                       <p className="text-xs text-muted-foreground">Level</p>
                     </div>
                     <div className="bg-muted/40 rounded-xl p-2">
@@ -189,16 +164,11 @@ export function PetCompanion({ todayProgress, habitsCompleted }: PetCompanionPro
                     <div className="bg-muted/40 rounded-xl p-2">
                       <p className="text-sm font-bold">{todayProgress}%</p>
                       <p className="text-xs text-muted-foreground">Today</p>
->>>>>>> 925ef42 (Initial commit)
                     </div>
                   </div>
 
                   <div className="bg-muted/30 rounded-xl p-2.5">
-<<<<<<< HEAD
-                    <p className="text-[10px] font-semibold text-muted-foreground mb-1.5 uppercase tracking-wider">Evolution Path</p>
-=======
                     <p className="text-xs font-semibold text-muted-foreground mb-1.5 uppercase tracking-wider">Evolution Path</p>
->>>>>>> 925ef42 (Initial commit)
                     <div className="flex items-center gap-1 overflow-x-auto pb-1">
                       {PET_STAGES.map((s, i) => (
                         <div key={i} className="flex items-center gap-0.5 flex-shrink-0">

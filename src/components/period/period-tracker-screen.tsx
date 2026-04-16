@@ -266,11 +266,7 @@ export function PeriodTrackerScreen() {
           </div>
           <div>
             <h2 className="text-base font-bold leading-tight tracking-tight">Period Tracker</h2>
-<<<<<<< HEAD
-            <p className="text-[10px] text-muted-foreground font-medium">Track your cycle · Private & secure</p>
-=======
             <p className="text-xs text-muted-foreground font-medium">Track your cycle · Private & secure</p>
->>>>>>> 925ef42 (Initial commit)
           </div>
         </div>
         <Button
@@ -302,11 +298,7 @@ export function PeriodTrackerScreen() {
             </div>
             <div className="text-left">
               <p className="text-xs font-bold text-foreground tracking-tight">Cycle Settings</p>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground">
-=======
               <p className="text-xs text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
                 {cycleSettings.age ? `Age ${cycleSettings.age} · ` : ''}{cycleSettings.cycleLength}-day cycle · {cycleSettings.periodDuration}-day period
               </p>
             </div>
@@ -328,11 +320,7 @@ export function PeriodTrackerScreen() {
               <div className="mt-2 bg-card rounded-2xl border border-border/40 shadow-card p-4 space-y-4">
                 {/* Age */}
                 <div>
-<<<<<<< HEAD
-                  <label className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-2">Your Age</label>
-=======
                   <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-2">Your Age</label>
->>>>>>> 925ef42 (Initial commit)
                   <div className="flex items-center gap-3">
                     <input
                       type="number"
@@ -348,11 +336,7 @@ export function PeriodTrackerScreen() {
                         key={cycleSettings.age}
                         initial={{ opacity: 0, x: 6 }}
                         animate={{ opacity: 1, x: 0 }}
-<<<<<<< HEAD
-                        className="text-[10px] text-muted-foreground leading-relaxed flex-1"
-=======
                         className="text-xs text-muted-foreground leading-relaxed flex-1"
->>>>>>> 925ef42 (Initial commit)
                       >
                         {getAgeAdvice(cycleSettings.age)}
                       </motion.p>
@@ -362,11 +346,7 @@ export function PeriodTrackerScreen() {
 
                 {/* Cycle length */}
                 <div>
-<<<<<<< HEAD
-                  <label className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-2">
-=======
                   <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-2">
->>>>>>> 925ef42 (Initial commit)
                     Cycle Length <span className="text-primary normal-case font-semibold">{cycleSettings.cycleLength} days</span>
                   </label>
                   <div className="flex items-center gap-3">
@@ -386,20 +366,12 @@ export function PeriodTrackerScreen() {
                       className="w-9 h-9 rounded-xl bg-muted/60 hover:bg-muted border border-border/50 flex items-center justify-center text-lg font-bold text-foreground transition-all active:scale-90"
                     >+</button>
                   </div>
-<<<<<<< HEAD
-                  <p className="text-[10px] text-muted-foreground mt-1.5">Typical range: 21–40 days. Adjusts next period & ovulation predictions.</p>
-=======
                   <p className="text-xs text-muted-foreground mt-1.5">Typical range: 21–40 days. Adjusts next period & ovulation predictions.</p>
->>>>>>> 925ef42 (Initial commit)
                 </div>
 
                 {/* Period duration */}
                 <div>
-<<<<<<< HEAD
-                  <label className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-2">
-=======
                   <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-2">
->>>>>>> 925ef42 (Initial commit)
                     Period Duration <span className="text-rose-500 normal-case font-semibold">{cycleSettings.periodDuration} days</span>
                   </label>
                   <div className="flex items-center gap-3">
@@ -419,11 +391,7 @@ export function PeriodTrackerScreen() {
                       className="w-9 h-9 rounded-xl bg-muted/60 hover:bg-muted border border-border/50 flex items-center justify-center text-lg font-bold text-foreground transition-all active:scale-90"
                     >+</button>
                   </div>
-<<<<<<< HEAD
-                  <p className="text-[10px] text-muted-foreground mt-1.5">Typical range: 3–7 days. Used for calendar shading.</p>
-=======
                   <p className="text-xs text-muted-foreground mt-1.5">Typical range: 3–7 days. Used for calendar shading.</p>
->>>>>>> 925ef42 (Initial commit)
                 </div>
               </div>
             </motion.div>
@@ -455,11 +423,7 @@ export function PeriodTrackerScreen() {
                   <div className="relative p-4">
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex-1">
-<<<<<<< HEAD
-                        <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wide uppercase ${phaseInfo?.badge}`}>
-=======
                         <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold tracking-wide uppercase ${phaseInfo?.badge}`}>
->>>>>>> 925ef42 (Initial commit)
                           <Sparkles className="h-2.5 w-2.5" />
                           {phaseInfo?.label}
                         </span>
@@ -487,17 +451,10 @@ export function PeriodTrackerScreen() {
                       <div className="w-6 h-6 rounded-lg bg-rose-100 dark:bg-rose-500/15 flex items-center justify-center">
                         <Calendar className="h-3.5 w-3.5 text-rose-500" />
                       </div>
-<<<<<<< HEAD
-                      <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wide">Next Period</p>
-                    </div>
-                    <p className="text-sm font-bold text-foreground">{format(insights.nextPeriod, 'MMM d')}</p>
-                    <p className="text-[10px] text-muted-foreground mt-0.5">
-=======
                       <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Next Period</p>
                     </div>
                     <p className="text-sm font-bold text-foreground">{format(insights.nextPeriod, 'MMM d')}</p>
                     <p className="text-xs text-muted-foreground mt-0.5">
->>>>>>> 925ef42 (Initial commit)
                       {insights.daysUntilNext > 0 ? `in ${insights.daysUntilNext} days` : insights.daysUntilNext === 0 ? 'Today' : `${Math.abs(insights.daysUntilNext)}d overdue`}
                     </p>
                   </div>
@@ -509,17 +466,10 @@ export function PeriodTrackerScreen() {
                       <div className="w-6 h-6 rounded-lg bg-violet-100 dark:bg-violet-500/15 flex items-center justify-center">
                         <Activity className="h-3.5 w-3.5 text-violet-500" />
                       </div>
-<<<<<<< HEAD
-                      <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wide">Ovulation</p>
-                    </div>
-                    <p className="text-sm font-bold text-foreground">{format(insights.ovulation, 'MMM d')}</p>
-                    <p className="text-[10px] text-muted-foreground mt-0.5">estimated</p>
-=======
                       <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Ovulation</p>
                     </div>
                     <p className="text-sm font-bold text-foreground">{format(insights.ovulation, 'MMM d')}</p>
                     <p className="text-xs text-muted-foreground mt-0.5">estimated</p>
->>>>>>> 925ef42 (Initial commit)
                   </div>
                 </motion.div>
               </div>
@@ -572,11 +522,7 @@ export function PeriodTrackerScreen() {
 
               <div className="grid grid-cols-7 gap-0.5 mb-2">
                 {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d, i) => (
-<<<<<<< HEAD
-                  <div key={i} className="text-center text-[10px] font-bold text-muted-foreground/70 py-1 tracking-wide">{d}</div>
-=======
                   <div key={i} className="text-center text-xs font-bold text-muted-foreground/70 py-1 tracking-wide">{d}</div>
->>>>>>> 925ef42 (Initial commit)
                 ))}
               </div>
 
@@ -592,11 +538,7 @@ export function PeriodTrackerScreen() {
                   return (
                     <div
                       key={dayStr}
-<<<<<<< HEAD
-                      className={`relative aspect-square flex items-center justify-center rounded-xl text-[11px] font-medium transition-all ${
-=======
                       className={`relative aspect-square flex items-center justify-center rounded-xl text-xs font-medium transition-all ${
->>>>>>> 925ef42 (Initial commit)
                         isPeriod
                           ? 'bg-rose-400 text-white font-bold shadow-sm'
                           : isOv
@@ -615,17 +557,6 @@ export function PeriodTrackerScreen() {
               <div className="flex items-center gap-5 mt-4 justify-center">
                 <div className="flex items-center gap-1.5">
                   <div className="w-2.5 h-2.5 rounded-full bg-rose-400" />
-<<<<<<< HEAD
-                  <span className="text-[10px] text-muted-foreground font-medium">Period</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-violet-300 dark:bg-violet-500/60" />
-                  <span className="text-[10px] text-muted-foreground font-medium">Fertile / Ovulation</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full border-2 border-primary" />
-                  <span className="text-[10px] text-muted-foreground font-medium">Today</span>
-=======
                   <span className="text-xs text-muted-foreground font-medium">Period</span>
                 </div>
                 <div className="flex items-center gap-1.5">
@@ -635,7 +566,6 @@ export function PeriodTrackerScreen() {
                 <div className="flex items-center gap-1.5">
                   <div className="w-2.5 h-2.5 rounded-full border-2 border-primary" />
                   <span className="text-xs text-muted-foreground font-medium">Today</span>
->>>>>>> 925ef42 (Initial commit)
                 </div>
               </div>
             </div>
@@ -675,15 +605,6 @@ export function PeriodTrackerScreen() {
                               {format(parseISO(log.startDate), 'MMM d, yyyy')}
                             </p>
                             {duration && (
-<<<<<<< HEAD
-                              <span className="text-[10px] bg-muted rounded-full px-1.5 py-0.5 text-muted-foreground font-medium">{duration}d</span>
-                            )}
-                          </div>
-                          <div className="flex items-center gap-2 mt-0.5">
-                            <span className="text-[10px] text-muted-foreground capitalize">{log.flow} flow</span>
-                            {symptoms.length > 0 && (
-                              <span className="text-[10px] text-muted-foreground">· {symptoms.slice(0, 2).join(', ')}</span>
-=======
                               <span className="text-xs bg-muted rounded-full px-1.5 py-0.5 text-muted-foreground font-medium">{duration}d</span>
                             )}
                           </div>
@@ -691,7 +612,6 @@ export function PeriodTrackerScreen() {
                             <span className="text-xs text-muted-foreground capitalize">{log.flow} flow</span>
                             {symptoms.length > 0 && (
                               <span className="text-xs text-muted-foreground">· {symptoms.slice(0, 2).join(', ')}</span>
->>>>>>> 925ef42 (Initial commit)
                             )}
                           </div>
                         </div>
@@ -708,11 +628,7 @@ export function PeriodTrackerScreen() {
             <div className="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
               <Info className="h-3.5 w-3.5 text-primary" />
             </div>
-<<<<<<< HEAD
-            <p className="text-[10px] text-muted-foreground leading-relaxed">
-=======
             <p className="text-xs text-muted-foreground leading-relaxed">
->>>>>>> 925ef42 (Initial commit)
               Your period data is private and stored securely. Only you can see your cycle information.
             </p>
           </div>
@@ -759,11 +675,7 @@ export function PeriodTrackerScreen() {
                   {/* Date inputs */}
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-<<<<<<< HEAD
-                      <label className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1.5">Start Date</label>
-=======
                       <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-1.5">Start Date</label>
->>>>>>> 925ef42 (Initial commit)
                       <input
                         type="date"
                         value={logStartDate}
@@ -773,11 +685,7 @@ export function PeriodTrackerScreen() {
                       />
                     </div>
                     <div>
-<<<<<<< HEAD
-                      <label className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1.5">End Date</label>
-=======
                       <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-1.5">End Date</label>
->>>>>>> 925ef42 (Initial commit)
                       <input
                         type="date"
                         value={logEndDate}
@@ -791,11 +699,7 @@ export function PeriodTrackerScreen() {
 
                   {/* Flow intensity */}
                   <div>
-<<<<<<< HEAD
-                    <label className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-2">Flow Intensity</label>
-=======
                     <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-2">Flow Intensity</label>
->>>>>>> 925ef42 (Initial commit)
                     <div className="grid grid-cols-3 gap-2">
                       {FLOW_OPTIONS.map(opt => (
                         <button
@@ -817,22 +721,14 @@ export function PeriodTrackerScreen() {
 
                   {/* Symptoms */}
                   <div>
-<<<<<<< HEAD
-                    <label className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-2">Symptoms (optional)</label>
-=======
                     <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-2">Symptoms (optional)</label>
->>>>>>> 925ef42 (Initial commit)
                     <div className="flex flex-wrap gap-1.5">
                       {SYMPTOM_OPTIONS.map(s => (
                         <button
                           key={s}
                           type="button"
                           onClick={() => toggleSymptom(s)}
-<<<<<<< HEAD
-                          className={`text-[11px] px-2.5 py-1.5 rounded-full border font-medium transition-all active:scale-95 chip-hover ${
-=======
                           className={`text-xs px-2.5 py-1.5 rounded-full border font-medium transition-all active:scale-95 chip-hover ${
->>>>>>> 925ef42 (Initial commit)
                             logSymptoms.includes(s)
                               ? 'border-rose-400 bg-rose-50 dark:bg-rose-500/15 text-rose-600 dark:text-rose-400 shadow-sm'
                               : 'border-border/50 bg-muted/30 text-muted-foreground hover:bg-muted/60'
@@ -846,11 +742,7 @@ export function PeriodTrackerScreen() {
 
                   {/* Notes */}
                   <div>
-<<<<<<< HEAD
-                    <label className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1.5">Notes (optional)</label>
-=======
                     <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-1.5">Notes (optional)</label>
->>>>>>> 925ef42 (Initial commit)
                     <textarea
                       value={logNotes}
                       onChange={e => setLogNotes(e.target.value)}

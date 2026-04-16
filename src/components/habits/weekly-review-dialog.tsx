@@ -112,20 +112,12 @@ export function WeeklyReviewDialog() {
                 <div className="bg-muted/40 rounded-xl p-3 text-center">
                   <Flame className="h-4 w-4 text-orange-500 mx-auto mb-1" />
                   <p className="text-lg font-bold">{data.currentStreak}</p>
-<<<<<<< HEAD
-                  <p className="text-[10px] text-muted-foreground">Streak</p>
-=======
                   <p className="text-xs text-muted-foreground">Streak</p>
->>>>>>> 925ef42 (Initial commit)
                 </div>
                 <div className="bg-muted/40 rounded-xl p-3 text-center">
                   <Timer className="h-4 w-4 text-purple-500 mx-auto mb-1" />
                   <p className="text-lg font-bold">{focusHours}h {focusMins}m</p>
-<<<<<<< HEAD
-                  <p className="text-[10px] text-muted-foreground">Focus</p>
-=======
                   <p className="text-xs text-muted-foreground">Focus</p>
->>>>>>> 925ef42 (Initial commit)
                 </div>
                 <div className="bg-muted/40 rounded-xl p-3 text-center">
                   {data.avgMood !== null ? (
@@ -136,11 +128,7 @@ export function WeeklyReviewDialog() {
                   <p className="text-lg font-bold">
                     {data.avgMood !== null ? data.avgMood.toFixed(1) : '—'}
                   </p>
-<<<<<<< HEAD
-                  <p className="text-[10px] text-muted-foreground">Avg Mood</p>
-=======
                   <p className="text-xs text-muted-foreground">Avg Mood</p>
->>>>>>> 925ef42 (Initial commit)
                 </div>
               </div>
 
@@ -193,11 +181,7 @@ export function WeeklyReviewDialog() {
                         <div className="flex-1">
                           <div className="flex justify-between items-center mb-0.5">
                             <span className="text-xs font-medium truncate">{h.name}</span>
-<<<<<<< HEAD
-                            <span className="text-[10px] text-muted-foreground ml-1 flex-shrink-0">{h.completedDays}/7</span>
-=======
                             <span className="text-xs text-muted-foreground ml-1 flex-shrink-0">{h.completedDays}/7</span>
->>>>>>> 925ef42 (Initial commit)
                           </div>
                           <div className="h-1.5 rounded-full bg-muted overflow-hidden">
                             <div

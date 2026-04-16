@@ -149,23 +149,10 @@ export function AchievementWall({ open, onOpenChange, earnedBadgeTypes, totalXP,
                     transition={{ delay: i * 0.05 }}
                     className="bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-500/10 dark:to-yellow-500/10 border border-amber-200/50 dark:border-amber-500/20 rounded-xl p-3 text-center shadow-sm flex flex-col items-center"
                   >
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
                     <div className="text-3xl mb-1.5">{badge.icon}</div>
                     <p className="text-xs font-bold text-foreground leading-tight">{badge.name}</p>
                     <p className="text-xs text-muted-foreground mt-0.5 leading-tight">{badge.description}</p>
                     <div className="mt-1.5 text-xs font-semibold text-amber-600 dark:text-amber-400">
-=======
->>>>>>> 925ef42 (Initial commit)
-                    <div className="mb-1.5"><BadgeIcon type={badge.type} /></div>
-                    <p className="text-[10px] font-bold text-foreground leading-tight">{badge.name}</p>
-                    <p className="text-[9px] text-muted-foreground mt-0.5 leading-tight">{badge.description}</p>
-                    <div className="mt-1.5 text-[9px] font-semibold text-amber-600 dark:text-amber-400">
-<<<<<<< HEAD
-=======
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
                       +{badge.xp} XP
                     </div>
                   </motion.div>
@@ -189,23 +176,10 @@ export function AchievementWall({ open, onOpenChange, earnedBadgeTypes, totalXP,
                     transition={{ delay: earned.length * 0.05 + i * 0.04 }}
                     className="bg-muted/40 border border-border/30 rounded-xl p-3 text-center grayscale opacity-50 flex flex-col items-center"
                   >
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
                     <div className="text-3xl mb-1.5 blur-[1px]">{badge.icon}</div>
                     <p className="text-xs font-bold leading-tight">{badge.name}</p>
                     <p className="text-xs text-muted-foreground mt-0.5 leading-tight">{badge.description}</p>
-                    <div className="mt-1.5 text-xs font-semibold text-muted-foreground">
-=======
->>>>>>> 925ef42 (Initial commit)
-                    <div className="mb-1.5 blur-[1px]"><BadgeIcon type={badge.type} /></div>
-                    <p className="text-[10px] font-bold leading-tight">{badge.name}</p>
-                    <p className="text-[9px] text-muted-foreground mt-0.5 leading-tight">{badge.description}</p>
                     <div className="mt-1.5 text-[9px] font-semibold text-muted-foreground">
-<<<<<<< HEAD
-=======
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
->>>>>>> 925ef42 (Initial commit)
                       +{badge.xp} XP
                     </div>
                   </motion.div>
@@ -233,31 +207,15 @@ export function AchievementWall({ open, onOpenChange, earnedBadgeTypes, totalXP,
                     key={i}
                     className="bg-muted/30 border border-dashed border-border/50 rounded-xl p-3 text-center flex flex-col items-center"
                   >
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-                    <div className="text-3xl mb-1.5 grayscale opacity-40">❓</div>
-                    <p className="text-xs font-bold leading-tight text-muted-foreground">Mystery</p>
-                    <p className="text-xs text-muted-foreground/60 mt-0.5 leading-tight">Earn to reveal</p>
-=======
->>>>>>> 925ef42 (Initial commit)
                     <div className="w-10 h-10 rounded-xl bg-muted/50 flex items-center justify-center mb-1.5">
                       <HelpCircle className="h-5 w-5 text-muted-foreground/40" />
                     </div>
                     <p className="text-[10px] font-bold leading-tight text-muted-foreground">Mystery</p>
                     <p className="text-[9px] text-muted-foreground/60 mt-0.5 leading-tight">Earn to reveal</p>
-<<<<<<< HEAD
-                  </div>
-                ))}
-              </div>
-              <p className="text-[10px] text-muted-foreground/60 text-center mt-2">
-=======
->>>>>>> 02b3c2faa52add0d654dfc155eecd2baddc0f79f
                   </div>
                 ))}
               </div>
               <p className="text-xs text-muted-foreground/60 text-center mt-2">
->>>>>>> 925ef42 (Initial commit)
                 {hiddenCount} secret badge{hiddenCount > 1 ? 's' : ''} waiting to be discovered
               </p>
             </div>

@@ -8,13 +8,8 @@ const COOKIE_MAX_AGE = 60 * 60 * 24 * 365; // 1 year
 function setSessionCookie(response: NextResponse, userId: string): NextResponse {
   response.cookies.set(SESSION_COOKIE, encodeURIComponent(userId), {
     httpOnly: false,
-<<<<<<< HEAD
-    secure: false,
-    sameSite: 'lax',
-=======
     secure: true,
     sameSite: 'none',
->>>>>>> 925ef42 (Initial commit)
     maxAge: COOKIE_MAX_AGE,
     path: '/',
   });

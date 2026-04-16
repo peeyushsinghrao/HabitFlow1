@@ -397,11 +397,7 @@ export function OnboardingScreen({ onComplete, initialName = '', initialGender =
                       </button>
                     ))}
                   </div>
-<<<<<<< HEAD
-                  <p className="text-[10px] text-muted-foreground">Required · Used to personalize wellbeing tools.</p>
-=======
                   <p className="text-xs text-muted-foreground">Required · Used to personalize wellbeing tools.</p>
->>>>>>> 925ef42 (Initial commit)
                 </div>
                 <div className="space-y-2">
                   <p className="text-xs font-semibold text-muted-foreground">Select your class</p>
@@ -412,11 +408,7 @@ export function OnboardingScreen({ onComplete, initialName = '', initialGender =
                   >
                     <span className="flex items-center justify-between gap-3">
                       <span>
-<<<<<<< HEAD
-                        <span className="block text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
-=======
                         <span className="block text-xs font-medium uppercase tracking-wide text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
                           Class
                         </span>
                         <span className={`block text-sm font-semibold ${studentClass ? 'text-foreground' : 'text-muted-foreground'}`}>
@@ -456,11 +448,7 @@ export function OnboardingScreen({ onComplete, initialName = '', initialGender =
                                     : 'border-primary/20 bg-background/80 text-muted-foreground hover:border-primary/50 hover:bg-primary/5'
                                 }`}
                               >
-<<<<<<< HEAD
-                                <span className="block text-[10px] font-medium uppercase tracking-wide">Class</span>
-=======
                                 <span className="block text-xs font-medium uppercase tracking-wide">Class</span>
->>>>>>> 925ef42 (Initial commit)
                                 <span className="block text-lg font-bold leading-tight">{className}</span>
                               </button>
                             );
@@ -564,11 +552,7 @@ export function OnboardingScreen({ onComplete, initialName = '', initialGender =
                                   <span className="text-base">{goal.emoji}</span>
                                   <span className="text-xs font-bold">{goal.label}</span>
                                 </span>
-<<<<<<< HEAD
-                                <span className="block text-[10px] text-muted-foreground mt-0.5 leading-tight">{goal.desc}</span>
-=======
                                 <span className="block text-xs text-muted-foreground mt-0.5 leading-tight">{goal.desc}</span>
->>>>>>> 925ef42 (Initial commit)
                               </button>
                             );
                           })}
@@ -581,20 +565,12 @@ export function OnboardingScreen({ onComplete, initialName = '', initialGender =
                             animate={{ opacity: 1 }}
                             className="bg-primary/5 border border-primary/15 rounded-2xl p-3 space-y-1.5"
                           >
-<<<<<<< HEAD
-                            <p className="text-[10px] font-semibold text-primary uppercase tracking-wide">
-=======
                             <p className="text-xs font-semibold text-primary uppercase tracking-wide">
->>>>>>> 925ef42 (Initial commit)
                               Suggested habits for {streamKey}
                             </p>
                             <div className="grid grid-cols-2 gap-1">
                               {streamSuggestions.map((s, i) => (
-<<<<<<< HEAD
-                                <div key={i} className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
-=======
                                 <div key={i} className="flex items-center gap-1.5 text-xs text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
                                   <span>{s.emoji}</span>
                                   <span className="truncate">{s.text}</span>
                                 </div>
@@ -623,11 +599,7 @@ export function OnboardingScreen({ onComplete, initialName = '', initialGender =
                         }`}
                       >
                         <span className="block text-sm font-semibold">{mode.title}</span>
-<<<<<<< HEAD
-                        <span className="mt-1 block text-[10px] leading-snug">{mode.description}</span>
-=======
                         <span className="mt-1 block text-xs leading-snug">{mode.description}</span>
->>>>>>> 925ef42 (Initial commit)
                       </button>
                     );
                   })}
@@ -648,11 +620,7 @@ export function OnboardingScreen({ onComplete, initialName = '', initialGender =
                     animate={{ opacity: 1, y: 0 }}
                     className="bg-primary/8 border border-primary/20 rounded-2xl p-3 text-center"
                   >
-<<<<<<< HEAD
-                    <p className="text-[10px] text-muted-foreground">Your dashboard will be titled</p>
-=======
                     <p className="text-xs text-muted-foreground">Your dashboard will be titled</p>
->>>>>>> 925ef42 (Initial commit)
                     <p className="text-sm font-bold text-primary mt-0.5">{dashTitle}</p>
                   </motion.div>
                 )}

@@ -329,11 +329,7 @@ export function AddHabitDialog() {
                   }`}
                 >
                   <p className="text-xs font-semibold">{t.label}</p>
-<<<<<<< HEAD
-                  <p className={`text-[9px] mt-0.5 ${type === t.value ? 'text-primary-foreground/70' : ''}`}>
-=======
                   <p className={`text-xs mt-0.5 ${type === t.value ? 'text-primary-foreground/70' : ''}`}>
->>>>>>> 925ef42 (Initial commit)
                     {t.description}
                   </p>
                 </motion.button>
@@ -455,11 +451,7 @@ export function AddHabitDialog() {
                         type="button"
                         whileTap={{ scale: 0.9 }}
                         onClick={() => toggleDay(d.key)}
-<<<<<<< HEAD
-                        className={`flex-1 py-2 rounded-lg text-[10px] font-bold transition-all ${
-=======
                         className={`flex-1 py-2 rounded-lg text-xs font-bold transition-all ${
->>>>>>> 925ef42 (Initial commit)
                           customDays.includes(d.key)
                             ? 'bg-primary text-primary-foreground'
                             : 'bg-muted/60 text-muted-foreground hover:bg-muted'
@@ -488,11 +480,7 @@ export function AddHabitDialog() {
               min={new Date().toISOString().split('T')[0]}
             />
             {deadline && (
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground">
-=======
               <p className="text-xs text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
                 Habit auto-archives after this date
               </p>
             )}
@@ -527,11 +515,7 @@ export function AddHabitDialog() {
                 {/* Habit Stacking */}
                 <div className="space-y-1.5">
                   <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Habit Stacking</Label>
-<<<<<<< HEAD
-                  <p className="text-[10px] text-muted-foreground">Name the habit you do this after</p>
-=======
                   <p className="text-xs text-muted-foreground">Name the habit you do this after</p>
->>>>>>> 925ef42 (Initial commit)
                   <Input
                     value={stackedAfter}
                     onChange={e => setStackedAfter(e.target.value)}
@@ -542,11 +526,7 @@ export function AddHabitDialog() {
                 {/* Min Viable Version */}
                 <div className="space-y-1.5">
                   <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Minimum Viable Version</Label>
-<<<<<<< HEAD
-                  <p className="text-[10px] text-muted-foreground">Smallest version that still counts</p>
-=======
                   <p className="text-xs text-muted-foreground">Smallest version that still counts</p>
->>>>>>> 925ef42 (Initial commit)
                   <Input
                     value={minViableVersion}
                     onChange={e => setMinViableVersion(e.target.value)}
@@ -557,11 +537,7 @@ export function AddHabitDialog() {
                 {/* Conditional Habit */}
                 <div className="space-y-1.5">
                   <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Only do when...</Label>
-<<<<<<< HEAD
-                  <p className="text-[10px] text-muted-foreground">Skip on certain conditions</p>
-=======
                   <p className="text-xs text-muted-foreground">Skip on certain conditions</p>
->>>>>>> 925ef42 (Initial commit)
                   <div className="flex gap-2">
                     <select
                       value={conditionType}

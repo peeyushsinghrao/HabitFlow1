@@ -243,11 +243,7 @@ export function PWHistorySheet({ open, onOpenChange }: PWHistorySheetProps) {
               {/* Today indicator */}
               {selectedDate === getTodayLocal() && (
                 <div className="flex justify-center mt-2">
-<<<<<<< HEAD
-                  <Badge className="text-[10px] px-2 py-0 border-none bg-primary/15 text-primary">
-=======
                   <Badge className="text-xs px-2 py-0 border-none bg-primary/15 text-primary">
->>>>>>> 925ef42 (Initial commit)
                     Today
                   </Badge>
                 </div>
@@ -334,11 +330,7 @@ export function PWHistorySheet({ open, onOpenChange }: PWHistorySheetProps) {
                       <p className="text-lg font-bold text-warm-800 dark:text-warm-100">
                         {record.classesAttended}
                       </p>
-<<<<<<< HEAD
-                      <p className="text-[10px] text-warm-600 dark:text-warm-400">
-=======
                       <p className="text-xs text-warm-600 dark:text-warm-400">
->>>>>>> 925ef42 (Initial commit)
                         Classes
                       </p>
                     </div>
@@ -347,11 +339,7 @@ export function PWHistorySheet({ open, onOpenChange }: PWHistorySheetProps) {
                       <p className="text-lg font-bold text-warm-800 dark:text-warm-100">
                         {record.todosCompleted}/{record.todosTotal}
                       </p>
-<<<<<<< HEAD
-                      <p className="text-[10px] text-warm-600 dark:text-warm-400">
-=======
                       <p className="text-xs text-warm-600 dark:text-warm-400">
->>>>>>> 925ef42 (Initial commit)
                         To-Dos
                       </p>
                     </div>
@@ -360,11 +348,7 @@ export function PWHistorySheet({ open, onOpenChange }: PWHistorySheetProps) {
                       <p className="text-lg font-bold text-warm-800 dark:text-warm-100">
                         {record.hasTest ? 'Yes' : 'No'}
                       </p>
-<<<<<<< HEAD
-                      <p className="text-[10px] text-warm-600 dark:text-warm-400">
-=======
                       <p className="text-xs text-warm-600 dark:text-warm-400">
->>>>>>> 925ef42 (Initial commit)
                         Test
                       </p>
                     </div>
@@ -401,26 +385,15 @@ export function PWHistorySheet({ open, onOpenChange }: PWHistorySheetProps) {
                               {cls.topic}
                             </p>
                           )}
-<<<<<<< HEAD
-                          <div className="flex items-center gap-3 text-[10px] text-warm-600 dark:text-warm-400">
-                            {cls.teacher && <span>👩‍🏫 {cls.teacher}</span>}
-                            {cls.attendedLive && (
-                              <Badge className="text-[10px] px-1.5 py-0 border-none bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
-=======
                           <div className="flex items-center gap-3 text-xs text-warm-600 dark:text-warm-400">
                             {cls.teacher && <span>👩‍🏫 {cls.teacher}</span>}
                             {cls.attendedLive && (
                               <Badge className="text-xs px-1.5 py-0 border-none bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
->>>>>>> 925ef42 (Initial commit)
                                 Live
                               </Badge>
                             )}
                             {cls.attendedRecorded && (
-<<<<<<< HEAD
-                              <Badge className="text-[10px] px-1.5 py-0 border-none bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">
-=======
                               <Badge className="text-xs px-1.5 py-0 border-none bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">
->>>>>>> 925ef42 (Initial commit)
                                 Recorded
                               </Badge>
                             )}
@@ -481,11 +454,7 @@ export function PWHistorySheet({ open, onOpenChange }: PWHistorySheetProps) {
                       <span className="text-sm font-semibold text-warm-800 dark:text-warm-100">
                         To-Do List
                       </span>
-<<<<<<< HEAD
-                      <Badge className="ml-auto text-[10px] px-2 py-0 border-none bg-primary/15 text-primary">
-=======
                       <Badge className="ml-auto text-xs px-2 py-0 border-none bg-primary/15 text-primary">
->>>>>>> 925ef42 (Initial commit)
                         {record.todosCompleted}/{record.todosTotal}
                       </Badge>
                     </div>
@@ -591,11 +560,7 @@ export function PWHistorySheet({ open, onOpenChange }: PWHistorySheetProps) {
               </Button>
 
               {/* Snapshot timestamp */}
-<<<<<<< HEAD
-              <p className="text-[10px] text-center text-muted-foreground pb-4">
-=======
               <p className="text-xs text-center text-muted-foreground pb-4">
->>>>>>> 925ef42 (Initial commit)
                 Snapshot taken: {new Date(record.createdAt).toLocaleString('en-IN')}
               </p>
             </div>

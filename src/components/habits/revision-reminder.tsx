@@ -156,18 +156,6 @@ export function RevisionReminder() {
     <div className="px-4 pb-4 space-y-4">
       {/* Stats row */}
       <div className="grid grid-cols-2 gap-2">
-<<<<<<< HEAD
-        <Card className="border-0 shadow-sm">
-          <CardContent className="p-2.5 text-center">
-            <p className="text-lg font-bold text-rose-500">{dueItems.length}</p>
-            <p className="text-[10px] text-muted-foreground">Due Today</p>
-          </CardContent>
-        </Card>
-        <Card className="border-0 shadow-sm">
-          <CardContent className="p-2.5 text-center">
-            <p className="text-lg font-bold text-primary">{items.length}</p>
-            <p className="text-[10px] text-muted-foreground">Total Topics</p>
-=======
         <Card className="border border-border/40 shadow-sm">
           <CardContent className="p-2.5 text-center">
             <p className="text-lg font-bold text-rose-500">{dueItems.length}</p>
@@ -178,7 +166,6 @@ export function RevisionReminder() {
           <CardContent className="p-2.5 text-center">
             <p className="text-lg font-bold text-primary">{items.length}</p>
             <p className="text-xs text-muted-foreground">Total Topics</p>
->>>>>>> 925ef42 (Initial commit)
           </CardContent>
         </Card>
       </div>
@@ -197,11 +184,7 @@ export function RevisionReminder() {
       {filter === 'plan' && (
         <AnimatePresence mode="wait">
           <motion.div key="plan" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
-<<<<<<< HEAD
-            <Card className="border-0 shadow-sm">
-=======
             <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
               <CardContent className="p-4">
                 {/* Month header */}
                 <div className="flex items-center justify-between mb-3">
@@ -217,11 +200,7 @@ export function RevisionReminder() {
                 {/* Day headers */}
                 <div className="grid grid-cols-7 mb-1">
                   {['S','M','T','W','T','F','S'].map((d, i) => (
-<<<<<<< HEAD
-                    <div key={i} className="text-[10px] font-semibold text-muted-foreground text-center py-0.5">{d}</div>
-=======
                     <div key={i} className="text-xs font-semibold text-muted-foreground text-center py-0.5">{d}</div>
->>>>>>> 925ef42 (Initial commit)
                   ))}
                 </div>
 
@@ -238,11 +217,7 @@ export function RevisionReminder() {
                       <button
                         key={dateStr}
                         onClick={() => setSelectedDate(isSelected ? null : dateStr)}
-<<<<<<< HEAD
-                        className={`relative flex flex-col items-center py-1.5 rounded-lg text-[11px] font-medium transition-all ${
-=======
                         className={`relative flex flex-col items-center py-1.5 rounded-lg text-xs font-medium transition-all ${
->>>>>>> 925ef42 (Initial commit)
                           isSelected ? 'bg-primary text-primary-foreground' :
                           todayDate ? 'bg-primary/10 text-primary font-bold' :
                           inMonth ? 'hover:bg-muted text-foreground' : 'text-muted-foreground'
@@ -258,11 +233,7 @@ export function RevisionReminder() {
                   })}
                 </div>
 
-<<<<<<< HEAD
-                <div className="flex items-center gap-3 mt-3 text-[10px] text-muted-foreground">
-=======
                 <div className="flex items-center gap-3 mt-3 text-xs text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
                   <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-blue-500 inline-block" />Planned</span>
                   <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-rose-500 inline-block" />Spaced review</span>
                 </div>
@@ -285,17 +256,10 @@ export function RevisionReminder() {
                       {/* Planned topics */}
                       {(bookings[selectedDate]?.length || 0) > 0 && (
                         <div className="space-y-1">
-<<<<<<< HEAD
-                          <p className="text-[10px] font-semibold text-muted-foreground uppercase">Planned for this day</p>
-                          <div className="flex flex-wrap gap-1.5">
-                            {(bookings[selectedDate] || []).map(topic => (
-                              <span key={topic} className="flex items-center gap-1 text-[11px] bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-2.5 py-1 rounded-full font-medium">
-=======
                           <p className="text-xs font-semibold text-muted-foreground uppercase">Planned for this day</p>
                           <div className="flex flex-wrap gap-1.5">
                             {(bookings[selectedDate] || []).map(topic => (
                               <span key={topic} className="flex items-center gap-1 text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-2.5 py-1 rounded-full font-medium">
->>>>>>> 925ef42 (Initial commit)
                                 {topic}
                                 <button onClick={() => removeBooking(selectedDate, topic)}>
                                   <X className="h-2.5 w-2.5" />
@@ -315,17 +279,10 @@ export function RevisionReminder() {
                         ]).filter(r => r.date === selectedDate && !r.done);
                         return due.length > 0 ? (
                           <div className="space-y-1">
-<<<<<<< HEAD
-                            <p className="text-[10px] font-semibold text-muted-foreground uppercase">Spaced Reviews Due</p>
-                            <div className="flex flex-wrap gap-1.5">
-                              {due.map(r => (
-                                <span key={`${r.item.id}-${r.label}`} className="text-[11px] bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 px-2.5 py-1 rounded-full font-medium">
-=======
                             <p className="text-xs font-semibold text-muted-foreground uppercase">Spaced Reviews Due</p>
                             <div className="flex flex-wrap gap-1.5">
                               {due.map(r => (
                                 <span key={`${r.item.id}-${r.label}`} className="text-xs bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 px-2.5 py-1 rounded-full font-medium">
->>>>>>> 925ef42 (Initial commit)
                                   {r.item.subject}: {r.item.topic} {r.label}
                                 </span>
                               ))}
@@ -368,44 +325,25 @@ export function RevisionReminder() {
       <AnimatePresence>
         {showAdd && filter !== 'plan' && (
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="overflow-hidden">
-<<<<<<< HEAD
-            <Card className="border-0 shadow-sm">
-              <CardContent className="p-4 space-y-3">
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <Label className="text-[10px] uppercase tracking-wider text-muted-foreground">Subject</Label>
-=======
             <Card className="border border-border/40 shadow-sm">
               <CardContent className="p-4 space-y-3">
                 <div className="grid grid-cols-2 gap-2">
                   <div>
                     <Label className="text-xs uppercase tracking-wider text-muted-foreground">Subject</Label>
->>>>>>> 925ef42 (Initial commit)
                     <select value={form.subject} onChange={e => setForm(f => ({ ...f, subject: e.target.value }))} className="mt-1 w-full h-9 px-2 rounded-lg border border-input bg-background text-xs">
                       {SUBJECTS.map(s => <option key={s} value={s}>{s}</option>)}
                     </select>
                   </div>
                   <div>
-<<<<<<< HEAD
-                    <Label className="text-[10px] uppercase tracking-wider text-muted-foreground">Topic Studied</Label>
-=======
                     <Label className="text-xs uppercase tracking-wider text-muted-foreground">Topic Studied</Label>
->>>>>>> 925ef42 (Initial commit)
                     <Input value={form.topic} onChange={e => setForm(f => ({ ...f, topic: e.target.value }))} placeholder="e.g., Thermodynamics" className="mt-1 h-9 rounded-lg text-xs" />
                   </div>
                 </div>
                 <div>
-<<<<<<< HEAD
-                  <Label className="text-[10px] uppercase tracking-wider text-muted-foreground">Notes (optional)</Label>
-                  <Input value={form.notes} onChange={e => setForm(f => ({ ...f, notes: e.target.value }))} placeholder="Key formulas or concepts..." className="mt-1 h-9 rounded-lg text-xs" />
-                </div>
-                <p className="text-[10px] text-muted-foreground bg-muted/40 px-2 py-1.5 rounded-lg">
-=======
                   <Label className="text-xs uppercase tracking-wider text-muted-foreground">Notes (optional)</Label>
                   <Input value={form.notes} onChange={e => setForm(f => ({ ...f, notes: e.target.value }))} placeholder="Key formulas or concepts..." className="mt-1 h-9 rounded-lg text-xs" />
                 </div>
                 <p className="text-xs text-muted-foreground bg-muted/40 px-2 py-1.5 rounded-lg">
->>>>>>> 925ef42 (Initial commit)
                   📅 Revision reminders will be set for +1, +3, and +7 days from today
                 </p>
                 <div className="flex gap-2">
@@ -439,17 +377,10 @@ export function RevisionReminder() {
                     <div className="flex items-start gap-2">
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-1.5 flex-wrap">
-<<<<<<< HEAD
-                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary">{item.subject}</span>
-                          <span className="text-xs font-medium">{item.topic}</span>
-                        </div>
-                        <p className="text-[10px] text-muted-foreground mt-0.5">Studied: {item.studiedDate}</p>
-=======
                           <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary">{item.subject}</span>
                           <span className="text-xs font-medium">{item.topic}</span>
                         </div>
                         <p className="text-xs text-muted-foreground mt-0.5">Studied: {item.studiedDate}</p>
->>>>>>> 925ef42 (Initial commit)
                         <div className="flex items-center gap-2 mt-2">
                           {[
                             { key: 'doneReview1' as const, label: '+1d', date: item.nextReview1, done: item.doneReview1 },
@@ -457,11 +388,7 @@ export function RevisionReminder() {
                             { key: 'doneReview7' as const, label: '+7d', date: item.nextReview7, done: item.doneReview7 },
                           ].map(r => (
                             <button key={r.key} onClick={() => !r.done && markDone(item.id, r.key)} disabled={r.done} title={`Review on ${r.date}`}
-<<<<<<< HEAD
-                              className={`flex items-center gap-1 px-2 py-1 rounded-lg text-[10px] font-semibold transition-all ${
-=======
                               className={`flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-semibold transition-all ${
->>>>>>> 925ef42 (Initial commit)
                                 r.done ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/30 dark:text-emerald-400' :
                                 isOverdue(r.date) ? 'bg-rose-50 text-rose-600 dark:bg-rose-950/30 dark:text-rose-400 animate-pulse' : 'bg-muted text-muted-foreground'
                               }`}>

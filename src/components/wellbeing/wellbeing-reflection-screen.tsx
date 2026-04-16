@@ -73,11 +73,7 @@ function SliderRow({
       <div className="flex items-center justify-between gap-3 mb-2">
         <div>
           <p className="text-xs font-semibold">{label}</p>
-<<<<<<< HEAD
-          <p className="text-[10px] text-muted-foreground">{helper}</p>
-=======
           <p className="text-xs text-muted-foreground">{helper}</p>
->>>>>>> 925ef42 (Initial commit)
         </div>
         <span className="w-8 h-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-sm font-bold">
           {value}
@@ -91,11 +87,7 @@ function SliderRow({
         onChange={e => onChange(Number(e.target.value))}
         className="w-full accent-primary"
       />
-<<<<<<< HEAD
-      <div className="flex justify-between text-[9px] text-muted-foreground">
-=======
       <div className="flex justify-between text-xs text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
         <span>0</span>
         <span>5</span>
       </div>
@@ -157,11 +149,7 @@ function ExamMilestoneRoadmap({ examDate }: { examDate: string }) {
 
   if (!examDate || countdown === null) {
     return (
-<<<<<<< HEAD
-      <Card className="border-0 shadow-sm">
-=======
       <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
         <CardContent className="p-4">
           <div className="flex items-center gap-2 mb-2">
             <CalendarDays className="h-4 w-4 text-amber-500" />
@@ -177,11 +165,7 @@ function ExamMilestoneRoadmap({ examDate }: { examDate: string }) {
   const progress = Math.max(0, Math.min(100, ((120 - countdown) / 120) * 100));
 
   return (
-<<<<<<< HEAD
-    <Card className="border-0 shadow-sm overflow-hidden">
-=======
     <Card className="border border-border/40 shadow-sm overflow-hidden">
->>>>>>> 925ef42 (Initial commit)
       <CardContent className="p-4 bg-gradient-to-br from-amber-50/70 to-orange-50/40 dark:from-amber-500/10 dark:to-orange-500/5">
         <div className="flex items-start justify-between gap-3 mb-4">
           <div>
@@ -189,19 +173,11 @@ function ExamMilestoneRoadmap({ examDate }: { examDate: string }) {
               <CalendarDays className="h-4 w-4 text-amber-500" />
               <p className="text-sm font-semibold">Exam Milestone Roadmap</p>
             </div>
-<<<<<<< HEAD
-            <p className="text-[10px] text-muted-foreground mt-0.5">
-              {countdown <= 0 ? 'Exam day has arrived' : `${countdown} days left until exam`}
-            </p>
-          </div>
-          <span className="text-[10px] font-bold rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300 px-2 py-1">
-=======
             <p className="text-xs text-muted-foreground mt-0.5">
               {countdown <= 0 ? 'Exam day has arrived' : `${countdown} days left until exam`}
             </p>
           </div>
           <span className="text-xs font-bold rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300 px-2 py-1">
->>>>>>> 925ef42 (Initial commit)
             Now: {currentMilestone.label}
           </span>
         </div>
@@ -216,15 +192,9 @@ function ExamMilestoneRoadmap({ examDate }: { examDate: string }) {
               const passed = countdown <= milestone.days;
               return (
                 <div key={milestone.days} className={`rounded-xl border p-2 ${isCurrent ? 'border-amber-400 bg-background/90' : passed ? 'border-emerald-200 bg-emerald-50/70 dark:border-emerald-500/20 dark:bg-emerald-500/10' : 'border-border/40 bg-background/60'}`}>
-<<<<<<< HEAD
-                  <p className={`text-[10px] font-bold ${isCurrent ? 'text-amber-700 dark:text-amber-300' : 'text-foreground'}`}>{milestone.days}d</p>
-                  <p className="text-[10px] leading-snug font-medium mt-1">{milestone.label}</p>
-                  <p className="text-[9px] text-muted-foreground leading-snug mt-1">{milestone.text}</p>
-=======
                   <p className={`text-xs font-bold ${isCurrent ? 'text-amber-700 dark:text-amber-300' : 'text-foreground'}`}>{milestone.days}d</p>
                   <p className="text-xs leading-snug font-medium mt-1">{milestone.label}</p>
                   <p className="text-xs text-muted-foreground leading-snug mt-1">{milestone.text}</p>
->>>>>>> 925ef42 (Initial commit)
                 </div>
               );
             })}
@@ -421,20 +391,12 @@ export function WellbeingReflectionScreen() {
         <HeartPulse className="h-5 w-5 text-pink-500" />
         <div>
           <h2 className="text-base font-bold">Wellbeing & Reflection</h2>
-<<<<<<< HEAD
-          <p className="text-[11px] text-muted-foreground">Reflection, exam roadmap, and weekly stress trends</p>
-=======
           <p className="text-xs text-muted-foreground">Reflection, exam roadmap, and weekly stress trends</p>
->>>>>>> 925ef42 (Initial commit)
         </div>
       </div>
 
       {showPeriodTracker && (
-<<<<<<< HEAD
-        <Card className="border-0 shadow-sm overflow-hidden">
-=======
         <Card className="border border-border/40 shadow-sm overflow-hidden">
->>>>>>> 925ef42 (Initial commit)
           <CardContent className="p-4 bg-gradient-to-br from-rose-50/90 via-pink-50/80 to-violet-50/60 dark:from-rose-500/10 dark:via-pink-500/10 dark:to-violet-500/10">
             <div className="flex items-start justify-between gap-3 mb-4">
               <div>
@@ -442,20 +404,12 @@ export function WellbeingReflectionScreen() {
                   <CalendarDays className="h-4 w-4 text-rose-500" />
                   <p className="text-sm font-semibold">Period Tracker</p>
                 </div>
-<<<<<<< HEAD
-                <p className="text-[10px] text-muted-foreground mt-0.5">
-=======
                 <p className="text-xs text-muted-foreground mt-0.5">
->>>>>>> 925ef42 (Initial commit)
                   Private cycle tracking with gentle predictions and reminders.
                 </p>
               </div>
               {nextPeriodEstimate && (
-<<<<<<< HEAD
-                <span className="rounded-xl bg-rose-500/10 text-rose-600 dark:text-rose-300 px-2 py-1 text-[10px] font-bold">
-=======
                 <span className="rounded-xl bg-rose-500/10 text-rose-600 dark:text-rose-300 px-2 py-1 text-xs font-bold">
->>>>>>> 925ef42 (Initial commit)
                   Next ~ {nextPeriodEstimate}
                 </span>
               )}
@@ -466,29 +420,17 @@ export function WellbeingReflectionScreen() {
                 <div className="flex items-center justify-between gap-2 mb-3">
                   <div>
                     <p className="text-xs font-bold">{periodSetupComplete ? 'Cycle settings' : 'First, add your age'}</p>
-<<<<<<< HEAD
-                    <p className="text-[10px] text-muted-foreground">
-                      Age is required so predictions can be adjusted safely. Your health data stays private to your account.
-                    </p>
-                  </div>
-                  <span className="rounded-full bg-pink-500/10 text-pink-600 dark:text-pink-300 px-2 py-1 text-[9px] font-bold">
-=======
                     <p className="text-xs text-muted-foreground">
                       Age is required so predictions can be adjusted safely. Your health data stays private to your account.
                     </p>
                   </div>
                   <span className="rounded-full bg-pink-500/10 text-pink-600 dark:text-pink-300 px-2 py-1 text-xs font-bold">
->>>>>>> 925ef42 (Initial commit)
                     Private
                   </span>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                   <div>
-<<<<<<< HEAD
-                    <label className="text-[10px] font-semibold text-muted-foreground">Age *</label>
-=======
                     <label className="text-xs font-semibold text-muted-foreground">Age *</label>
->>>>>>> 925ef42 (Initial commit)
                     <input
                       type="number"
                       min={8}
@@ -500,11 +442,7 @@ export function WellbeingReflectionScreen() {
                     />
                   </div>
                   <div>
-<<<<<<< HEAD
-                    <label className="text-[10px] font-semibold text-muted-foreground">Cycle length</label>
-=======
                     <label className="text-xs font-semibold text-muted-foreground">Cycle length</label>
->>>>>>> 925ef42 (Initial commit)
                     <input
                       type="number"
                       min={21}
@@ -516,11 +454,7 @@ export function WellbeingReflectionScreen() {
                     />
                   </div>
                   <div>
-<<<<<<< HEAD
-                    <label className="text-[10px] font-semibold text-muted-foreground">Last period date</label>
-=======
                     <label className="text-xs font-semibold text-muted-foreground">Last period date</label>
->>>>>>> 925ef42 (Initial commit)
                     <input
                       type="date"
                       value={lastPeriodDate}
@@ -532,11 +466,7 @@ export function WellbeingReflectionScreen() {
                 <label className="mt-3 flex items-center justify-between gap-3 rounded-xl bg-rose-50/70 dark:bg-rose-500/10 border border-rose-100 dark:border-rose-500/20 px-3 py-2">
                   <span>
                     <span className="block text-xs font-semibold">Reminders</span>
-<<<<<<< HEAD
-                    <span className="block text-[10px] text-muted-foreground">Get a gentle reminder before your next period and to log changes.</span>
-=======
                     <span className="block text-xs text-muted-foreground">Get a gentle reminder before your next period and to log changes.</span>
->>>>>>> 925ef42 (Initial commit)
                   </span>
                   <input
                     type="checkbox"
@@ -554,29 +484,17 @@ export function WellbeingReflectionScreen() {
                 <>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                     <div className="rounded-2xl bg-background/80 border border-border/40 p-3">
-<<<<<<< HEAD
-                      <p className="text-[10px] text-muted-foreground">Smart insight</p>
-=======
                       <p className="text-xs text-muted-foreground">Smart insight</p>
->>>>>>> 925ef42 (Initial commit)
                       <p className="text-sm font-bold mt-1">
                         {isOvulationPhase ? 'You are in ovulation phase' : daysUntilPeriod !== null ? daysUntilPeriod <= 0 ? 'Your period may start soon' : `Your next period is in ${daysUntilPeriod} day${daysUntilPeriod === 1 ? '' : 's'}` : 'Add a period date to start predictions'}
                       </p>
                     </div>
                     <div className="rounded-2xl bg-background/80 border border-border/40 p-3">
-<<<<<<< HEAD
-                      <p className="text-[10px] text-muted-foreground">Cycle length</p>
-                      <p className="text-sm font-bold mt-1">{cycleLength} days</p>
-                    </div>
-                    <div className="rounded-2xl bg-background/80 border border-border/40 p-3">
-                      <p className="text-[10px] text-muted-foreground">Ovulation window</p>
-=======
                       <p className="text-xs text-muted-foreground">Cycle length</p>
                       <p className="text-sm font-bold mt-1">{cycleLength} days</p>
                     </div>
                     <div className="rounded-2xl bg-background/80 border border-border/40 p-3">
                       <p className="text-xs text-muted-foreground">Ovulation window</p>
->>>>>>> 925ef42 (Initial commit)
                       <p className="text-sm font-bold mt-1">
                         {ovulationStart && ovulationEnd ? `${format(ovulationStart, 'MMM d')} – ${format(ovulationEnd, 'MMM d')}` : 'Log a date first'}
                       </p>
@@ -586,21 +504,13 @@ export function WellbeingReflectionScreen() {
                   <div className="rounded-2xl bg-background/85 border border-border/40 p-3">
                     <div className="flex items-center justify-between mb-3">
                       <p className="text-xs font-bold">{format(calendarStart, 'MMMM yyyy')}</p>
-<<<<<<< HEAD
-                      <div className="flex items-center gap-2 text-[9px] text-muted-foreground">
-=======
                       <div className="flex items-center gap-2 text-xs text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
                         <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-rose-400" />Period</span>
                         <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-violet-400" />Ovulation</span>
                         <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-emerald-300" />Safe</span>
                       </div>
                     </div>
-<<<<<<< HEAD
-                    <div className="grid grid-cols-7 gap-1 mb-1 text-center text-[9px] font-semibold text-muted-foreground">
-=======
                     <div className="grid grid-cols-7 gap-1 mb-1 text-center text-xs font-semibold text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
                       {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, index) => <span key={`${day}-${index}`}>{day}</span>)}
                     </div>
                     <div className="grid grid-cols-7 gap-1">
@@ -616,11 +526,7 @@ export function WellbeingReflectionScreen() {
                         return (
                           <div
                             key={keyForDate(day)}
-<<<<<<< HEAD
-                            className={`h-9 rounded-xl flex items-center justify-center text-[11px] font-bold transition-all ${styles} ${isToday ? 'ring-2 ring-foreground/50' : ''}`}
-=======
                             className={`h-9 rounded-xl flex items-center justify-center text-xs font-bold transition-all ${styles} ${isToday ? 'ring-2 ring-foreground/50' : ''}`}
->>>>>>> 925ef42 (Initial commit)
                           >
                             {format(day, 'd')}
                           </div>
@@ -631,11 +537,7 @@ export function WellbeingReflectionScreen() {
 
                   <div className="grid grid-cols-2 gap-2">
                     <div>
-<<<<<<< HEAD
-                      <label className="text-[10px] font-semibold text-muted-foreground">Start date</label>
-=======
                       <label className="text-xs font-semibold text-muted-foreground">Start date</label>
->>>>>>> 925ef42 (Initial commit)
                       <input
                         type="date"
                         value={periodStart}
@@ -644,11 +546,7 @@ export function WellbeingReflectionScreen() {
                       />
                     </div>
                     <div>
-<<<<<<< HEAD
-                      <label className="text-[10px] font-semibold text-muted-foreground">End date</label>
-=======
                       <label className="text-xs font-semibold text-muted-foreground">End date</label>
->>>>>>> 925ef42 (Initial commit)
                       <input
                         type="date"
                         value={periodEnd}
@@ -659,11 +557,7 @@ export function WellbeingReflectionScreen() {
                   </div>
 
                   <div>
-<<<<<<< HEAD
-                    <label className="text-[10px] font-semibold text-muted-foreground">Flow</label>
-=======
                     <label className="text-xs font-semibold text-muted-foreground">Flow</label>
->>>>>>> 925ef42 (Initial commit)
                     <div className="grid grid-cols-3 gap-2 mt-1">
                       {['light', 'medium', 'heavy'].map(flow => (
                         <button
@@ -679,11 +573,7 @@ export function WellbeingReflectionScreen() {
                   </div>
 
                   <div>
-<<<<<<< HEAD
-                    <label className="text-[10px] font-semibold text-muted-foreground">Symptoms</label>
-=======
                     <label className="text-xs font-semibold text-muted-foreground">Symptoms</label>
->>>>>>> 925ef42 (Initial commit)
                     <div className="flex flex-wrap gap-1.5 mt-1">
                       {symptomOptions.map(symptom => {
                         const active = periodSymptoms.includes(symptom);
@@ -692,11 +582,7 @@ export function WellbeingReflectionScreen() {
                             key={symptom}
                             type="button"
                             onClick={() => setPeriodSymptoms(prev => active ? prev.filter(s => s !== symptom) : [...prev, symptom])}
-<<<<<<< HEAD
-                            className={`rounded-full px-3 py-1.5 text-[10px] font-semibold border transition-all ${active ? 'bg-rose-500 text-white border-rose-500' : 'bg-background border-border text-muted-foreground'}`}
-=======
                             className={`rounded-full px-3 py-1.5 text-xs font-semibold border transition-all ${active ? 'bg-rose-500 text-white border-rose-500' : 'bg-background border-border text-muted-foreground'}`}
->>>>>>> 925ef42 (Initial commit)
                           >
                             {symptom}
                           </button>
@@ -718,11 +604,7 @@ export function WellbeingReflectionScreen() {
 
                   {periodLogs.length > 0 && (
                     <div className="space-y-2">
-<<<<<<< HEAD
-                      <p className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wide">Recent cycles</p>
-=======
                       <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Recent cycles</p>
->>>>>>> 925ef42 (Initial commit)
                       {periodLogs.slice(0, 4).map(log => {
                         const symptoms = parseSymptoms(log.symptoms);
                         return (
@@ -731,17 +613,10 @@ export function WellbeingReflectionScreen() {
                               <p className="text-xs font-semibold">
                                 {format(localDate(log.startDate), 'MMM d')} {log.endDate ? `– ${format(localDate(log.endDate), 'MMM d')}` : ''}
                               </p>
-<<<<<<< HEAD
-                              <span className="text-[10px] rounded-full bg-rose-500/10 text-rose-600 px-2 py-0.5 capitalize">{log.flow}</span>
-                            </div>
-                            {symptoms.length > 0 && <p className="text-[10px] text-muted-foreground mt-1">{symptoms.join(', ')}</p>}
-                            {log.notes && <p className="text-[11px] text-foreground/80 mt-1">{log.notes}</p>}
-=======
                               <span className="text-xs rounded-full bg-rose-500/10 text-rose-600 px-2 py-0.5 capitalize">{log.flow}</span>
                             </div>
                             {symptoms.length > 0 && <p className="text-xs text-muted-foreground mt-1">{symptoms.join(', ')}</p>}
                             {log.notes && <p className="text-xs text-foreground/80 mt-1">{log.notes}</p>}
->>>>>>> 925ef42 (Initial commit)
                           </div>
                         );
                       })}
@@ -754,11 +629,7 @@ export function WellbeingReflectionScreen() {
         </Card>
       )}
 
-<<<<<<< HEAD
-      <Card className="border-0 shadow-sm overflow-hidden">
-=======
       <Card className="border border-border/40 shadow-sm overflow-hidden">
->>>>>>> 925ef42 (Initial commit)
         <CardContent className="p-4 bg-gradient-to-br from-indigo-50/70 to-pink-50/50 dark:from-indigo-500/10 dark:to-pink-500/10">
           <div className="flex items-start justify-between gap-3 mb-3">
             <div>
@@ -766,19 +637,11 @@ export function WellbeingReflectionScreen() {
                 <Moon className="h-4 w-4 text-indigo-500" />
                 <p className="text-sm font-semibold">9 PM Reflection</p>
               </div>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground mt-0.5">
-                One rotating journal question appears each night.
-              </p>
-            </div>
-            <span className="rounded-full bg-background/80 border border-border/40 px-2 py-1 text-[10px] font-semibold">
-=======
               <p className="text-xs text-muted-foreground mt-0.5">
                 One rotating journal question appears each night.
               </p>
             </div>
             <span className="rounded-full bg-background/80 border border-border/40 px-2 py-1 text-xs font-semibold">
->>>>>>> 925ef42 (Initial commit)
               {reflectionUnlocked ? 'Open now' : 'Unlocks 9 PM'}
             </span>
           </div>
@@ -786,11 +649,7 @@ export function WellbeingReflectionScreen() {
           {reflectionUnlocked ? (
             <div className="space-y-3">
               <div className="rounded-2xl bg-background/80 border border-border/50 p-3">
-<<<<<<< HEAD
-                <p className="text-[10px] font-semibold uppercase tracking-wide text-indigo-500 mb-1">Tonight’s prompt</p>
-=======
                 <p className="text-xs font-semibold uppercase tracking-wide text-indigo-500 mb-1">Tonight’s prompt</p>
->>>>>>> 925ef42 (Initial commit)
                 <p className="text-sm font-semibold">{todaysPrompt}</p>
               </div>
               <Textarea
@@ -815,11 +674,7 @@ export function WellbeingReflectionScreen() {
 
       <ExamMilestoneRoadmap examDate={examDate} />
 
-<<<<<<< HEAD
-      <Card className="border-0 shadow-sm">
-=======
       <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
         <CardContent className="p-4">
           <div className="flex items-start justify-between gap-3 mb-3">
             <div>
@@ -827,15 +682,9 @@ export function WellbeingReflectionScreen() {
                 <BookHeart className="h-4 w-4 text-rose-500" />
                 <p className="text-sm font-semibold">Weekly Stress Review</p>
               </div>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground mt-0.5">Separate from mood logs. Resets for a new entry each Monday.</p>
-            </div>
-            <span className="rounded-xl bg-rose-500/10 text-rose-600 dark:text-rose-300 px-2 py-1 text-[10px] font-bold">
-=======
               <p className="text-xs text-muted-foreground mt-0.5">Separate from mood logs. Resets for a new entry each Monday.</p>
             </div>
             <span className="rounded-xl bg-rose-500/10 text-rose-600 dark:text-rose-300 px-2 py-1 text-xs font-bold">
->>>>>>> 925ef42 (Initial commit)
               {wellbeingScore}% balance
             </span>
           </div>
@@ -858,11 +707,7 @@ export function WellbeingReflectionScreen() {
       </Card>
 
       {trendData.length >= 2 && (
-<<<<<<< HEAD
-        <Card className="border-0 shadow-sm">
-=======
         <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
           <CardContent className="p-4">
             <div className="flex items-center gap-2 mb-3">
               <HeartPulse className="h-4 w-4 text-primary" />
@@ -885,11 +730,7 @@ export function WellbeingReflectionScreen() {
         </Card>
       )}
 
-<<<<<<< HEAD
-      <Card className="border-0 shadow-sm">
-=======
       <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
         <CardContent className="p-4">
           <button
             className="flex items-center justify-between w-full"
@@ -908,11 +749,7 @@ export function WellbeingReflectionScreen() {
                   animate={{ opacity: 1, y: 0 }}
                   className="rounded-xl bg-muted/40 p-3"
                 >
-<<<<<<< HEAD
-                  <p className="text-[10px] text-muted-foreground font-medium">
-=======
                   <p className="text-xs text-muted-foreground font-medium">
->>>>>>> 925ef42 (Initial commit)
                     {format(new Date(`${item.date}T12:00:00`), 'EEEE, MMMM d, yyyy')}
                   </p>
                   <p className="text-xs font-semibold mt-1">{item.prompt}</p>

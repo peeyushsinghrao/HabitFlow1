@@ -166,11 +166,7 @@ export function AISummaryScreen() {
           <AriaAvatar size={36} />
           <div>
             <h2 className="text-base font-bold leading-tight">Aria — Your Study Buddy</h2>
-<<<<<<< HEAD
-            <p className="text-[10px] text-muted-foreground">Remembers your conversations · Always here for you</p>
-=======
             <p className="text-xs text-muted-foreground">Remembers your conversations · Always here for you</p>
->>>>>>> 925ef42 (Initial commit)
           </div>
         </div>
         {loaded && (
@@ -188,11 +184,7 @@ export function AISummaryScreen() {
 
       {/* Loading state */}
       {isLoading && (
-<<<<<<< HEAD
-        <Card className="border-0 shadow-sm">
-=======
         <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
           <CardContent className="p-6">
             <div className="flex flex-col items-center gap-3">
               <motion.div
@@ -228,21 +220,13 @@ export function AISummaryScreen() {
           {stats && (
             <div className="grid grid-cols-3 gap-2">
               {statCards.map(({ icon: Icon, label, value, sub, color, bg }) => (
-<<<<<<< HEAD
-                <Card key={label} className="border-0 shadow-sm">
-=======
                 <Card key={label} className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
                   <CardContent className="p-3">
                     <div className={`w-7 h-7 rounded-lg ${bg} flex items-center justify-center mb-2`}>
                       <Icon className={`h-3.5 w-3.5 ${color}`} />
                     </div>
                     <p className="text-sm font-bold text-foreground leading-tight">{value}</p>
-<<<<<<< HEAD
-                    <p className="text-[10px] text-muted-foreground mt-0.5 leading-tight">{sub}</p>
-=======
                     <p className="text-xs text-muted-foreground mt-0.5 leading-tight">{sub}</p>
->>>>>>> 925ef42 (Initial commit)
                   </CardContent>
                 </Card>
               ))}
@@ -250,11 +234,7 @@ export function AISummaryScreen() {
           )}
 
           {/* Summary card */}
-<<<<<<< HEAD
-          <Card className="border-0 shadow-sm bg-gradient-to-br from-violet-50/70 to-purple-50/50 dark:from-violet-900/15 dark:to-purple-900/10">
-=======
           <Card className="border border-violet-200/40 dark:border-violet-800/20 shadow-sm bg-gradient-to-br from-violet-50/70 to-purple-50/50 dark:from-violet-900/15 dark:to-purple-900/10">
->>>>>>> 925ef42 (Initial commit)
             <CardContent className="p-4">
               <div className="flex items-center gap-2 mb-3">
                 <AriaAvatar size={20} />
@@ -281,19 +261,11 @@ export function AISummaryScreen() {
           {stats && (stats.topHabits.length > 0 || stats.weakHabits.length > 0) && (
             <div className="grid grid-cols-2 gap-2">
               {stats.topHabits.length > 0 && (
-<<<<<<< HEAD
-                <Card className="border-0 shadow-sm bg-emerald-50/70 dark:bg-emerald-900/10">
-                  <CardContent className="p-3">
-                    <p className="text-[11px] font-bold text-emerald-700 dark:text-emerald-400 mb-1.5">✅ Strongest</p>
-                    {stats.topHabits.slice(0, 3).map((h, i) => (
-                      <p key={i} className="text-[11px] text-foreground/80 leading-snug">• {h}</p>
-=======
                 <Card className="border border-emerald-200/40 dark:border-emerald-800/20 shadow-sm bg-emerald-50/70 dark:bg-emerald-900/10">
                   <CardContent className="p-3">
                     <p className="text-xs font-bold text-emerald-700 dark:text-emerald-400 mb-1.5">✅ Strongest</p>
                     {stats.topHabits.slice(0, 3).map((h, i) => (
                       <p key={i} className="text-xs text-foreground/80 leading-snug">• {h}</p>
->>>>>>> 925ef42 (Initial commit)
                     ))}
                   </CardContent>
                 </Card>
@@ -301,15 +273,9 @@ export function AISummaryScreen() {
               {stats.weakHabits.length > 0 && (
                 <Card className="border-0 shadow-sm bg-amber-50/70 dark:bg-amber-900/10">
                   <CardContent className="p-3">
-<<<<<<< HEAD
-                    <p className="text-[11px] font-bold text-amber-700 dark:text-amber-400 mb-1.5">⚠️ Needs Work</p>
-                    {stats.weakHabits.slice(0, 3).map((h, i) => (
-                      <p key={i} className="text-[11px] text-foreground/80 leading-snug">• {h}</p>
-=======
                     <p className="text-xs font-bold text-amber-700 dark:text-amber-400 mb-1.5">⚠️ Needs Work</p>
                     {stats.weakHabits.slice(0, 3).map((h, i) => (
                       <p key={i} className="text-xs text-foreground/80 leading-snug">• {h}</p>
->>>>>>> 925ef42 (Initial commit)
                     ))}
                   </CardContent>
                 </Card>
@@ -318,11 +284,7 @@ export function AISummaryScreen() {
           )}
 
           {/* AI Daily Study Plan */}
-<<<<<<< HEAD
-          <Card className="border-0 shadow-sm bg-gradient-to-br from-sky-50/70 to-blue-50/50 dark:from-sky-900/15 dark:to-blue-900/10">
-=======
           <Card className="border border-sky-200/40 dark:border-sky-800/20 shadow-sm bg-gradient-to-br from-sky-50/70 to-blue-50/50 dark:from-sky-900/15 dark:to-blue-900/10">
->>>>>>> 925ef42 (Initial commit)
             <CardContent className="p-0">
               <button
                 className="w-full flex items-center gap-2 p-4 pb-3"
@@ -339,11 +301,7 @@ export function AISummaryScreen() {
                 </div>
                 <div className="flex-1 text-left">
                   <p className="text-sm font-semibold">Today&apos;s AI Study Plan</p>
-<<<<<<< HEAD
-                  <p className="text-[10px] text-muted-foreground">
-=======
                   <p className="text-xs text-muted-foreground">
->>>>>>> 925ef42 (Initial commit)
                     {planGeneratedAt ? `Generated at ${planGeneratedAt}` : 'Time-blocked plan for the rest of your day'}
                   </p>
                 </div>
@@ -354,11 +312,7 @@ export function AISummaryScreen() {
                     <ChevronRight className="h-4 w-4 text-muted-foreground" />
                   </motion.div>
                 ) : (
-<<<<<<< HEAD
-                  <span className="text-[11px] font-semibold text-sky-600 dark:text-sky-400 bg-sky-500/10 px-2.5 py-1 rounded-full">
-=======
                   <span className="text-xs font-semibold text-sky-600 dark:text-sky-400 bg-sky-500/10 px-2.5 py-1 rounded-full">
->>>>>>> 925ef42 (Initial commit)
                     Generate
                   </span>
                 )}
@@ -387,15 +341,6 @@ export function AISummaryScreen() {
                             <span className="text-lg leading-none mt-0.5">{block.emoji}</span>
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center gap-1.5 flex-wrap">
-<<<<<<< HEAD
-                                <span className="text-[11px] font-bold text-foreground">{block.time}</span>
-                                {block.subject && (
-                                  <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full text-white ${cfg.dot}`}>
-                                    {block.subject}
-                                  </span>
-                                )}
-                                <span className="text-[10px] text-muted-foreground ml-auto">{block.duration} min</span>
-=======
                                 <span className="text-xs font-bold text-foreground">{block.time}</span>
                                 {block.subject && (
                                   <span className={`text-xs font-semibold px-1.5 py-0.5 rounded-full text-white ${cfg.dot}`}>
@@ -403,7 +348,6 @@ export function AISummaryScreen() {
                                   </span>
                                 )}
                                 <span className="text-xs text-muted-foreground ml-auto">{block.duration} min</span>
->>>>>>> 925ef42 (Initial commit)
                               </div>
                               <p className="text-xs text-foreground/80 leading-snug mt-0.5">{block.task}</p>
                             </div>
@@ -414,21 +358,13 @@ export function AISummaryScreen() {
                         <button
                           onClick={fetchDailyPlan}
                           disabled={planLoading}
-<<<<<<< HEAD
-                          className="flex-1 text-center text-[11px] font-semibold text-sky-600 dark:text-sky-400 disabled:opacity-50"
-=======
                           className="flex-1 text-center text-xs font-semibold text-sky-600 dark:text-sky-400 disabled:opacity-50"
->>>>>>> 925ef42 (Initial commit)
                         >
                           {planLoading ? '⏳ Regenerating…' : '↻ Regenerate Plan'}
                         </button>
                         <button
                           onClick={printPlan}
-<<<<<<< HEAD
-                          className="flex items-center gap-1.5 text-[11px] font-semibold text-foreground/60 hover:text-foreground bg-muted/60 hover:bg-muted px-3 py-1.5 rounded-lg transition-colors"
-=======
                           className="flex items-center gap-1.5 text-xs font-semibold text-foreground/60 hover:text-foreground bg-muted/60 hover:bg-muted px-3 py-1.5 rounded-lg transition-colors"
->>>>>>> 925ef42 (Initial commit)
                         >
                           <Printer className="h-3 w-3" />
                           Print / PDF

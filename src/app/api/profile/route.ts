@@ -12,12 +12,9 @@ function normalizeUsername(u: unknown): string | undefined {
 export async function GET(request: Request) {
   try {
     const userId = getRequestUserId(request);
-<<<<<<< HEAD
-=======
     if (!userId || userId === 'default-user') {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
->>>>>>> 925ef42 (Initial commit)
     const profile = await db.userProfile.upsert({
       where: { userId },
       create: { userId },

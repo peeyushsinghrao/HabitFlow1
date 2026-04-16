@@ -336,11 +336,7 @@ export function SplashLoginScreen({ onStartJourney, onLogin }: SplashLoginScreen
                       <XIcon className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-destructive" />
                     )}
                   </div>
-<<<<<<< HEAD
-                  <p className="text-[11px] text-muted-foreground">Letters, numbers, _ and . only. Used for adding friends.</p>
-=======
                   <p className="text-xs text-muted-foreground">Letters, numbers, _ and . only. Used for adding friends.</p>
->>>>>>> 925ef42 (Initial commit)
                 </div>
 
                 <div className="space-y-1.5">
@@ -436,11 +432,7 @@ export function SplashLoginScreen({ onStartJourney, onLogin }: SplashLoginScreen
                   <div className="flex items-center justify-between">
                     <label className={labelCls}>Password</label>
                     <button type="button" onClick={goToForgotPassword}
-<<<<<<< HEAD
-                      className="text-[11px] text-primary font-semibold hover:underline">
-=======
                       className="text-xs text-primary font-semibold hover:underline">
->>>>>>> 925ef42 (Initial commit)
                       Forgot password?
                     </button>
                   </div>

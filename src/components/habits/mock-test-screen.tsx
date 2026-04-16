@@ -140,15 +140,6 @@ export function MockTestScreen() {
       {/* Stats row */}
       {tests.length > 0 && (
         <div className="grid grid-cols-3 gap-2">
-<<<<<<< HEAD
-          <Card className="border-0 shadow-sm">
-            <CardContent className="p-2.5 text-center">
-              <p className="text-lg font-bold text-primary">{avg}%</p>
-              <p className="text-[10px] text-muted-foreground">Avg Score</p>
-            </CardContent>
-          </Card>
-          <Card className="border-0 shadow-sm">
-=======
           <Card className="border border-border/40 shadow-sm">
             <CardContent className="p-2.5 text-center">
               <p className="text-lg font-bold text-primary">{avg}%</p>
@@ -156,21 +147,11 @@ export function MockTestScreen() {
             </CardContent>
           </Card>
           <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
             <CardContent className="p-2.5 text-center">
               <div className="flex items-center justify-center gap-1">
                 <p className="text-lg font-bold">{Math.round(best)}%</p>
                 <Trophy className="h-3.5 w-3.5 text-amber-500" />
               </div>
-<<<<<<< HEAD
-              <p className="text-[10px] text-muted-foreground">Best</p>
-            </CardContent>
-          </Card>
-          <Card className="border-0 shadow-sm">
-            <CardContent className="p-2.5 text-center">
-              <p className="text-lg font-bold text-rose-500">{avgSilly}</p>
-              <p className="text-[10px] text-muted-foreground">Avg Silly</p>
-=======
               <p className="text-xs text-muted-foreground">Best</p>
             </CardContent>
           </Card>
@@ -178,7 +159,6 @@ export function MockTestScreen() {
             <CardContent className="p-2.5 text-center">
               <p className="text-lg font-bold text-rose-500">{avgSilly}</p>
               <p className="text-xs text-muted-foreground">Avg Silly</p>
->>>>>>> 925ef42 (Initial commit)
             </CardContent>
           </Card>
         </div>
@@ -186,11 +166,7 @@ export function MockTestScreen() {
 
       {/* Trend chart */}
       {chartData.length >= 2 && (
-<<<<<<< HEAD
-        <Card className="border-0 shadow-sm">
-=======
         <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
           <CardContent className="p-3">
             <div className="flex items-center justify-between mb-2">
               <p className="text-xs font-semibold">Score Trend</p>
@@ -230,31 +206,19 @@ export function MockTestScreen() {
       {activeTab === 'heatmap' && (
         <AnimatePresence mode="wait">
           <motion.div key="heatmap" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}>
-<<<<<<< HEAD
-            <Card className="border-0 shadow-sm">
-=======
             <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
               <CardContent className="p-4">
                 <div className="flex items-center gap-2 mb-3">
                   <Flame className="h-4 w-4 text-rose-500" />
                   <div>
                     <p className="text-sm font-semibold">Weak Topic Heatmap</p>
-<<<<<<< HEAD
-                    <p className="text-[10px] text-muted-foreground">Built from actual mistakes across {tests.length} tests</p>
-=======
                     <p className="text-xs text-muted-foreground">Built from actual mistakes across {tests.length} tests</p>
->>>>>>> 925ef42 (Initial commit)
                   </div>
                 </div>
                 {topicHeatmap.length === 0 ? (
                   <div className="text-center py-6">
                     <p className="text-sm text-muted-foreground">No topics tagged yet</p>
-<<<<<<< HEAD
-                    <p className="text-[11px] text-muted-foreground mt-1">Tag wrong-answer topics when logging tests</p>
-=======
                     <p className="text-xs text-muted-foreground mt-1">Tag wrong-answer topics when logging tests</p>
->>>>>>> 925ef42 (Initial commit)
                   </div>
                 ) : (
                   <div className="flex flex-wrap gap-2">
@@ -266,26 +230,16 @@ export function MockTestScreen() {
                         className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-semibold ${getHeatColor(count, maxTopicCount)}`}
                       >
                         <span>{topic}</span>
-<<<<<<< HEAD
-                        <span className="opacity-70 text-[10px]">×{count}</span>
-=======
                         <span className="opacity-70 text-xs">×{count}</span>
->>>>>>> 925ef42 (Initial commit)
                       </motion.div>
                     ))}
                   </div>
                 )}
                 {topicHeatmap.length > 0 && (
                   <div className="flex items-center gap-2 mt-3 pt-3 border-t border-border/40">
-<<<<<<< HEAD
-                    <p className="text-[10px] text-muted-foreground">Heat:</p>
-                    {['Low', 'Mid', 'High', 'Critical'].map((l, i) => (
-                      <span key={l} className={`text-[9px] px-2 py-0.5 rounded-full font-semibold ${['bg-muted text-muted-foreground', 'bg-amber-200 text-amber-800 dark:bg-amber-800 dark:text-amber-100', 'bg-rose-300 text-rose-900 dark:bg-rose-700 dark:text-rose-100', 'bg-rose-500 text-white'][i]}`}>{l}</span>
-=======
                     <p className="text-xs text-muted-foreground">Heat:</p>
                     {['Low', 'Mid', 'High', 'Critical'].map((l, i) => (
                       <span key={l} className={`text-xs px-2 py-0.5 rounded-full font-semibold ${['bg-muted text-muted-foreground', 'bg-amber-200 text-amber-800 dark:bg-amber-800 dark:text-amber-100', 'bg-rose-300 text-rose-900 dark:bg-rose-700 dark:text-rose-100', 'bg-rose-500 text-white'][i]}`}>{l}</span>
->>>>>>> 925ef42 (Initial commit)
                     ))}
                   </div>
                 )}
@@ -306,17 +260,6 @@ export function MockTestScreen() {
       <AnimatePresence>
         {showForm && (
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="overflow-hidden">
-<<<<<<< HEAD
-            <Card className="border-0 shadow-sm">
-              <CardContent className="p-4 space-y-3">
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <Label className="text-[10px] uppercase text-muted-foreground">Test Name</Label>
-                    <Input value={form.testName} onChange={e => setForm(f => ({ ...f, testName: e.target.value }))} placeholder="Mock Test 1" className="mt-1 h-9 rounded-lg text-xs" />
-                  </div>
-                  <div>
-                    <Label className="text-[10px] uppercase text-muted-foreground">Subject</Label>
-=======
             <Card className="border border-border/40 shadow-sm">
               <CardContent className="p-4 space-y-3">
                 <div className="grid grid-cols-2 gap-2">
@@ -326,7 +269,6 @@ export function MockTestScreen() {
                   </div>
                   <div>
                     <Label className="text-xs uppercase text-muted-foreground">Subject</Label>
->>>>>>> 925ef42 (Initial commit)
                     <select value={form.subject} onChange={e => setForm(f => ({ ...f, subject: e.target.value }))} className="mt-1 w-full h-9 px-2 rounded-lg border border-input bg-background text-xs">
                       {SUBJECTS.map(s => <option key={s} value={s}>{s}</option>)}
                     </select>
@@ -334,17 +276,6 @@ export function MockTestScreen() {
                 </div>
                 <div className="grid grid-cols-3 gap-2">
                   <div>
-<<<<<<< HEAD
-                    <Label className="text-[10px] uppercase text-muted-foreground">Marks Got</Label>
-                    <Input type="number" value={form.marksObtained} onChange={e => setForm(f => ({ ...f, marksObtained: e.target.value }))} placeholder="72" className="mt-1 h-9 rounded-lg text-xs" />
-                  </div>
-                  <div>
-                    <Label className="text-[10px] uppercase text-muted-foreground">Max Marks</Label>
-                    <Input type="number" value={form.maxMarks} onChange={e => setForm(f => ({ ...f, maxMarks: e.target.value }))} className="mt-1 h-9 rounded-lg text-xs" />
-                  </div>
-                  <div>
-                    <Label className="text-[10px] uppercase text-muted-foreground">Silly ✗</Label>
-=======
                     <Label className="text-xs uppercase text-muted-foreground">Marks Got</Label>
                     <Input type="number" value={form.marksObtained} onChange={e => setForm(f => ({ ...f, marksObtained: e.target.value }))} placeholder="72" className="mt-1 h-9 rounded-lg text-xs" />
                   </div>
@@ -354,20 +285,14 @@ export function MockTestScreen() {
                   </div>
                   <div>
                     <Label className="text-xs uppercase text-muted-foreground">Silly ✗</Label>
->>>>>>> 925ef42 (Initial commit)
                     <Input type="number" value={form.sillyMistakes} onChange={e => setForm(f => ({ ...f, sillyMistakes: e.target.value }))} className="mt-1 h-9 rounded-lg text-xs" />
                   </div>
                 </div>
 
                 {/* Wrong topic tags */}
                 <div>
-<<<<<<< HEAD
-                  <Label className="text-[10px] uppercase text-muted-foreground">Wrong Answer Topics</Label>
-                  <p className="text-[10px] text-muted-foreground mb-1.5">Tag each topic you got wrong — builds your heatmap</p>
-=======
                   <Label className="text-xs uppercase text-muted-foreground">Wrong Answer Topics</Label>
                   <p className="text-xs text-muted-foreground mb-1.5">Tag each topic you got wrong — builds your heatmap</p>
->>>>>>> 925ef42 (Initial commit)
                   <div className="flex gap-1.5">
                     <Input
                       value={topicInput}
@@ -381,11 +306,7 @@ export function MockTestScreen() {
                   {wrongTopics.length > 0 && (
                     <div className="flex flex-wrap gap-1.5 mt-2">
                       {wrongTopics.map(t => (
-<<<<<<< HEAD
-                        <span key={t} className="flex items-center gap-1 bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 text-[10px] font-semibold px-2 py-0.5 rounded-full">
-=======
                         <span key={t} className="flex items-center gap-1 bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 text-xs font-semibold px-2 py-0.5 rounded-full">
->>>>>>> 925ef42 (Initial commit)
                           {t}
                           <button onClick={() => removeTopic(t)}><X className="h-2.5 w-2.5" /></button>
                         </span>
@@ -417,28 +338,16 @@ export function MockTestScreen() {
             const noteText = extractNotes(test.notes);
             return (
               <motion.div key={test.id} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.04 }}>
-<<<<<<< HEAD
-                <Card className="border-0 shadow-sm">
-=======
                 <Card className="border border-border/40 shadow-sm">
->>>>>>> 925ef42 (Initial commit)
                   <CardContent className="p-3">
                     <div className="flex items-start gap-3">
                       <div className="text-center w-10 flex-shrink-0">
                         <p className={`text-base font-bold ${color}`}>{pct}%</p>
-<<<<<<< HEAD
-                        <p className="text-[9px] text-muted-foreground">{test.marksObtained}/{test.maxMarks}</p>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-xs font-semibold truncate">{test.testName}</p>
-                        <div className="flex items-center gap-2 text-[10px] text-muted-foreground mt-0.5 flex-wrap">
-=======
                         <p className="text-xs text-muted-foreground">{test.marksObtained}/{test.maxMarks}</p>
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="text-xs font-semibold truncate">{test.testName}</p>
                         <div className="flex items-center gap-2 text-xs text-muted-foreground mt-0.5 flex-wrap">
->>>>>>> 925ef42 (Initial commit)
                           <span>{test.subject}</span>
                           <span>• {test.date}</span>
                           {test.sillyMistakes > 0 && <span className="text-rose-500">• {test.sillyMistakes} silly</span>}
@@ -447,21 +356,13 @@ export function MockTestScreen() {
                         {topics.length > 0 && (
                           <div className="flex flex-wrap gap-1 mt-1.5">
                             {topics.map(t => (
-<<<<<<< HEAD
-                              <span key={t} className="text-[9px] bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 px-1.5 py-0.5 rounded-full font-medium">
-=======
                               <span key={t} className="text-xs bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 px-1.5 py-0.5 rounded-full font-medium">
->>>>>>> 925ef42 (Initial commit)
                                 ✗ {t}
                               </span>
                             ))}
                           </div>
                         )}
-<<<<<<< HEAD
-                        {noteText && <p className="text-[10px] text-muted-foreground mt-1 truncate">{noteText}</p>}
-=======
                         {noteText && <p className="text-xs text-muted-foreground mt-1 truncate">{noteText}</p>}
->>>>>>> 925ef42 (Initial commit)
                       </div>
                       <button onClick={() => handleDelete(test.id)} className="p-1.5 rounded-lg hover:bg-destructive/10 text-muted-foreground hover:text-destructive">
                         <Trash2 className="h-3.5 w-3.5" />
