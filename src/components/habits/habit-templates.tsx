@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'sonner';
 import { useHabitStore } from '@/stores/habit-store';
@@ -11,7 +11,8 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Check, Plus, Package, ChevronRight } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Check, Plus, Package, ChevronRight, Search } from 'lucide-react';
 
 interface TemplateHabit {
   name: string;
@@ -289,6 +290,19 @@ export function HabitTemplatesDialog({
   const [isAdding, setIsAdding] = useState(false);
   const [addedCount, setAddedCount] = useState<number | null>(null);
   const [addedPackName, setAddedPackName] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [quickStream, setQuickStream] = useState<string | null>(null);
+
+  // Reset state on every open
+  useEffect(() => {
+    if (open) {
+      setSelectedPack(null);
+      setSelectedHabits(new Set());
+      setAddedCount(null);
+      setSearchQuery('');
+      setQuickStream(null);
+    }
+  }, [open]);
 
   const templatePacks = useMemo(() => {
     const classPack = getClassPack(studentClass);
